@@ -16,3 +16,12 @@ body {
   max-width: 900px;
   justify-content: center;
 }
+
+button {
+  padding: 0.4em 1em;
+  margin: 10px;
+  color: #0f0f0f;
+  /* background-color: rgb(115, 192, 255); */
+  border-radius: 3px;
+  border: #666666 solid 1.4px;
+}
