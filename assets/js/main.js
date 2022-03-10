@@ -1,44 +1,35 @@
 // FIXME: fix Papa.parse integration
-// let btnUpload = document
-//   .getElementById("btn-read-csv")
-//   .addEventListener("click", () => {
-//     Papa.parse(document.getElementById("txtFileUpload").files[0], {
-//       header: true,
-//       skipEmptyLines: true,
-//       complete: function (results) {
-//         console.log(results);
-//         results.data.map((data, index) => {
-//           console.log(data);
-//         });
-//       },
-//     });
-//   });
-
-const date = [];
-
 const firstData = [];
 const secondData = [];
 const thirdData = [];
+const labels = [];
 
-const confirmReadCsv = document
-  .getElementById("confirm-read-csv")
-  .addEventListener("click", () => {
-    Papa.parse(document.getElementById("txtFileUpload").files[0], {
-      download: true,
-      skipEmptyLines: true,
-      header: true,
-      complete: function (results) {
-        console.log(results);
-        for (i = 0; i < results.data.length; i++) {
-          date.push(results.data[i].Month);
-          firstData.push(results.data[i].price1);
-          secondData.push(results.data[i].price2);
-          thirdData.push(results.data[i].price3);
-        }
-        console.log(secondData);
-      },
-    });
+const fileInput = document.querySelector("#txtFileUpload");
+
+// const confirmReadCsv = document
+//   .getElementById("confirm-read-csv")
+//   .addEventListener("click", () => {
+
+fileInput.addEventListener("change", (e) => {
+  Papa.parse(fileInput.files[0], {
+    download: true,
+    skipEmptyLines: true,
+    header: true,
+    complete: function (results) {
+      console.log(results.data[0].day);
+      for (i = 0; i < results.data.length; i++) {
+        firstData.push(results.data[i].day);
+        secondData.push(results.data[i].price1);
+        thirdData.push(results.data[i].price2);
+        labels.push(results.data[i].month);
+      }
+      console.log([1]);
+      console.log(firstData);
+      console.log(secondData);
+      console.log(thirdData);
+    },
   });
+});
 
 // adding the chart data
 
@@ -57,6 +48,15 @@ function updateChart(label) {
   console.log(label);
   myChart.update();
 }
+
+// dropdown buttons
+let selection = document.querySelector("select");
+let result = document.querySelector("h3");
+
+selection.addEventListener("change", () => {
+  result.innerHTML = selection.options[selection.selectedIndex].text;
+});
+
 // FIXME: fix chart to display import csv
 // const ctx = document.getElementById("myChart").getContext("2d");
 // const myChart = new Chart(ctx, {
@@ -104,37 +104,39 @@ function updateChart(label) {
 //     },
 //   },
 // });
+// chart
+const data = {
+  // labels: ["Red", "Blue", "Yellow", "Green", "Other"],
+  labels: [],
+  datasets: [
+    {
+      label: "firstData",
+      data: firstData,
+      backgroundColor: [
+        "rgba(255, 99, 132, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+        "rgba(255, 206, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(153, 102, 255, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+      ],
+      borderColor: [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)",
+      ],
+      borderWidth: 1,
+    },
+  ],
+};
 
-const ctx = document.getElementById("myChart").getContext("2d");
-const myChart = new Chart(ctx, {
+// config
+const config = {
   type: "bar",
-  data: {
-    labels: labels,
-    // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [
-      {
-        label: "price1",
-        data: firstData,
-        backgroundColor: "rgba(54, 162, 235, .4)",
-        borderColor: "rgba(54, 162, 235, 1)",
-        borderWidth: 1,
-      },
-      {
-        label: "Profit",
-        data: secondData,
-        backgroundColor: "rgba(75, 192, 192, 0.4)",
-        borderColor: "rgba(75, 192, 192, 1)",
-        borderWidth: 1,
-      },
-      {
-        label: "Sell",
-        data: thirdData,
-        backgroundColor: "rgba(255, 99, 132, 0.4)",
-        borderColor: "rgba(255, 99, 132, 1)",
-        borderWidth: 1,
-      },
-    ],
-  },
+  data,
   options: {
     scales: {
       y: {
@@ -142,7 +144,48 @@ const myChart = new Chart(ctx, {
       },
     },
   },
-});
+};
+
+// const myChart = new Chart(document.getElementById("myChart"), config);
+
+// const ctx = document.getElementById("myChart").getContext("2d");
+// const myChart = new Chart(ctx, {
+//   type: "bar",
+//   data: {
+//     labels: labels,
+//     // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+//     datasets: [
+//       {
+//         label: "price1",
+//         data: firstData,
+//         backgroundColor: "rgba(54, 162, 235, .4)",
+//         borderColor: "rgba(54, 162, 235, 1)",
+//         borderWidth: 1,
+//       },
+//       {
+//         label: "Profit",
+//         data: secondData,
+//         backgroundColor: "rgba(75, 192, 192, 0.4)",
+//         borderColor: "rgba(75, 192, 192, 1)",
+//         borderWidth: 1,
+//       },
+//       {
+//         label: "Sell",
+//         data: thirdData,
+//         backgroundColor: "rgba(255, 99, 132, 0.4)",
+//         borderColor: "rgba(255, 99, 132, 1)",
+//         borderWidth: 1,
+//       },
+//     ],
+//   },
+//   options: {
+//     scales: {
+//       y: {
+//         beginAtZero: true,
+//       },
+//     },
+//   },
+// });
 
 // try {
 //   console.log("hello");
