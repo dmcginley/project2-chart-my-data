@@ -20,7 +20,8 @@ add chartjs and csv for my new project
 
 ### Libraries used
 - **Chart.js** https://www.chartjs.org/docs/latest/
-- **d3.js**
+- **d3.js** https://d3js.org/
+- **Papa Parse** https://www.papaparse.com/
 
 ### Graphic/UX Design
 * **Figma, Gimp, & Inkscape.**
@@ -55,13 +56,20 @@ add chartjs and csv for my new project
 
 ## Resources
 *General reading and resources.*
+#### Books 
+- [Eloquent JavaScript ~ *by Marijn Haverbeke*](https://www.goodreads.com/book/show/52016825-javascript)
+
+- [JavaScript and jQuery: Interactive Front-End Web Development ~ *by Jon Duckett*](https://www.goodreads.com/book/show/16219704-javascript-and-jquery)
+
 
 ## Credits
 *Sites content, media, and help with implementing code for tutorials/online help.*
 
-- JavaScript Programming Tutorial 39 - Average of Array Values
+#### Tutorials
+- [Tabular Data - Working With Data & APIs in JavaScript](https://www.youtube.com/watch?v=RfMkdvN-23o)
 
-    https://www.youtube.com/watch?v=QgUnJhUTGoI
+- [JavaScript Programming Tutorial 39 - Average of Array Values](https://www.youtube.com/watch?v=QgUnJhUTGoI)
+
 
 
 ## Content
