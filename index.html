@@ -24,14 +24,24 @@
   <body>
     <!-- the chart -->
     <div class="flex-container">
+      <!-- TODO: center chart -->
       <div class="chart-box">
         <h2>chart</h2>
         <canvas id="myChart"></canvas>
       </div>
 
       <fieldset>
-        <input class="file-upload-btn" id="txtFileUpload" type="file" />
+        <!-- FIXME: input err, workout stander for input -->
+        <input
+          class="file-upload-btn"
+          id="txtFileUpload"
+          type="file"
+          name=""
+          accept=".csv"
+        />
       </fieldset>
+
+      <!-- TODO: add buttons for input to chart -->
       <button onclick="updateChart('firstData')">firstData</button>
     </div>
 

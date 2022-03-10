@@ -2,6 +2,7 @@
 
 const firstData = [];
 
+// FIXME: fix Papa.parse integration
 // let btnUpload = document
 //   .getElementById("btn-read-csv")
 //   .addEventListener("click", () => {
@@ -17,6 +18,7 @@ const firstData = [];
 //     });
 //   });
 
+// FIXME: fix chart to display import csv
 const ctx = document.getElementById("myChart").getContext("2d");
 const myChart = new Chart(ctx, {
   type: "bar",
