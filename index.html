@@ -28,11 +28,6 @@
 
 <body>
   <div class="flex-container">
-    <!-- <div class="chart-box">
-        <h2>Static data</h2>
-        <canvas id="myChart"></canvas>
-       <button class="btn2" type="button" onclick="toggleData(1)">Two</button>
-      </div> -->
     <div class="chart-box">
       <h2>CSV test data</h2>
       <canvas id="myChart"></canvas>
@@ -53,6 +48,14 @@
       <button onclick="updateChart('thirdData')">thirdData</button>
     </fieldset>
 
+    <select name="" id="">
+      <option disabled hidden selected>Select Data</option>
+      <option value="firstData">firstData</option>
+      <option value="secondData">secondData</option>
+      <option value="thirdData">thirdData</option>
+    </select>
+    <h3 id="result">Result</h3>
+    
   </div>
   </div>
 
