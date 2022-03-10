@@ -8,7 +8,14 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  color: #1b1b1b;
+  color: #333333;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  padding-bottom: 1em;
 }
 
 .chart-box {
@@ -17,11 +24,42 @@ body {
   justify-content: center;
 }
 
-button {
+button,
+select {
   padding: 0.4em 1em;
   margin: 10px;
   color: #0f0f0f;
   /* background-color: rgb(115, 192, 255); */
   border-radius: 3px;
   border: #666666 solid 1.4px;
+}
+
+button:hover {
+  background-color: rgb(146, 146, 146);
+}
+.btn1 {
+  background-color: hsla(0, 0%, 100%, 0.5);
+}
+.btn2 {
+  background-color: rgba(163, 71, 186, 0.5);
+}
+
+fieldset {
+  margin: 1em;
+}
+legend {
+  background-color: #e7f0fd;
+  margin-left: 0.4em;
+  padding: 0.6em 1em;
+}
+
+fieldset,
+legend {
+  color: #333333;
+  border: #9b9b9b solid 1px;
+  border-radius: 4px;
+}
+.file-upload-btn {
+  font-size: 1rem;
+  padding: 1em;
 }

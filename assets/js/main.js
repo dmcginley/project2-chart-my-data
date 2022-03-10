@@ -39,11 +39,14 @@ tableHead.addEventListener("change", (e) => {
     preview: 1,
     complete: function (nameResults) {
       // console.log(nameResults);
-      names.push(nameResults.data);
-      console.log(names);
+      names.push(nameResults.data[0]);
+      // console.log(nameResults.data[0]);
+      console.log(names[0]);
     },
   });
 });
+
+//
 
 // parsing the data with papa parse
 fileInput.addEventListener("change", (e) => {
@@ -83,6 +86,17 @@ function updateChart(label) {
   myChart.update();
 }
 
+// creat buttons from array
+const btn = ["cat", "dog", "one", "two"];
+
+function creatBtn() {
+  for (i = 0; i < btn.length; i++) {
+    document.getElementById("btn-container").innerHTML +=
+      "<button>" + btn[i] + "</button>";
+  }
+}
+creatBtn();
+
 // dropdown buttons
 let selection = document.querySelector("select");
 let result = document.querySelector("h3");
@@ -99,23 +113,23 @@ const data = {
     {
       label: "firstData",
       data: firstData,
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-      ],
-      borderWidth: 1,
+      // backgroundColor: [
+      //   "rgba(255, 99, 132, 0.2)",
+      //   "rgba(54, 162, 235, 0.2)",
+      //   "rgba(255, 206, 86, 0.2)",
+      //   "rgba(75, 192, 192, 0.2)",
+      //   "rgba(153, 102, 255, 0.2)",
+      //   "rgba(255, 159, 64, 0.2)",
+      // ],
+      // borderColor: [
+      //   "rgba(255, 99, 132, 1)",
+      //   "rgba(54, 162, 235, 1)",
+      //   "rgba(255, 206, 86, 1)",
+      //   "rgba(75, 192, 192, 1)",
+      //   "rgba(153, 102, 255, 1)",
+      //   "rgba(255, 159, 64, 1)",
+      // ],
+      // borderWidth: 1,
     },
   ],
 };
@@ -125,6 +139,39 @@ const config = {
   type: "bar",
   data,
   options: {
+    borderWidth: 1,
+    backgroundColor: [
+      "rgba(255, 99, 132, 0.6)",
+      "rgba(54, 162, 235, 0.6)",
+      "rgba(255, 206, 86, 0.6)",
+      "rgba(75, 192, 192, 0.6)",
+      "rgba(153, 102, 255, 0.6)",
+      "rgba(255, 159, 64, 0.6)",
+    ],
+    borderColor: [
+      "rgba(255, 99, 132, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(255, 206, 86, 1)",
+      "rgba(75, 192, 192, 1)",
+      "rgba(153, 102, 255, 1)",
+      "rgba(255, 159, 64, 1)",
+    ],
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+};
+
+const config2 = {
+  type: "line",
+  data,
+  options: {
+    borderWidth: 2,
+    backgroundColor: "rgba(54, 162, 235, 1)",
+    borderColor: "rgba(54, 162, 235, 1)",
+    tension: 0.5,
     scales: {
       y: {
         beginAtZero: true,
@@ -134,7 +181,17 @@ const config = {
 };
 
 // render init the data
-const myChart = new Chart(document.getElementById("myChart"), config);
+let myChart = new Chart(document.getElementById("myChart"), config);
+
+function chartType(type) {
+  myChart.destroy();
+  if (type === "bar") {
+    myChart = new Chart(document.getElementById("myChart"), config);
+  }
+  if (type === "line") {
+    myChart = new Chart(document.getElementById("myChart"), config2);
+  }
+}
 
 // try {
 //   console.log("hello");

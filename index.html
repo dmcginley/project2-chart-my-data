@@ -18,16 +18,18 @@
       integrity="sha384-gbSJST5/Geo6Slr9JzXgmoS6LqyisUUyjZG7z94EWbxfwQjHndoHiyz2YbZ6TCVz"
       crossorigin="anonymous"
     ></script> -->
+<!-- FIXME:d3js color sets not sure will I use yet-->
+!-- Import D3 Scale Chromatic via CDN -->  
+<script src="https://d3js.org/d3-color.v1.min.js"></script>  
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>  
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+
+
   <!-- chart.js script added integrity and crossorigin for SRI Hash using https://www.srihash.org/  -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"
     integrity="sha384-7NrRHqlWUj2hJl3a/dZj/a1GxuQc56mJ3aYsEnydBYrY1jR+RSt6SBvK3sHfj+mJ" crossorigin="anonymous">
   </script>
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-
 
 
   <title>ChartJS</title>
@@ -55,7 +57,7 @@
       <button onclick="updateChart('thirdData')">thirdData</button>
     </fieldset>
 
-    <div class="button-holder"></div>
+    <div id="btn-container"></div>
 
 
 
@@ -66,8 +68,11 @@
       <option value="thirdData">thirdData</option>
     </select>
     <h3 id="result">Result</h3>
+    <div>
+      <input onclick="chartType('bar')" type="radio" value="bar" name="chart">bar
+      <input onclick="chartType('line')" type="radio" value="line" name="chart">line
+    </div>
 
-  </div>
   </div>
 
   <!-- script -->
