@@ -5,7 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    
+
+    <!-- Papa parse JS - added integrity and crossorigin for SRI Hash using https://www.srihash.org/  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
+      integrity="sha384-3UqfbTnADMqh/U3Nnc2YemCb4NU2tvfy1QWQa71aD9jM8J22WQov29gHPWobkC/p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- chart.js script - added integrity and crossorigin for SRI Hash using https://www.srihash.org/  -->
     <script
       src="https://cdn.jsdelivr.net/npm/chart.js"
       integrity="sha384-7NrRHqlWUj2hJl3a/dZj/a1GxuQc56mJ3aYsEnydBYrY1jR+RSt6SBvK3sHfj+mJ"
@@ -15,31 +22,24 @@
     <title>ChartJS</title>
   </head>
   <body>
-   <!-- the chart -->
-   <div class="flex-container">
+    <!-- the chart -->
+    <div class="flex-container">
+      <div class="chart-box">
+        <h2>chart</h2>
+        <canvas id="myChart"></canvas>
+      </div>
 
-
-    <div class="chart-box">
-      <h2>chart</h2>
-      <canvas id="myChart"></canvas>
+      <fieldset>
+        <input class="file-upload-btn" id="txtFileUpload" type="file" />
+      </fieldset>
+      <button onclick="updateChart('firstData')">firstData</button>
     </div>
-  </div>
-  
 
-  <!-- csv button upload -->
-
-
-
-
-
-
+    <!-- csv button upload -->
 
     <!-- buttons -->
 
-
-
     <!-- script -->
     <script src="assets/js/main.js"></script>
-
   </body>
 </html>

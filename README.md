@@ -1,12 +1,13 @@
-# Project 2
+# Project 2 - Chart my data
 <p>&nbsp;</p>
 
 Site url:
 
-Repository for the project:
+Repository for the project: https://github.com/dmcginley/project2-chart-my-data
 
 add chartjs and csv for my new project
 
+<p>&nbsp;</p>
 
 ## Wireframe
 
