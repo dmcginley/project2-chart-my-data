@@ -63,3 +63,22 @@ legend {
   font-size: 1rem;
   padding: 1em;
 }
+
+.radio-btn-container {
+  margin-left: 2em;
+}
+.radio-input {
+  display: none;
+}
+
+.radio-label {
+  display: inline-block;
+  padding: 0.2em;
+  background-color: rgb(228, 228, 228);
+  width: 80px;
+  text-align: center;
+}
+
+.radio-input:checked + .radio-label {
+  background-color: rgb(174, 255, 228);
+}
