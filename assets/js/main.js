@@ -9,26 +9,10 @@ const thirdData = [];
 const labels = [];
 
 // empty array to separate out the first row from the file (the names)
-const names = [];
+let names = [];
 
 const fileInput = document.querySelector("#txtFileUpload");
 const tableHead = document.querySelector("#txtFileUpload");
-
-// FIXME: trying to get the first row, the names
-// tableHead.addEventListener("change", (e) => {
-//   Papa.parse(fileInput.files[0], {
-//     download: true,
-//     skipEmptyLines: true,
-//     header: false,
-//     complete: function (results) {
-//       // console.log(results.data[0]);
-//       for (i = 0; i < results.data.length; i++) {
-//         names.push(results.data.[i] );
-//         console.log(names);
-//       }
-//     },
-//   });
-// });
 
 // using preview: 1 option to get just the first row in the csv
 tableHead.addEventListener("change", (e) => {
@@ -39,9 +23,10 @@ tableHead.addEventListener("change", (e) => {
     preview: 1,
     complete: function (nameResults) {
       // console.log(nameResults);
-      names.push(nameResults.data[0]);
+      names = nameResults.data[0].slice(2);
       // console.log(nameResults.data[0]);
-      console.log(names[0]);
+      console.log("header row", names);
+      createBtn();
     },
   });
 });
@@ -62,10 +47,6 @@ fileInput.addEventListener("change", (e) => {
         thirdData.push(results.data[i].price2);
         labels.push(results.data[i].month);
       }
-      // console.log(results.data[2]);
-      // console.log(firstData);
-      // console.log(secondData);
-      // console.log(thirdData);
     },
   });
 });
@@ -75,12 +56,15 @@ function updateChart(label) {
   myChart.data.datasets[0].label = label;
   if (label === "firstData") {
     myChart.data.datasets[0].data = firstData;
+    myChart.data.datasets[1].data = secondData;
   }
   if (label === "secondData") {
     myChart.data.datasets[0].data = secondData;
+    myChart.data.datasets[1].data = thirdData;
   }
   if (label === "thirdData") {
     myChart.data.datasets[0].data = thirdData;
+    myChart.data.datasets[1].data = secondData;
   }
   // console.log(label);
   myChart.update();
@@ -89,13 +73,27 @@ function updateChart(label) {
 // creat buttons from array
 const btn = ["cat", "dog", "one", "two"];
 
-function creatBtn() {
-  for (i = 0; i < btn.length; i++) {
-    document.getElementById("btn-container").innerHTML +=
-      "<button>" + btn[i] + "</button>";
+function createBtn() {
+  console.log("createBtn", names);
+
+  const container = document.getElementById("btn-container");
+  // remove all previous buttons
+  while (container.firstChild) {
+    container.removeChild(container.lastChild);
+  }
+
+  for (i = 0; i < names.length; i++) {
+    // document.getElementById("btn-container").innerHTML +=
+    //   "<button>" + names[i] + "</button>";
+
+    const newButton = document.createElement("button");
+    newButton.innerHTML = names[i];
+    container.appendChild(newButton);
+
+    // .innerHTML +=
+    //   "<button>" + names[i] + "</button>";
   }
 }
-creatBtn();
 
 // dropdown buttons
 let selection = document.querySelector("select");
@@ -104,6 +102,8 @@ let result = document.querySelector("h3");
 selection.addEventListener("change", () => {
   result.innerHTML = selection.options[selection.selectedIndex].text;
 });
+
+const otherData = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // chart
 const data = {
@@ -130,6 +130,10 @@ const data = {
       //   "rgba(255, 159, 64, 1)",
       // ],
       // borderWidth: 1,
+    },
+    {
+      label: "Other Data",
+      data: otherData,
     },
   ],
 };
@@ -183,6 +187,7 @@ const config2 = {
 // render init the data
 let myChart = new Chart(document.getElementById("myChart"), config);
 
+// to destroy and creat two different charts - bar and line
 function chartType(type) {
   myChart.destroy();
   if (type === "bar") {
