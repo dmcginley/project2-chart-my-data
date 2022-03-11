@@ -1,3 +1,5 @@
+// testing js file, to be deleted later
+
 // const buttons = ["cat", "dog", "one", "two", "three"];
 
 // // buttons created using jQuery
