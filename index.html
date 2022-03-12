@@ -49,21 +49,6 @@
       </div>
       <h2 id="introHeader">Upload your CSV File</h2>
 
-      <fieldset>
-        <!-- <legend>Data Input:</legend> -->
-
-        <!-- <div> -->
-        <input
-          class="file-upload-btn"
-          type="file"
-          id="txtFileUpload"
-          name="File Upload"
-          accept=".csv"
-        />
-        <!-- <button id="confirm-read-csv">Upload CSV</button> -->
-        <!-- </div> -->
-      </fieldset>
-
       <section class="chart-box">
         <!-- <h2 class="p-t1">CSV test data</h2> -->
         <canvas
@@ -72,6 +57,8 @@
           role="img"
         ></canvas>
       </section>
+
+      <!-- the two chart type buttons under the chart -->
       <div class="radio-btn-container">
         <input
           onclick="chartType('bar')"
@@ -82,7 +69,8 @@
           name="chart"
         />
         <label class="radio-label" for="radio1">
-          <i class="bx bx-bar-chart-alt-2"></i>
+          <img class="chart-svg" src="assets/icons/bx-bar-chart.svg" alt="" />
+          <p class="radio-label-name">Bar</p>
         </label>
 
         <input
@@ -94,7 +82,8 @@
           name="chart"
         />
         <label class="radio-label" for="radio2">
-          <i class="bx bx-line-chart"></i>
+          <img class="chart-svg" src="assets/icons/bx-line-chart.svg" alt="" />
+          <p class="radio-label-name">Line</p>
         </label>
       </div>
 
@@ -114,6 +103,14 @@
           <h3 id="result">Result</h3>
         </div>
       </div>
+
+      <label class="file" for="txtFileUpload">
+        <input class="file-upload-btn" type="file" id="txtFileUpload" name="File
+        Upload" aria-label="File browser accept=".csv" />
+        <span class="file-upload-custom-btn"></span>
+      </label>
+
+      <!-- <button id="confirm-read-csv">Upload CSV</button> -->
     </div>
 
     <!-- script -->
