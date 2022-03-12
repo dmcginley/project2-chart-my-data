@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- boxicons icons -->
-    <!-- <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script> -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Papa parse JS -->
     <script
@@ -39,49 +42,36 @@
   </head>
 
   <body>
-    <div class="flex-container">
-      <div class="chart-box">
-        <h2>CSV test data</h2>
-        <canvas
-          id="myChart"
-          aria-label="Bar Chart Values of....."
-          role="img"
-        ></canvas>
+    <div class="main-container">
+      <div class="hero">
+        <h1>A place to upload your csv dataset</h1>
+        <p>visualization of for your data</p>
       </div>
-    </div>
-    <div class="upload-container">
       <h2 id="introHeader">Upload your CSV File</h2>
 
       <fieldset>
         <!-- <legend>Data Input:</legend> -->
 
-        <div>
-          <input
-            class="file-upload-btn"
-            type="file"
-            id="txtFileUpload"
-            name="File Upload"
-            accept=".csv"
-          />
-          <!-- <button id="confirm-read-csv">Upload CSV</button> -->
-        </div>
-        <button onclick="updateChart('firstData')">firstData</button>
-        <button onclick="updateChart('secondData')">secondData</button>
-        <button onclick="updateChart('thirdData')">thirdData</button>
+        <!-- <div> -->
+        <input
+          class="file-upload-btn"
+          type="file"
+          id="txtFileUpload"
+          name="File Upload"
+          accept=".csv"
+        />
+        <!-- <button id="confirm-read-csv">Upload CSV</button> -->
+        <!-- </div> -->
       </fieldset>
 
-      <div id="btn-container"></div>
-
-      <select name="" id="">
-        <option disabled hidden selected>Select Data</option>
-        <option value="firstData">firstData</option>
-        <option value="secondData">secondData</option>
-        <option value="thirdData">thirdData</option>
-      </select>
-      <div>
-        <h3 id="result">Result</h3>
-      </div>
-
+      <section class="chart-box">
+        <!-- <h2 class="p-t1">CSV test data</h2> -->
+        <canvas
+          id="myChart"
+          aria-label="Bar Chart Values of....."
+          role="img"
+        ></canvas>
+      </section>
       <div class="radio-btn-container">
         <input
           onclick="chartType('bar')"
@@ -91,7 +81,9 @@
           value="bar"
           name="chart"
         />
-        <label class="radio-label" for="radio1">bar</label>
+        <label class="radio-label" for="radio1">
+          <i class="bx bx-bar-chart-alt-2"></i>
+        </label>
 
         <input
           onclick="chartType('line')"
@@ -101,7 +93,26 @@
           value="line"
           name="chart"
         />
-        <label class="radio-label" for="radio2">line</label>
+        <label class="radio-label" for="radio2">
+          <i class="bx bx-line-chart"></i>
+        </label>
+      </div>
+
+      <div class="upload-container">
+        <button onclick="updateChart('firstData')">firstData</button>
+        <button onclick="updateChart('secondData')">secondData</button>
+        <button onclick="updateChart('thirdData')">thirdData</button>
+        <div id="btn-container"></div>
+
+        <select name="" id="">
+          <option disabled hidden selected>Select Data</option>
+          <option value="firstData">firstData</option>
+          <option value="secondData">secondData</option>
+          <option value="thirdData">thirdData</option>
+        </select>
+        <div>
+          <h3 id="result">Result</h3>
+        </div>
       </div>
     </div>
 

@@ -56,15 +56,15 @@ function updateChart(label) {
   myChart.data.datasets[0].label = label;
   if (label === "firstData") {
     myChart.data.datasets[0].data = firstData;
-    myChart.data.datasets[1].data = secondData;
+    // myChart.data.datasets[1].data = secondData;
   }
   if (label === "secondData") {
     myChart.data.datasets[0].data = secondData;
-    myChart.data.datasets[1].data = thirdData;
+    // myChart.data.datasets[1].data = thirdData;
   }
   if (label === "thirdData") {
     myChart.data.datasets[0].data = thirdData;
-    myChart.data.datasets[1].data = secondData;
+    // myChart.data.datasets[1].data = secondData;
   }
   // console.log(label);
   myChart.update();
@@ -103,16 +103,17 @@ selection.addEventListener("change", () => {
   result.innerHTML = selection.options[selection.selectedIndex].text;
 });
 
-const otherData = [1, 2, 3, 4, 5, 6, 7, 8];
+// const otherData = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // chart
 const data = {
-  // labels: ["Red", "Blue", "Yellow", "Green", "Other"],
-  labels: [],
+  labels: ["Red", "Blue", "Yellow", "Green", "Other"],
+  // labels: [],
   datasets: [
     {
       label: "firstData",
-      data: firstData,
+      data: [4.5, 7, 3, 4.2, 5.1, 3, 3.6, 7],
+      // data: firstData,
       // backgroundColor: [
       //   "rgba(255, 99, 132, 0.2)",
       //   "rgba(54, 162, 235, 0.2)",
@@ -131,10 +132,10 @@ const data = {
       // ],
       // borderWidth: 1,
     },
-    {
-      label: "Other Data",
-      data: otherData,
-    },
+    // {
+    //   label: "Other Data",
+    //   data: otherData,
+    // },
   ],
 };
 
@@ -173,9 +174,9 @@ const config2 = {
   data,
   options: {
     borderWidth: 2,
-    backgroundColor: "rgba(54, 162, 235, 1)",
-    borderColor: "rgba(54, 162, 235, 1)",
-    tension: 0.5,
+    backgroundColor: "rgba(33, 195, 216, 1)",
+    borderColor: "rgba(33, 195, 216, 1)",
+    tension: 0.4,
     scales: {
       y: {
         beginAtZero: true,
