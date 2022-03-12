@@ -85,7 +85,9 @@ fieldset {
   margin-top: 1em;
 }
 .radio-input {
-  display: none;
+  /* display: none; */
+  opacity: 0;
+  position: absolute;
 }
 
 .radio-label {
@@ -94,6 +96,12 @@ fieldset {
   background-color: rgb(233, 233, 233);
   width: 50%;
   text-align: center;
+}
+/* .radio-input:focus + .radio-label {
+  outline: 3px dashed red;
+} */
+.radio-input:focus-visible + .radio-label {
+  outline: 3px dashed blue;
 }
 
 .radio-input:checked + .radio-label {
