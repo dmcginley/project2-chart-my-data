@@ -82,7 +82,7 @@ button:hover {
 .radio-label {
   display: inline-block;
   /* padding: 0.2em; */
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(238, 224, 238);
   width: 50%;
   text-align: center;
 }
@@ -96,7 +96,9 @@ button:hover {
 }
 
 .radio-input:checked + .radio-label {
-  background-color: rgb(179, 255, 229);
+  background-color: rgb(247, 155, 242);
+  /* background-color: #ca2629; */
+  color: aliceblue;
 }
 
 .radio-label {

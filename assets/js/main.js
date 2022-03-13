@@ -92,32 +92,37 @@ const data = {
     {
       label: "firstData",
       data: [4.5, 7, 3, 4.2, 5.1, 3, 3.6, 7],
+      backgroundColor: "#69b3a2",
+      borderColor: "#69b3a2",
+    },
+    {
+      label: "secondData",
+      data: [3.5, 2, 5, 6.2, 5, 3.3, 3, 2],
+      backgroundColor: "#4682b4",
+      borderColor: "#4682b4",
+    },
+    {
+      label: "thirdData",
+      data: [4, 1, 2, 3.2, 5.6, 2.2, 6, 5.1],
+      backgroundColor: "#e24b9e",
+      borderColor: "#e24b9e",
+    },
+    {
+      label: "forthData",
+      data: [8, 4, 3.8, 5.3, 4.2, 3.6, 2, 4.1],
+      backgroundColor: "#0cf0e9",
+      borderColor: "#0cf0e9",
     },
   ],
 };
 
 // config of chart - data color FIXME:
-const config = {
+const configBar = {
   type: "bar",
   data,
   options: {
-    borderWidth: 1,
-    backgroundColor: [
-      "rgba(255, 99, 132, 0.6)",
-      "rgba(54, 162, 235, 0.6)",
-      "rgba(255, 206, 86, 0.6)",
-      "rgba(75, 192, 192, 0.6)",
-      "rgba(153, 102, 255, 0.6)",
-      "rgba(255, 159, 64, 0.6)",
-    ],
-    borderColor: [
-      "rgba(255, 99, 132, 1)",
-      "rgba(54, 162, 235, 1)",
-      "rgba(255, 206, 86, 1)",
-      "rgba(75, 192, 192, 1)",
-      "rgba(153, 102, 255, 1)",
-      "rgba(255, 159, 64, 1)",
-    ],
+    borderWidth: 0,
+
     scales: {
       y: {
         beginAtZero: true,
@@ -126,7 +131,7 @@ const config = {
   },
 };
 // config2 of chart - data color
-const config2 = {
+const configLine = {
   type: "line",
   data,
   options: {
@@ -143,16 +148,16 @@ const config2 = {
 };
 
 // render init the data
-let myChart = new Chart(document.getElementById("myChart"), config);
+let myChart = new Chart(document.getElementById("myChart"), configBar);
 
 // to destroy and creat two different charts - bar and line
 function chartType(type) {
   myChart.destroy();
   if (type === "bar") {
-    myChart = new Chart(document.getElementById("myChart"), config);
+    myChart = new Chart(document.getElementById("myChart"), configBar);
   }
   if (type === "line") {
-    myChart = new Chart(document.getElementById("myChart"), config2);
+    myChart = new Chart(document.getElementById("myChart"), configLine);
   }
 }
 
