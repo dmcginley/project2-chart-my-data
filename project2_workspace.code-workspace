@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "."
+	}
+],
+  "settings": {
+    "files.autoSave": "off",
+    "workbench.colorTheme": "Theme",
+    "terminal.integrated.gpuAcceleration": "canvas",
+    "liveServer.settings.port": 5501,
+    "liveServer.settings.multiRootWorkspaceName": "project2-chart-my-data"
+  }
+}
