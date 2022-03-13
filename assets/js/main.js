@@ -15,6 +15,19 @@ const fileInput = document.querySelector("#txtFileUpload");
 
 // add function for  extracting the names
 
+function processMyData(data) {
+  for (i = 0; i < data.length; i++) {
+    const row = data[i];
+
+    if (i === 0) {
+      // process header
+      dataSetNames = row.slice(1); // remove 'Date' header
+      console.log(dataSetNames);
+    }
+    // proses rows next
+  }
+}
+
 // parsing the data with papa parse
 fileInput.addEventListener("change", (e) => {
   Papa.parse(fileInput.files[0], {
@@ -122,10 +135,15 @@ const configBar = {
   data,
   options: {
     borderWidth: 0,
+    responsive: true,
 
     scales: {
       y: {
         beginAtZero: true,
+        stacked: true,
+      },
+      x: {
+        stacked: true,
       },
     },
   },
