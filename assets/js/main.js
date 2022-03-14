@@ -38,11 +38,9 @@ function processData(data) {
       //const dict = {'year': year, 'month': month};
       console.log(`processing row ${i}`, {
         year,
-        month,
-        dateOfMonth,
       });
 
-      if (month === 11) {
+      if (year === 11) {
         console.log(date);
         firstData.push(row[1]);
         secondData.push(row[2]);
@@ -60,9 +58,13 @@ function processData(data) {
 function displayDefaultChart() {
   myChart.data.labels = labels;
   myChart.data.datasets[0].data = firstData;
+  myChart.data.datasets[0].label = dataSetNames[0];
   myChart.data.datasets[1].data = secondData;
+  myChart.data.datasets[1].label = dataSetNames[1];
   myChart.data.datasets[2].data = thirdData;
+  myChart.data.datasets[2].label = dataSetNames[2];
   myChart.data.datasets[3].data = fourthData;
+  myChart.data.datasets[3].label = dataSetNames[3];
   myChart.update();
 }
 
@@ -162,8 +164,8 @@ const data = {
       borderColor: "#e24b9e",
     },
     {
-      label: "forthData",
-      data: forthData,
+      label: "fourthData",
+      data: fourthData,
       backgroundColor: "#0cf0e9",
       borderColor: "#0cf0e9",
     },
@@ -195,8 +197,7 @@ const configLine = {
   data,
   options: {
     borderWidth: 2,
-    // backgroundColor: "rgba(33, 195, 216, 1)",
-    // borderColor: "rgba(33, 195, 216, 1)",
+
     tension: 0.4,
     pointRadius: 3,
     // pointHoverRadius: 5,
