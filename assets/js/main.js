@@ -3,16 +3,10 @@
 // empty array to separate out the first row from the file (the names)
 let dataSetNames = [];
 
-// initial test data columns
-let firstData = [4.5, 7, 3, 4.2, 5.1, 3, 3.6, 7];
-let secondData = [3.5, 2, 5, 6.2, 5, 3.3, 3, 2];
-let thirdData = [4, 1, 2, 3.2, 5.6, 2.2, 6, 5.1];
-let fourthData = [8, 4, 3.8, 5.3, 4.2, 3.6, 2, 4.1];
-
-// const firstData = [];
-// const secondData = [];
-// const thirdData = [];
-// const fourthData = [];
+const firstData = [];
+const secondData = [];
+const thirdData = [];
+const fourthData = [];
 
 // labels, determines the length of the chart
 const labels = [];
@@ -34,22 +28,18 @@ function processData(data) {
       // process data row
       console.log(`processing row ${i}`);
       const date = new Date(row[0]);
-      const year = date.getFullYear();
+      // const year = date.getFullYear();
       //const dict = {'year': year, 'month': month};
       console.log(`processing row ${i}`, {
-        year,
+        // year,
       });
 
-      // gets february data
-      // if (year === 2) {
-      //   console.log(date);
-      //   firstData.push(row[1]);
-      //   secondData.push(row[2]);
-      //   thirdData.push(row[3]);
-      //   fourthData.push(row[4]);
-      //   //labels.push(row[0]); // date
-      //   labels.push(dateOfMonth.toString());
-      // }
+      console.log(date);
+      firstData.push(row[1]);
+      secondData.push(row[2]);
+      thirdData.push(row[3]);
+      fourthData.push(row[4]);
+      labels.push(row[0]); // the date x axis
 
       // TODO: get a month worth of data
     }
