@@ -7,6 +7,7 @@ let dataSetNames = [];
 const firstData = [];
 const secondData = [];
 const thirdData = [];
+const fourthData = [];
 
 // labels, determines the length of the chart
 const labels = [];
@@ -25,6 +26,18 @@ function processMyData(data) {
       console.log(dataSetNames);
     }
     // proses rows next
+    else {
+      // process data row
+      console.log(`processing row ${i}`);
+      const date = new Date(row[0]);
+      const year = date.getFullYear();
+      //const dict = {'year': year, 'month': month};
+      console.log(`processing row ${i}`, {
+        year,
+        month,
+        dateOfMonth,
+      });
+    }
   }
 }
 
@@ -37,10 +50,7 @@ fileInput.addEventListener("change", (e) => {
     complete: function (results) {
       // console.log(results.data[0]);
       for (i = 0; i < results.data.length; i++) {
-        firstData.push(results.data[i].day);
-        secondData.push(results.data[i].price1);
-        thirdData.push(results.data[i].price2);
-        labels.push(results.data[i].month);
+        // FIXME:
       }
     },
   });
@@ -154,9 +164,10 @@ const configLine = {
   data,
   options: {
     borderWidth: 2,
-    backgroundColor: "rgba(33, 195, 216, 1)",
-    borderColor: "rgba(33, 195, 216, 1)",
+    // backgroundColor: "rgba(33, 195, 216, 1)",
+    // borderColor: "rgba(33, 195, 216, 1)",
     tension: 0.4,
+    pointRadius: 3,
     scales: {
       y: {
         beginAtZero: true,
@@ -178,14 +189,3 @@ function chartType(type) {
     myChart = new Chart(document.getElementById("myChart"), configLine);
   }
 }
-
-// try {
-//   console.log("hello");
-//   blo;
-// } catch (err) {
-//   console.error("error" + err.stack);
-// } finally {
-//   console.log("...end of test");
-// }
-
-// console.log("continue");
