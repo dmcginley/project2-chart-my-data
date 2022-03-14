@@ -146,6 +146,7 @@ const configBar = {
   type: "bar",
   data,
   options: {
+    // maintainAspectRatio: false,
     borderWidth: 0,
     responsive: true,
 

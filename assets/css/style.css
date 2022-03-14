@@ -6,9 +6,36 @@
   box-sizing: border-box;
 }
 
+/* -----------------------
+   [table of contents]
+1.  color styling
+2.  global style
+    
+    2.1.  maine grid style
+    2.2.  typography
+3.  buttons
+4.  google icons
+5. footer icons
+-------------------------- */
+
+/* ----------------
+    1. color styling
+---------------- */
+:root {
+  /* page colors */
+  --white: #eeeeee;
+  --black: #1a1a1a;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   /* color: #333333; */
+  display: grid;
+  grid-template-columns: 1fr minmax(30ch, 100ch) 1fr;
+}
+
+.main-container {
+  grid-column: 2;
 }
 .p-t1 {
   padding-top: 1em;
@@ -53,10 +80,6 @@ button:hover {
 }
 .btn2 {
   background-color: rgb(80, 77, 230);
-}
-
-.file-upload-btn {
-  /* opacity: 0; */
 }
 
 .file-upload-btn {
@@ -130,4 +153,25 @@ button:hover {
   /* background-color: #e4a9a9; */
   margin-top: 1em;
   /* height: 50px; */
+}
+
+.chart-box {
+  /* background-color: aquamarine; */
+  /* height: 600px; */
+  /* height: 60vw; */
+}
+/* canvas {
+  height: 500px;
+} */
+
+/* @media only screen and (min-width: 600px) {
+  .chart-box {
+    height: 60vw;
+  }
+} */
+
+@media only screen and (min-width: 520px) {
+  #btn-container {
+    flex-direction: row;
+  }
 }
