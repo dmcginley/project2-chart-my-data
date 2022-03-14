@@ -4,10 +4,15 @@
 let dataSetNames = [];
 
 // initial test data columns
-const firstData = [];
-const secondData = [];
-const thirdData = [];
-const fourthData = [];
+let firstData = [4.5, 7, 3, 4.2, 5.1, 3, 3.6, 7];
+let secondData = [3.5, 2, 5, 6.2, 5, 3.3, 3, 2];
+let thirdData = [4, 1, 2, 3.2, 5.6, 2.2, 6, 5.1];
+let fourthData = [8, 4, 3.8, 5.3, 4.2, 3.6, 2, 4.1];
+
+// const firstData = [];
+// const secondData = [];
+// const thirdData = [];
+// const fourthData = [];
 
 // labels, determines the length of the chart
 const labels = [];
@@ -15,7 +20,6 @@ const labels = [];
 const fileInput = document.querySelector("#txtFileUpload");
 
 // add function for  extracting the names
-
 function processData(data) {
   for (i = 0; i < data.length; i++) {
     const row = data[i];
@@ -37,10 +41,32 @@ function processData(data) {
         month,
         dateOfMonth,
       });
+
+      if (month === 11) {
+        console.log(date);
+        firstData.push(row[1]);
+        secondData.push(row[2]);
+        thirdData.push(row[3]);
+        fourthData.push(row[4]);
+        //labels.push(row[0]); // date
+        labels.push(dateOfMonth.toString());
+      }
+
+      // TODO: get a month worth of data
     }
   }
 }
 
+function displayDefaultChart() {
+  myChart.data.labels = labels;
+  myChart.data.datasets[0].data = firstData;
+  myChart.data.datasets[1].data = secondData;
+  myChart.data.datasets[2].data = thirdData;
+  myChart.data.datasets[3].data = fourthData;
+  myChart.update();
+}
+
+// FIXME: get data to display in the chart
 // parsing the data with papa parse
 fileInput.addEventListener("change", (e) => {
   Papa.parse(fileInput.files[0], {
@@ -55,27 +81,8 @@ fileInput.addEventListener("change", (e) => {
   });
 });
 
-function updateChart(label) {
-  myChart.data.labels = labels;
-  myChart.data.datasets[0].label = label;
-  if (label === "firstData") {
-    myChart.data.datasets[0].data = firstData;
-    // myChart.data.datasets[1].data = secondData;
-  }
-  if (label === "secondData") {
-    myChart.data.datasets[0].data = secondData;
-    // myChart.data.datasets[1].data = thirdData;
-  }
-  if (label === "thirdData") {
-    myChart.data.datasets[0].data = thirdData;
-    // myChart.data.datasets[1].data = secondData;
-  }
-  // console.log(label);
-  myChart.update();
-}
-
-function createBtn() {
-  console.log("createBtn", names);
+function createDataSetButtons() {
+  console.log("createDataSetButtons", dataSetNames);
 
   const container = document.getElementById("btn-container");
   // remove all previous buttons
@@ -83,18 +90,33 @@ function createBtn() {
     container.removeChild(container.lastChild);
   }
 
-  for (i = 0; i < names.length; i++) {
-    // document.getElementById("btn-container").innerHTML +=
-    //   "<button>" + names[i] + "</button>";
-
+  for (let i = 0; i < dataSetNames.length; i++) {
     const newButton = document.createElement("button");
-    newButton.innerHTML = names[i];
+    newButton.innerText = dataSetNames[i];
+    newButton.setAttribute("onclick", `toggleDataSet(${i})`);
     container.appendChild(newButton);
-
-    // .innerHTML +=
-    //   "<button>" + names[i] + "</button>";
   }
 }
+
+// function updateChart(label) {
+//   myChart.data.labels = labels;
+//   myChart.data.datasets[0].label = label;
+//   if (label === "firstData") {
+//     myChart.data.datasets[0].data = firstData;
+//     // myChart.data.datasets[1].data = secondData;
+//   }
+//   if (label === "secondData") {
+//     myChart.data.datasets[0].data = secondData;
+//     // myChart.data.datasets[1].data = thirdData;
+//   }
+//   if (label === "thirdData") {
+//     myChart.data.datasets[0].data = thirdData;
+//     // myChart.data.datasets[1].data = secondData;
+//   }
+//   // console.log(label);
+//   myChart.update();
+// }
+
 // toggle the data set
 function toggleDataSet(index) {
   console.log("toggle dataset", index);
@@ -118,30 +140,30 @@ function toggleDataSet(index) {
 
 // chart
 const data = {
-  labels: ["Red", "Blue", "Yellow", "Green", "Other"],
-  // labels: [],
+  // labels: ["Red", "Blue", "Yellow", "Green", "Other"],
+  labels: [],
   datasets: [
     {
       label: "firstData",
-      data: [4.5, 7, 3, 4.2, 5.1, 3, 3.6, 7],
+      data: firstData,
       backgroundColor: "#69b3a2",
       borderColor: "#69b3a2",
     },
     {
       label: "secondData",
-      data: [3.5, 2, 5, 6.2, 5, 3.3, 3, 2],
+      data: secondData,
       backgroundColor: "#4682b4",
       borderColor: "#4682b4",
     },
     {
       label: "thirdData",
-      data: [4, 1, 2, 3.2, 5.6, 2.2, 6, 5.1],
+      data: thirdData,
       backgroundColor: "#e24b9e",
       borderColor: "#e24b9e",
     },
     {
       label: "forthData",
-      data: [8, 4, 3.8, 5.3, 4.2, 3.6, 2, 4.1],
+      data: forthData,
       backgroundColor: "#0cf0e9",
       borderColor: "#0cf0e9",
     },
