@@ -40,31 +40,29 @@ function processData(data) {
         year,
       });
 
-      if (year === 11) {
-        console.log(date);
-        firstData.push(row[1]);
-        secondData.push(row[2]);
-        thirdData.push(row[3]);
-        fourthData.push(row[4]);
-        //labels.push(row[0]); // date
-        labels.push(dateOfMonth.toString());
-      }
+      // gets february data
+      // if (year === 2) {
+      //   console.log(date);
+      //   firstData.push(row[1]);
+      //   secondData.push(row[2]);
+      //   thirdData.push(row[3]);
+      //   fourthData.push(row[4]);
+      //   //labels.push(row[0]); // date
+      //   labels.push(dateOfMonth.toString());
+      // }
 
       // TODO: get a month worth of data
     }
   }
 }
 
+// selects from the first 4 columns and adds them into an array (to form the button)
 function displayDefaultChart() {
   myChart.data.labels = labels;
   myChart.data.datasets[0].data = firstData;
-  myChart.data.datasets[0].label = dataSetNames[0];
   myChart.data.datasets[1].data = secondData;
-  myChart.data.datasets[1].label = dataSetNames[1];
   myChart.data.datasets[2].data = thirdData;
-  myChart.data.datasets[2].label = dataSetNames[2];
   myChart.data.datasets[3].data = fourthData;
-  myChart.data.datasets[3].label = dataSetNames[3];
   myChart.update();
 }
 
@@ -99,25 +97,6 @@ function createDataSetButtons() {
     container.appendChild(newButton);
   }
 }
-
-// function updateChart(label) {
-//   myChart.data.labels = labels;
-//   myChart.data.datasets[0].label = label;
-//   if (label === "firstData") {
-//     myChart.data.datasets[0].data = firstData;
-//     // myChart.data.datasets[1].data = secondData;
-//   }
-//   if (label === "secondData") {
-//     myChart.data.datasets[0].data = secondData;
-//     // myChart.data.datasets[1].data = thirdData;
-//   }
-//   if (label === "thirdData") {
-//     myChart.data.datasets[0].data = thirdData;
-//     // myChart.data.datasets[1].data = secondData;
-//   }
-//   // console.log(label);
-//   myChart.update();
-// }
 
 // toggle the data set
 function toggleDataSet(index) {
