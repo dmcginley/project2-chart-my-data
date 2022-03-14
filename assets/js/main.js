@@ -16,7 +16,7 @@ const fileInput = document.querySelector("#txtFileUpload");
 
 // add function for  extracting the names
 
-function processMyData(data) {
+function processData(data) {
   for (i = 0; i < data.length; i++) {
     const row = data[i];
 
@@ -46,12 +46,11 @@ fileInput.addEventListener("change", (e) => {
   Papa.parse(fileInput.files[0], {
     download: true,
     skipEmptyLines: true,
-    header: true,
+    header: false,
     complete: function (results) {
-      // console.log(results.data[0]);
-      for (i = 0; i < results.data.length; i++) {
-        // FIXME:
-      }
+      processData(results.data);
+      createDataSetButtons();
+      displayDefaultChart();
     },
   });
 });
@@ -96,14 +95,24 @@ function createBtn() {
     //   "<button>" + names[i] + "</button>";
   }
 }
+// toggle the data set
+function toggleDataSet(index) {
+  console.log("toggle dataset", index);
+  const isVisible = myChart.isDatasetVisible(index);
+  if (isVisible) {
+    myChart.hide(index);
+  } else {
+    myChart.show(index);
+  }
+}
 
-// dropdown buttons
-let selection = document.querySelector("select");
-let result = document.querySelector("h3");
+// // dropdown buttons
+// let selection = document.querySelector("select");
+// let result = document.querySelector("h3");
 
-selection.addEventListener("change", () => {
-  result.innerHTML = selection.options[selection.selectedIndex].text;
-});
+// selection.addEventListener("change", () => {
+//   result.innerHTML = selection.options[selection.selectedIndex].text;
+// });
 
 // const otherData = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -168,6 +177,7 @@ const configLine = {
     // borderColor: "rgba(33, 195, 216, 1)",
     tension: 0.4,
     pointRadius: 3,
+    // pointHoverRadius: 5,
     scales: {
       y: {
         beginAtZero: true,
