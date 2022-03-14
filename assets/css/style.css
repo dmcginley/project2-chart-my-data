@@ -122,3 +122,12 @@ button:hover {
     grid-template-columns: 1fr minmax(30ch, 240ch) 1fr;
   }
 } */
+
+#btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: #e4a9a9; */
+  margin-top: 1em;
+  /* height: 50px; */
+}
