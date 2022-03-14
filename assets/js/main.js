@@ -71,6 +71,7 @@ fileInput.addEventListener("change", (e) => {
   });
 });
 
+// remove any and adds dynamic buttons to the html file
 function createDataSetButtons() {
   console.log("createDataSetButtons", dataSetNames);
 
@@ -80,6 +81,7 @@ function createDataSetButtons() {
     container.removeChild(container.lastChild);
   }
 
+  // I loop through the array to create buttons
   for (let i = 0; i < dataSetNames.length; i++) {
     const newButton = document.createElement("button");
     newButton.innerText = dataSetNames[i];
@@ -146,10 +148,9 @@ const configBar = {
   type: "bar",
   data,
   options: {
-    // maintainAspectRatio: false,
     borderWidth: 0,
     responsive: true,
-
+    maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true,
@@ -167,7 +168,8 @@ const configLine = {
   data,
   options: {
     borderWidth: 2,
-
+    responsive: true,
+    maintainAspectRatio: false,
     tension: 0.4,
     pointRadius: 3,
     // pointHoverRadius: 5,
