@@ -28,8 +28,6 @@ function processData(data) {
       // process data row
       console.log(`processing row ${i}`);
       const date = new Date(row[0]);
-      // const year = date.getFullYear();
-      //const dict = {'year': year, 'month': month};
       console.log(`processing row ${i}`, {
         // year,
       });
@@ -87,6 +85,11 @@ function createDataSetButtons() {
     newButton.innerText = dataSetNames[i];
     newButton.setAttribute("onclick", `toggleDataSet(${i})`);
     container.appendChild(newButton);
+
+    // create only 4 buttons
+    if (i === 3) {
+      break;
+    }
   }
 }
 
@@ -171,7 +174,7 @@ const configLine = {
     responsive: true,
     maintainAspectRatio: false,
     tension: 0.4,
-    pointRadius: 3,
+    pointRadius: 2,
     // pointHoverRadius: 5,
     scales: {
       y: {
