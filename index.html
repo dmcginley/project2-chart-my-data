@@ -89,11 +89,20 @@
 
       <div id="btn-container"></div>
 
-      <label class="file" for="txtFileUpload">
+      <div class="file-upload-container">
+        <label class="file-upload-file" for="txtFileUpload">
+          <img
+            class="upload-img"
+            src="assets/icons/bx-upload-white.svg"
+            alt=""
+          />Upload File
+        </label>
+
         <input class="file-upload-btn" type="file" id="txtFileUpload" name="File
         Upload" aria-label="File browser accept=" .csv" />
-        <span class="file-upload-custom-btn"></span>
-      </label>
+        <!-- <span class="file-upload-custom-btn"></span> -->
+        <!-- </label> -->
+      </div>
 
       <!-- <button id="confirm-read-csv">Upload CSV</button> -->
     </div>

@@ -145,6 +145,20 @@ const data = {
       borderColor: "#0cf0e9",
     },
   ],
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+      y: {
+        grid: {
+          display: false,
+        },
+      },
+    },
+  },
 };
 
 // config of chart - data color FIXME:
@@ -159,9 +173,15 @@ const configBar = {
       y: {
         beginAtZero: true,
         stacked: true,
+        // grid: {
+        //   display: false,
+        // },
       },
       x: {
         stacked: true,
+        // grid: {
+        //   display: false,
+        // },
       },
     },
   },
@@ -180,6 +200,15 @@ const configLine = {
     scales: {
       y: {
         beginAtZero: true,
+        // grid: {
+        //   display: false,
+        // },
+      },
+      x: {
+        stacked: true,
+        // grid: {
+        //   display: false,
+        // },
       },
     },
   },
