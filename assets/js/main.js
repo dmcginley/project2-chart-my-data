@@ -8,16 +8,18 @@ const secondData = [];
 const thirdData = [];
 const fourthData = [];
 
+// const dataset = [1, 2, 3, 4, 5, 6, 7, 8];
+
 // labels, determines the length of the chart
 const labels = [];
 
 const fileInput = document.querySelector("#txtFileUpload");
 
-// add function for  extracting the names
+// added function for extracting the names
 function processData(data) {
   for (i = 0; i < data.length; i++) {
     const row = data[i];
-
+    console.log(row);
     if (i === 0) {
       // process header
       dataSetNames = row.slice(1); // remove 'Date' header
@@ -26,13 +28,12 @@ function processData(data) {
     // proses rows next
     else {
       // process data row
-      console.log(`processing row ${i}`);
       const date = new Date(row[0]);
-      console.log(`processing row ${i}`, {
-        // year,
-      });
+      // console.log(`processing row ${i}`, {
+      //   year,
+      // });
 
-      console.log(date);
+      // console.log(date);
       firstData.push(row[1]);
       secondData.push(row[2]);
       thirdData.push(row[3]);
@@ -104,23 +105,23 @@ function toggleDataSet(index) {
   }
 }
 
-// // dropdown buttons
-// let selection = document.querySelector("select");
-// let result = document.querySelector("h3");
-
-// selection.addEventListener("change", () => {
-//   result.innerHTML = selection.options[selection.selectedIndex].text;
-// });
-
-// const otherData = [1, 2, 3, 4, 5, 6, 7, 8];
+function addData(chart, label, data) {
+  chart.data.labels.push(label);
+  chart.data.datasets.forEach((dataset) => {
+    dataset.data.push(data);
+  });
+  chart.update();
+}
 
 // chart
+
 const data = {
   // labels: ["Red", "Blue", "Yellow", "Green", "Other"],
   labels: [],
   datasets: [
     {
       label: "firstData",
+      // data: firstData,
       data: firstData,
       backgroundColor: "#69b3a2",
       borderColor: "#69b3a2",
@@ -183,6 +184,24 @@ const configLine = {
     },
   },
 };
+
+// Adding or Removing Data - from chart.js docs
+// function addData(chart, label, data) {
+//   // chart.data.labels.push(label);
+//   chart.data.datasets.forEach((dataset) => {
+//     dataset.data.push(data);
+//     console.log(dataset);
+//   });
+//   chart.update();
+// }
+
+// function removeData(chart) {
+//   chart.data.labels.pop();
+//   chart.data.datasets.forEach((dataset) => {
+//     dataset.data.pop();
+//   });
+//   chart.update();
+// }
 
 // render init the data
 let myChart = new Chart(document.getElementById("myChart"), configBar);
