@@ -7,7 +7,7 @@ const firstData = [];
 const secondData = [];
 const thirdData = [];
 const fourthData = [];
-
+// let btnColors = [];
 // const dataset = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // labels, determines the length of the chart
@@ -70,14 +70,36 @@ fileInput.addEventListener("change", (e) => {
   });
 });
 
+function getColors(color) {
+  myChart.data.datasets[0].backgroundColor = color;
+
+  // for (let i = 0; i < dataSetNames.length; i++) {
+  // let colors = myChart.data.datasets[i].backgroundColor;
+
+  console.log("colors", getColors());
+  // }
+}
+
 // remove any and adds dynamic buttons to the html file
 function createDataSetButtons() {
-  console.log("createDataSetButtons", dataSetNames);
+  // console.log("createDataSetButtons", dataSetNames);
+
+  // colors
+  // let colors = myChart.data.datasets[0].backgroundColor;
 
   const container = document.getElementById("dynamic-btn-container");
   // remove all previous buttons
   while (container.firstChild) {
     container.removeChild(container.lastChild);
+  }
+  // loop to get the colors
+  for (let i = 0; i < dataSetNames.length; i++) {
+    let colors = myChart.data.datasets[i].backgroundColor;
+    if (i === 4) {
+      break;
+    }
+    // colors === btnColors;
+    console.log("color", colors);
   }
 
   // I loop through the array to create buttons
@@ -85,6 +107,8 @@ function createDataSetButtons() {
     const newButton = document.createElement("button");
     newButton.innerText = dataSetNames[i];
     newButton.setAttribute("onclick", `toggleDataSet(${i})`);
+    // newButton.setAttribute("style", "background-color: color");
+    // newButton.setAttribute("style", "background-color: #3d84ca");
     container.appendChild(newButton);
 
     // create only 4 buttons
