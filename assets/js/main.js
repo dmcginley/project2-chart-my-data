@@ -74,7 +74,7 @@ fileInput.addEventListener("change", (e) => {
 function createDataSetButtons() {
   console.log("createDataSetButtons", dataSetNames);
 
-  const container = document.getElementById("btn-container");
+  const container = document.getElementById("dynamic-btn-container");
   // remove all previous buttons
   while (container.firstChild) {
     container.removeChild(container.lastChild);
@@ -169,6 +169,11 @@ const configBar = {
     borderWidth: 0,
     responsive: true,
     maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
     scales: {
       y: {
         beginAtZero: true,
@@ -179,9 +184,9 @@ const configBar = {
       },
       x: {
         stacked: true,
-        // grid: {
-        //   display: false,
-        // },
+        grid: {
+          display: false,
+        },
       },
     },
   },
@@ -197,6 +202,11 @@ const configLine = {
     tension: 0.4,
     pointRadius: 2,
     // pointHoverRadius: 5,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
     scales: {
       y: {
         beginAtZero: true,

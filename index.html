@@ -49,15 +49,6 @@
       </div>
       <h2 id="introHeader">Upload your CSV File</h2>
 
-      <section class="chart-box">
-        <!-- <h2 class="p-t1">CSV test data</h2> -->
-        <canvas
-          id="myChart"
-          aria-label="Bar Chart Values of....."
-          role="img"
-        ></canvas>
-      </section>
-
       <!-- the two chart type buttons under the chart -->
       <div class="radio-btn-container">
         <input
@@ -87,15 +78,27 @@
         </label>
       </div>
 
-      <div id="btn-container"></div>
+      <section class="chart-box">
+        <!-- <h2 class="p-t1">CSV test data</h2> -->
+        <canvas
+          id="myChart"
+          aria-label="Bar Chart Values of....."
+          role="img"
+        ></canvas>
+      </section>
+
+      <div id="dynamic-btn-container"></div>
 
       <div class="file-upload-container">
-        <label class="file-upload-file" for="txtFileUpload">
-          <img
-            class="upload-img"
-            src="assets/icons/bx-upload-white.svg"
-            alt=""
-          />Upload File
+        <label class="upload-label" for="txtFileUpload">
+          <span class="upload-img-span">
+            <img
+              class="upload-img"
+              src="assets/icons/bx-upload-white.svg"
+              alt=""
+            />
+          </span>
+          <span class="upload-text-span">Upload File</span>
         </label>
 
         <input class="file-upload-btn" type="file" id="txtFileUpload" name="File
