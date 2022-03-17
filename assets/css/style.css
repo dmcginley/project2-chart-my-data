@@ -41,9 +41,11 @@ body {
   justify-content: space-evenly;
   /* align-items: baseline; */
 }
+
 .p-t1 {
   padding-top: 1em;
 }
+
 h1 {
   font-size: 1.6rem;
   text-align: center;
@@ -51,14 +53,17 @@ h1 {
   padding-bottom: 0.4em;
   /* background-color: aqua; */
 }
+
 h2 {
   padding: 1em;
 }
+
 .hero {
   /* background-color: rgb(192, 192, 192); */
   padding: 2em 1em;
   text-align: center;
 }
+
 .chart-box {
   padding: 0 0.8em;
   /* max-width: 900px; */
@@ -69,6 +74,7 @@ h2 {
 .btn1 {
   background-color: hsla(0, 0%, 100%, 0.5);
 }
+
 .btn2 {
   background-color: rgb(80, 77, 230);
 }
@@ -76,11 +82,14 @@ h2 {
 input[type="file"] {
   display: none;
 }
+
 .file-upload-container {
   display: flex;
   justify-content: center;
-  padding: 1em 0;
+  /* background-color: #d6d6d6; */
+  padding: 4em 0;
 }
+
 .upload-label {
   display: flex;
   justify-content: center;
@@ -89,12 +98,15 @@ input[type="file"] {
   background-color: #ee3625;
   width: 100%;
 }
+
 .upload-label:hover {
   background-color: #d3291a;
 }
+
 .upload-label:active {
   background-color: #bd271a;
 }
+
 .upload-img-span {
   display: none;
   background-color: rgba(0, 0, 0, 0.09);
@@ -116,7 +128,7 @@ input[type="file"] {
   height: 2rem;
 }
 
-.radio-btn-container {
+.chart-toggle-btn {
   display: flex;
   /* margin-top: 1em; */
 }
@@ -129,79 +141,72 @@ button {
   /* min-width: 100px; */
   width: 100%;
   border-radius: 0;
-  /* border: #2b2b2b solid 1.4px; */
 }
 
 button:nth-child(1) {
   background-color: #69b3a2;
 }
+
 button:nth-child(2) {
   background-color: #4682b4;
 }
+
 button:nth-child(3) {
   background-color: #e24b9e;
 }
+
 button:nth-child(4) {
   background-color: #0cf0e9;
 }
 
-button:nth-child(n):hover {
-  filter: brightness(0.8);
+button:nth-child(n):hover,
+button:nth-child(n):focus-visible {
+  filter: brightness(0.9);
 }
 
-button:nth-child(n):focus-visible {
-  filter: brightness(0.8);
-}
+/* chart type toggle buttons */
 .radio-input {
   opacity: 0;
   position: absolute;
 }
 
-.radio-label {
+.chart-toggle-label {
   display: inline-block;
   background-color: rgb(238, 224, 238);
   width: 50%;
   text-align: center;
 }
-/* .radio-input:focus + .radio-label {
-  outline: 3px dashed red;
-} */
-.radio-input:focus-visible + .radio-label {
+
+.radio-input:focus-visible+.chart-toggle-label {
   outline: 2px solid var(--black);
   outline-offset: -2px;
-  /* border-inline: 2px solid black; */
+  border-inline: 2px solid black;
 }
 
-.radio-input:checked + .radio-label {
+.radio-input:checked+.chart-toggle-label {
   /* background-color: rgb(247, 155, 242); */
   background-color: #8d3636;
   color: aliceblue;
 }
 
-.radio-label {
+.chart-toggle-label {
   color: #252525;
   padding: 0.6em;
-  /* font-size: 3em; */
 }
 
-.chart-svg {
+.chart-toggle-svg {
   height: 1.6rem;
   opacity: 0.8;
   /* background-color: aqua; */
 }
 
-.radio-label-name {
+.chart-toggle-name {
   color: black;
   opacity: 0.8;
   font-size: 1rem;
 }
-/* @media only screen and (min-width: 768px) {
-  .main-container {
-    display: grid;
-    grid-template-columns: 1fr minmax(30ch, 240ch) 1fr;
-  }
-} */
 
+/* dynamic buttons - the 4 legends for the chart */
 #dynamic-btn-container {
   display: flex;
   flex-direction: column;
@@ -211,39 +216,53 @@ button:nth-child(n):focus-visible {
   margin-top: 2em;
 }
 
-/* canvas {
-  height: 500px;
-} */
+
+
+
+
+
+
+.visible {
+  background-color: #1a1a1a;
+}
+
 @media only screen and (min-width: 340px) {
   .chart-box {
     /* height: 50vw; */
     height: 240px;
     /* width: 800px; */
   }
+
   .upload-label {
     width: auto;
   }
+
   .upload-img-span {
     display: block;
     /* background-color: rgba(0, 0, 0, 0.09); */
     /* padding: 1em 2.2em; */
   }
+
   .upload-text-span {
     font-size: 1.2rem;
   }
 }
+
 @media only screen and (min-width: 520px) {
   .chart-box {
     height: 50vw;
     /* width: 800px; */
   }
+
   #dynamic-btn-container {
     flex-direction: row;
   }
+
   button {
     width: 40%;
   }
 }
+
 @media only screen and (min-width: 900px) {
   .chart-box {
     height: 450px;
@@ -251,8 +270,7 @@ button:nth-child(n):focus-visible {
   }
 }
 
-@media only screen and (min-width: 560px) {
-}
+@media only screen and (min-width: 560px) {}
 
 @media only screen and (min-width: 740px) {
   #dynamic-btn-container {

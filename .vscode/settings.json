@@ -26,13 +26,13 @@
    "editor.defaultFormatter": "HookyQR.beautify",
    "liveServer.settings.port": 5501,
    "[css]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "HookyQR.beautify"
    },
    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "HookyQR.beautify"
    },
    "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "HookyQR.beautify"
    },
    "cSpell.words": [
       "boxicons"
