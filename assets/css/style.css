@@ -216,6 +216,9 @@ button:nth-child(n):focus-visible {
   margin-top: 2em;
 }
 
+button .foo {
+  background-color: #0cf0e9;
+}
 
 
 
@@ -223,7 +226,7 @@ button:nth-child(n):focus-visible {
 
 
 .visible {
-  background-color: #1a1a1a;
+  background-color: #1a1a1a7c;
 }
 
 @media only screen and (min-width: 340px) {

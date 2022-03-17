@@ -92,17 +92,28 @@ function createDataSetButtons() {
     const newButton = document.createElement("button");
     newButton.innerText = dataSetNames[i];
     newButton.setAttribute("onclick", `toggleDataSet(${i})`);
+    newButton.setAttribute("class", "button");
 
     container.appendChild(newButton);
+
+
+
+    // console.log(toggleButton);
+
+
+    // FIXME: doesn't wor grey out button
+    // async function newColor() {
+    //   newButton.setAttribute("style", "background-color: red;");
+    // }
+    // newButton.addEventListener("onclick", newColor())
+
 
     // create only 4 buttons
     if (i === 3) {
       break;
     }
-
-    // console.log(toggleButton);
-
   }
+
 }
 
 
