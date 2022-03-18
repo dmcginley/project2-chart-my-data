@@ -31,22 +31,6 @@ const fileInput = document.querySelector("#txtFileUpload");
 // }
 // added function for extracting the names
 function processData(data) {
-  // resetData();
-
-
-
-
-  // FIXME: resetting data not working correctly
-  // firstData.length = 0;
-  // secondData.length = 0;
-  // thirdData.length = 0;
-  // fourthData.length = 0;
-  // labels.length = 0;
-  // destroyChart()
-
-
-
-
   for (i = 0; i < data.length; i++) {
     const row = data[i];
     console.log(row);
@@ -57,14 +41,12 @@ function processData(data) {
     }
     // proses rows next
     else {
-      // process data row
-      // FIXME: data not declared 
-      // const date = new Date(row[0]);
-      // console.log(`processing row ${i}`, {
-      //   year,
-      // });
 
-      // clearData = [];
+      const date = new Date(row[0]);
+      const year = date.getMonth();
+      //const dict = {'year': year, 'month': month};
+
+      clearData = [];
 
       console.log("firstData set", firstData);
 
