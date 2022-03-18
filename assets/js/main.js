@@ -15,23 +15,58 @@ const labels = [];
 
 const fileInput = document.querySelector("#txtFileUpload");
 
+
+
+// stockData()
+// async function stockData() {
+//   const url = "assets/csv/test2.csv";
+//   const response = await fetch(url);
+//   const tableData = await response.text();
+//   // console.log(tableData);
+
+
+
+//   const sex = processData(tableData);
+//   console.log(tableData);
+// }
 // added function for extracting the names
 function processData(data) {
+  // resetData();
+
+
+
+
+  // FIXME: resetting data not working correctly
+  // firstData.length = 0;
+  // secondData.length = 0;
+  // thirdData.length = 0;
+  // fourthData.length = 0;
+  // labels.length = 0;
+  // destroyChart()
+
+
+
+
   for (i = 0; i < data.length; i++) {
     const row = data[i];
     console.log(row);
     if (i === 0) {
       // process header
       dataSetNames = row.slice(1); // remove 'Date' header
-      console.log(dataSetNames);
+      console.log("dataSetNames", dataSetNames);
     }
     // proses rows next
     else {
       // process data row
-      const date = new Date(row[0]);
+      // FIXME: data not declared 
+      // const date = new Date(row[0]);
       // console.log(`processing row ${i}`, {
       //   year,
       // });
+
+      // clearData = [];
+
+      console.log("firstData set", firstData);
 
       // console.log(date);
       firstData.push(row[1]);
@@ -39,19 +74,28 @@ function processData(data) {
       thirdData.push(row[3]);
       fourthData.push(row[4]);
       labels.push(row[0]); // the date x axis
+      console.log("firstData set", firstData);
+
+      // firstData.length = 0;
+
+      // console.log("afirstData set", firstData);
 
       // TODO: get a month worth of data
     }
+
   }
 }
 
 // selects from the first 4 columns and adds them into an array (to form the button)
 function displayDefaultChart() {
-  myChart.data.labels = labels;
-  myChart.data.datasets[0].data = firstData;
-  myChart.data.datasets[1].data = secondData;
-  myChart.data.datasets[2].data = thirdData;
-  myChart.data.datasets[3].data = fourthData;
+  // resetData();
+  // myChart.data.labels = labels;
+  // myChart.data.datasets[0].data = firstData;
+  // myChart.data.datasets[1].data = secondData;
+  // myChart.data.datasets[2].data = thirdData;
+  // myChart.data.datasets[3].data = fourthData;
+
+
   myChart.update();
 }
 
@@ -117,6 +161,13 @@ function createDataSetButtons() {
 }
 
 
+
+
+
+
+
+
+
 // toggle the data set
 function toggleDataSet(index) {
   console.log("toggle dataset", index);
@@ -128,13 +179,17 @@ function toggleDataSet(index) {
   }
 }
 
-function addData(chart, label, data) {
-  chart.data.labels.push(label);
-  chart.data.datasets.forEach((dataset) => {
-    dataset.data.push(data);
-  });
-  chart.update();
-}
+// function addData(chart, label, data) {
+//   // chart.destroy();
+
+
+//   chart.data.labels.push(label);
+//   chart.data.datasets.forEach((dataset) => {
+//     dataset.data.push(data);
+//   });
+//   chart.update();
+// }
+
 
 // chart
 
@@ -182,6 +237,13 @@ const data = {
     },
   },
 };
+
+
+
+
+
+
+
 
 // config of chart - data color FIXME:
 const configBar = {
@@ -264,9 +326,14 @@ const configLine = {
 //   chart.update();
 // }
 
-// render init the data
-let myChart = new Chart(document.getElementById("myChart"), configBar);
 
+
+
+
+
+myChart = new Chart(document.getElementById("myChart"), configBar);
+// render init the data
+// let myChart = new Chart(document.getElementById("myChart"), configBar);
 // to destroy and creat two different charts - bar and line
 function chartType(type) {
   myChart.destroy();
@@ -277,3 +344,15 @@ function chartType(type) {
     myChart = new Chart(document.getElementById("myChart"), configLine);
   }
 }
+
+
+function resetData() {
+  myChart.data.datasets[0].data = firstData;
+  myChart.data.datasets[1].data = secondData;
+  myChart.data.datasets[2].data = thirdData;
+  myChart.data.datasets[3].data = fourthData;
+  myChart.data.labels = labels;
+  myChart.update();
+
+}
+// resetData();
