@@ -71,7 +71,7 @@ If you have some data you'd like to visualise...
 
 - [w3schools](https://www.w3schools.com/js/default.asp) - JavaScript
 - [Mozilla Developer](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - JavaScript
-- []()
+- [d3js](https://d3js.org/)
 - []()
 - []()
 - []()
@@ -87,6 +87,9 @@ If you have some data you'd like to visualise...
 - [JavaScript Break and Continue](https://www.w3schools.com/js/js_break.asp) - to break out of the loop for the buttons.
 
 - [How to Parse CSV String in Javascript with Papaparse JS](https://www.youtube.com/watch?v=s6SgVjIvIV8&list=PLPZlbsSRAxIpfL9s3LPCXqllojDEqxAXl&index=11) -using PapaParse.
+
+
+How to Create a Chart with a Remote CSV File with Chart JS
 
 
 ## Content

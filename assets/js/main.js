@@ -33,22 +33,22 @@ const fileInput = document.querySelector("#txtFileUpload");
 function processData(data) {
   for (i = 0; i < data.length; i++) {
     const row = data[i];
-    console.log(row);
+    // console.log(row);
     if (i === 0) {
       // process header
       dataSetNames = row.slice(1); // remove 'Date' header
-      console.log("dataSetNames", dataSetNames);
+      // console.log("dataSetNames", dataSetNames);
     }
     // proses rows next
     else {
 
       const date = new Date(row[0]);
-      const year = date.getMonth();
+      const year = date.getFullYear();
       //const dict = {'year': year, 'month': month};
 
       clearData = [];
 
-      console.log("firstData set", firstData);
+      // console.log("firstData set", firstData);
 
       // console.log(date);
       firstData.push(row[1]);
@@ -56,7 +56,7 @@ function processData(data) {
       thirdData.push(row[3]);
       fourthData.push(row[4]);
       labels.push(row[0]); // the date x axis
-      console.log("firstData set", firstData);
+      // console.log("firstData set", firstData);
 
       // firstData.length = 0;
 
@@ -71,17 +71,17 @@ function processData(data) {
 // selects from the first 4 columns and adds them into an array (to form the button)
 function displayDefaultChart() {
   // resetData();
-  // myChart.data.labels = labels;
-  // myChart.data.datasets[0].data = firstData;
-  // myChart.data.datasets[1].data = secondData;
-  // myChart.data.datasets[2].data = thirdData;
-  // myChart.data.datasets[3].data = fourthData;
+  myChart.data.labels = labels;
+  myChart.data.datasets[0].data = firstData;
+
+  myChart.data.datasets[1].data = secondData;
+  myChart.data.datasets[2].data = thirdData;
+  myChart.data.datasets[3].data = fourthData;
 
 
   myChart.update();
 }
 
-// FIXME: get data to display in the chart
 // parsing the data with papa parse
 fileInput.addEventListener("change", (e) => {
   Papa.parse(fileInput.files[0], {
@@ -104,8 +104,6 @@ fileInput.addEventListener("change", (e) => {
 // remove any and adds dynamic buttons to the html file
 function createDataSetButtons() {
   // console.log("createDataSetButtons", dataSetNames);
-
-
   const container = document.getElementById("dynamic-btn-container");
   // remove all previous buttons
   while (container.firstChild) {
@@ -152,7 +150,7 @@ function createDataSetButtons() {
 
 // toggle the data set
 function toggleDataSet(index) {
-  console.log("toggle dataset", index);
+  // console.log("toggle dataset", index);
   const isVisible = myChart.isDatasetVisible(index);
   if (isVisible) {
     myChart.hide(index);
@@ -173,6 +171,34 @@ function toggleDataSet(index) {
 // }
 
 
+
+Papa.parse("/assets/csv/test2.csv", {
+  download: true,
+  complete: function (results) {
+    // console.log("results", results);
+    processData(results.data);
+    displayDefaultChart();
+
+    console.log(results);
+  }
+
+
+});
+
+// const chartData = "/assets/csv/test2.csv"
+
+// d3.csv(chartData).then(function (dataPoints) {
+//   // console.log("My dataPoints", dataPoints);
+//   const firstData = [];
+//   const secondData = [];
+//   const thirdData = [];
+//   const fourthData = [];
+
+//   for (let i = 0; i < dataPoints.length; i++) {
+//     firstData.push(dataPoints[i].firstData)
+//     console.log("max", firstData);
+//   }
+// });
 // chart
 
 const data = {
@@ -219,7 +245,6 @@ const data = {
     },
   },
 };
-
 
 
 
