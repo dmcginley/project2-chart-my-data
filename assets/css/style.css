@@ -31,14 +31,16 @@
 ---------------- */
 :root {
   /* page colors */
-  --white: #eeeeee;
+  --white: #f7f7f7;
   --black: #1a1a1a;
   --dark-grey: #323236;
+  --light-grey: #3e3e44;
 }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  color: var(--black);
+  color: var(--white);
+  background-color: var(--dark-grey);
 }
 
 
@@ -89,24 +91,27 @@ h2 {
 
 .header-logo {
   display: flex;
+  width: 210px;
   /* justify-content: center; */
   align-items: center;
   text-decoration: none;
   padding: 10px;
+  /* background-color: #0cf0e9; */
   /* height: 30px; */
   /* width: 300px; */
 }
 
 .header-logo img {
-  height: 40px;
+  height: 30px;
   /* padding: 10px; */
 }
 
 .header-logo p {
   font-size: 1.4em;
   font-weight: 200;
-  padding: 14px;
-  text-transform: uppercase;
+  padding: 0 0 0 10px;
+  /* background-color: #0cf0e9; */
+  text-transform: capitalize;
   color: var(--white);
   /* padding: 10px; */
 }
@@ -136,11 +141,18 @@ li {
 }
 
 .chart-box {
-  padding: 0 0.8em;
+  /* padding: 0 0.8em; */
   /* max-width: 900px; */
   width: 100%;
   justify-content: center;
 }
+
+#myChart {
+  background-color: var(--light-grey);
+  /* padding: 1em; */
+  /* width: 100%; */
+}
+
 
 .btn1 {
   background-color: hsla(0, 0%, 100%, 0.5);
@@ -165,8 +177,8 @@ input[type="file"] {
   display: flex;
   justify-content: center;
   cursor: pointer;
-  color: #ffffff;
-  background-color: #ee3625;
+  color: var(--white);
+  background-color: #c20a19;
   width: 100%;
 }
 
@@ -205,29 +217,38 @@ input[type="file"] {
 }
 
 button {
-  padding: 2em 1em;
+  padding: 1em;
   border: none;
-  font-size: 600;
+  /* font-size: 600px; */
   /* margin: 10px; */
   /* min-width: 100px; */
   width: 100%;
   border-radius: 0;
+
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 button:nth-child(1) {
-  background-color: #69b3a2;
+  background-color: #245d74;
+  color: var(--white);
 }
 
 button:nth-child(2) {
-  background-color: #4682b4;
+  background-color: #7a5195;
+  color: var(--white);
 }
 
 button:nth-child(3) {
-  background-color: #e24b9e;
+  background-color: #ef5675;
+  color: var(--black);
+
+
 }
 
 button:nth-child(4) {
-  background-color: #0cf0e9;
+  background-color: #ffa600;
+  color: var(--black);
 }
 
 button:nth-child(n):hover,

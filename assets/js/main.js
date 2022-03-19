@@ -3,16 +3,17 @@
 // empty array to separate out the first row from the file (the names)
 let dataSetNames = [];
 
+// 4 empty arrays for the data to be injected in to
 const firstData = [];
 const secondData = [];
 const thirdData = [];
 const fourthData = [];
 
-// const dataset = [1, 2, 3, 4, 5, 6, 7, 8];
 
-// labels, determines the length of the chart
+// labels that determines the length of the chart
 const labels = [];
 
+// demo data that gets displayed on first load 
 const fileInput = document.querySelector("#txtFileUpload");
 
 
@@ -29,19 +30,20 @@ const fileInput = document.querySelector("#txtFileUpload");
 //   const sex = processData(tableData);
 //   console.log(tableData);
 // }
-// added function for extracting the names
+
+
+// function for extracting the names
 function processData(data) {
   for (i = 0; i < data.length; i++) {
     const row = data[i];
     // console.log(row);
     if (i === 0) {
-      // process header
+      // process the header
       dataSetNames = row.slice(1); // remove 'Date' header
       // console.log("dataSetNames", dataSetNames);
     }
-    // proses rows next
+    // proses the rows
     else {
-
       const date = new Date(row[0]);
       const year = date.getFullYear();
       //const dict = {'year': year, 'month': month};
@@ -82,7 +84,7 @@ function displayDefaultChart() {
   myChart.update();
 }
 
-// parsing the data with papa parse
+// parsing the user uploaded data with papa parse
 fileInput.addEventListener("change", (e) => {
   Papa.parse(fileInput.files[0], {
     download: true,
@@ -176,7 +178,11 @@ Papa.parse("/assets/csv/test2.csv", {
   download: true,
   complete: function (results) {
     // console.log("results", results);
+    // processData(results.data);
+    // displayDefaultChart();
+
     processData(results.data);
+    createDataSetButtons();
     displayDefaultChart();
 
     console.log(results);
@@ -208,26 +214,26 @@ const data = {
       label: "firstData",
       // data: firstData,
       data: firstData,
-      backgroundColor: "#69b3a2",
-      borderColor: "#69b3a2",
+      backgroundColor: "#245d74",
+      borderColor: "#245d74",
     },
     {
       label: "secondData",
       data: secondData,
-      backgroundColor: "#4682b4",
-      borderColor: "#4682b4",
+      backgroundColor: "#7a5195",
+      borderColor: "#7a5195",
     },
     {
       label: "thirdData",
       data: thirdData,
-      backgroundColor: "#e24b9e",
-      borderColor: "#e24b9e",
+      backgroundColor: "#ef5675",
+      borderColor: "#ef5675",
     },
     {
       label: "fourthData",
       data: fourthData,
-      backgroundColor: "#0cf0e9",
-      borderColor: "#0cf0e9",
+      backgroundColor: "#ffa600",
+      borderColor: "#ffa600",
     },
   ],
   options: {
