@@ -39,56 +39,79 @@
   </head>
 
   <body>
-    <div class="main-container">
-      <div class="hero">
-        <h1>A place to upload your csv dataset</h1>
-        <p>visualization of for your data</p>
-      </div>
-      <h2 id="introHeader">Upload your CSV File</h2>
 
-      <!-- the two chart type buttons under the chart -->
-      <div class="chart-toggle-btn">
-        <input onclick="chartType('bar')" class="radio-input" id="radio1" type="radio" value="bar"
-          name="chart" />
-        <label class="chart-toggle-label" for="radio1">
-          <img class="chart-toggle-svg" src="assets/icons/bx-bar-chart.svg" alt="" />
-          <p class="chart-toggle-name">Bar</p>
-        </label>
+    <!-- grid container - of 1fr on either side and a minmax in the middle for the main content -->
+    <div class="master-grid">
 
-        <input onclick="chartType('line')" class="radio-input" id="radio2" type="radio" value="line"
-          name="chart" />
-        <label class="chart-toggle-label" for="radio2">
-          <img class="chart-toggle-svg" src="assets/icons/bx-line-chart.svg" alt="" />
-          <p class="chart-toggle-name">Line</p>
-        </label>
-      </div>
+      <!-- header containing the navigation  -->
+      <header class="master-grid header">
+        <div class="header-content">
+          <a href="#" class="header-logo">
+            <img src="assets/icons/chart-icon-sm.svg" alt="chart website logo" />
+            <p>Chart Data</p>
+          </a>
+          <nav>
+            <ul class="">
+              <li class="">
+                <a class="links" id="" href="#"></a>
+              </li>
 
-      <section class="chart-box">
-        <!-- <h2 class="p-t1">CSV test data</h2> -->
-        <canvas id="myChart" aria-label="Bar or line chart presentation" role="img"></canvas>
-      </section>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
-      <div id="dynamic-btn-container"></div>
+      <div class="main-container">
+        <div class="hero">
+          <h1>A place to upload your CSV dataset</h1>
+          <p>visualization of for your data</p>
+        </div>
+        <h2 id="introHeader">Upload your CSV File</h2>
 
-      <div class="file-upload-container">
-        <label class="upload-label" for="txtFileUpload">
-          <span class="upload-img-span">
-            <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="" />
-          </span>
-          <span class="upload-text-span">Upload File</span>
-        </label>
+        <!-- the two chart type buttons under the chart -->
+        <div class="chart-toggle-btn">
+          <input onclick="chartType('bar')" class="radio-input" id="radio1" type="radio" value="bar"
+            name="chart" />
+          <label class="chart-toggle-label" for="radio1">
+            <img class="chart-toggle-svg" src="assets/icons/bx-bar-chart.svg" alt="" />
+            <p class="chart-toggle-name">Bar</p>
+          </label>
 
-        <input class="file-upload-btn" type="file" id="txtFileUpload" name="File
+          <input onclick="chartType('line')" class="radio-input" id="radio2" type="radio"
+            value="line" name="chart" />
+          <label class="chart-toggle-label" for="radio2">
+            <img class="chart-toggle-svg" src="assets/icons/bx-line-chart.svg" alt="" />
+            <p class="chart-toggle-name">Line</p>
+          </label>
+        </div>
+
+        <section class="chart-box">
+          <!-- <h2 class="p-t1">CSV test data</h2> -->
+          <canvas id="myChart" aria-label="Bar or line chart presentation" role="img"></canvas>
+        </section>
+
+        <div id="dynamic-btn-container"></div>
+
+        <div class="file-upload-container">
+          <label class="upload-label" for="txtFileUpload">
+            <span class="upload-img-span">
+              <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="" />
+            </span>
+            <span class="upload-text-span">Upload File</span>
+          </label>
+
+          <input class="file-upload-btn" type="file" id="txtFileUpload" name="File
         Upload" aria-label="File browser accept=" .csv" />
+        </div>
+
+        <!-- <button id="confirm-read-csv">Upload CSV</button> -->
       </div>
 
-      <!-- <button id="confirm-read-csv">Upload CSV</button> -->
+      <!-- script -->
+      <script src="assets/js/main.js"></script>
+      <!-- <script src="assets/js/button.js"></script> -->
+      <!-- <script src="assets/js/read_head.js"></script> -->
     </div>
-
-    <!-- script -->
-    <script src="assets/js/main.js"></script>
-    <!-- <script src="assets/js/button.js"></script> -->
-    <!-- <script src="assets/js/read_head.js"></script> -->
   </body>
 
 </html>
