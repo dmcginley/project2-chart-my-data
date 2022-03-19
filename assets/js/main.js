@@ -174,7 +174,7 @@ function toggleDataSet(index) {
 
 
 
-Papa.parse("/assets/csv/test2.csv", {
+Papa.parse("assets/csv/test2.csv", {
   download: true,
   complete: function (results) {
     // console.log("results", results);
@@ -208,7 +208,6 @@ Papa.parse("/assets/csv/test2.csv", {
 // chart
 
 const data = {
-  // labels: ["Red", "Blue", "Yellow", "Green", "Other"],
   labels: [],
   datasets: [{
       label: "firstData",

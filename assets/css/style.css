@@ -33,8 +33,9 @@
   /* page colors */
   --white: #f7f7f7;
   --black: #1a1a1a;
-  --dark-grey: #323236;
   --light-grey: #3e3e44;
+  --dark-grey: #323236;
+  --darker-grey: #1d1d1d;
 }
 
 body {
@@ -63,9 +64,6 @@ h2 {
   padding: 1em;
 }
 
-
-
-
 .master-grid {
   display: grid;
   grid-template-columns: 1fr minmax(30ch, 120ch) 1fr;
@@ -76,14 +74,14 @@ h2 {
 
 .header {
   grid-column: 1/4;
+  padding: 10px;
   /* display: block; */
-  background-color: var(--dark-grey);
+  background-color: var(--darker-grey);
 
   /* width: 100%; */
 }
 
 .header-content {
-
   grid-column: 2;
   /* background-color: #69b3a2; */
   /* width: 100%; */
@@ -141,16 +139,16 @@ li {
 }
 
 .chart-box {
-  /* padding: 0 0.8em; */
   /* max-width: 900px; */
   width: 100%;
   justify-content: center;
 }
 
 #myChart {
-  background-color: var(--light-grey);
-  /* padding: 1em; */
+  /* background-color: var(--light-grey); */
+  /* padding: 1em 0; */
   /* width: 100%; */
+
 }
 
 
