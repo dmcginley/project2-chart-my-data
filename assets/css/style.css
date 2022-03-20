@@ -133,8 +133,11 @@ li {
 
 
 .hero {
-  /* background-color: rgb(192, 192, 192); */
+  height: 50vh;
+  background-color: rgb(243, 134, 134);
+
   padding: 2em 1em;
+
   text-align: center;
 }
 

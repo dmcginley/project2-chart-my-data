@@ -1,9 +1,7 @@
-// FIXME: fix Papa.parse integration, to select the data from the file at the moment it is hardcoded
-
 // empty array to separate out the first row from the file (the names)
 let dataSetNames = [];
 
-// 4 empty arrays for the data to be injected in to
+// 4 empty arrays for the data to be injected into
 const firstData = [];
 const secondData = [];
 const thirdData = [];
@@ -13,23 +11,9 @@ const fourthData = [];
 // labels that determines the length of the chart
 const labels = [];
 
-// demo data that gets displayed on first load 
+
+// linked to the button that uploads the users data
 const fileInput = document.querySelector("#txtFileUpload");
-
-
-
-// stockData()
-// async function stockData() {
-//   const url = "assets/csv/test2.csv";
-//   const response = await fetch(url);
-//   const tableData = await response.text();
-//   // console.log(tableData);
-
-
-
-//   const sex = processData(tableData);
-//   console.log(tableData);
-// }
 
 
 // function for extracting the names
@@ -37,18 +21,21 @@ function processData(data) {
   for (i = 0; i < data.length; i++) {
     const row = data[i];
     // console.log(row);
+
     if (i === 0) {
+
       // process the header
       dataSetNames = row.slice(1); // remove 'Date' header
       // console.log("dataSetNames", dataSetNames);
     }
+
     // proses the rows
     else {
       const date = new Date(row[0]);
       const year = date.getFullYear();
       //const dict = {'year': year, 'month': month};
 
-      clearData = [];
+      // clearData = [];
 
       // console.log("firstData set", firstData);
 
@@ -59,30 +46,55 @@ function processData(data) {
       fourthData.push(row[4]);
       labels.push(row[0]); // the date x axis
       // console.log("firstData set", firstData);
-
-      // firstData.length = 0;
-
-      // console.log("afirstData set", firstData);
-
-      // TODO: get a month worth of data
     }
 
   }
 }
 
+
+function resetData() {
+  myChart.data.datasets[0].data = firstData;
+  myChart.data.datasets[1].data = secondData;
+  myChart.data.datasets[2].data = thirdData;
+  myChart.data.datasets[3].data = fourthData;
+  myChart.data.labels = labels;
+  myChart.update();
+
+}
+
+// FIXME: function to clear the previous data
+function clearData() {
+  firstData.length = 0
+  secondData.length = 0
+  thirdData.length = 0
+  fourthData.length = 0
+}
+
 // selects from the first 4 columns and adds them into an array (to form the button)
 function displayDefaultChart() {
-  // resetData();
+  // clearData()
   myChart.data.labels = labels;
   myChart.data.datasets[0].data = firstData;
-
   myChart.data.datasets[1].data = secondData;
   myChart.data.datasets[2].data = thirdData;
   myChart.data.datasets[3].data = fourthData;
 
-
   myChart.update();
 }
+
+
+// demo csv data to be displayed on first load
+Papa.parse("assets/csv/test2.csv", {
+  download: true,
+  complete: function (results) {
+    clearData();
+
+    processData(results.data);
+    createDataSetButtons();
+    displayDefaultChart();
+  }
+});
+
 
 // parsing the user uploaded data with papa parse
 fileInput.addEventListener("change", (e) => {
@@ -91,15 +103,14 @@ fileInput.addEventListener("change", (e) => {
     skipEmptyLines: true,
     header: false,
     complete: function (results) {
+      clearData();
+
       processData(results.data);
       createDataSetButtons();
       displayDefaultChart();
     },
   });
 });
-
-
-
 
 
 
@@ -122,18 +133,6 @@ function createDataSetButtons() {
 
     container.appendChild(newButton);
 
-
-
-    // console.log(toggleButton);
-
-
-    // FIXME: doesn't wor grey out button
-    // async function newColor() {
-    //   newButton.setAttribute("style", "background-color: red;");
-    // }
-    // newButton.addEventListener("onclick", newColor())
-
-
     // create only 4 buttons
     if (i === 3) {
       break;
@@ -141,13 +140,6 @@ function createDataSetButtons() {
   }
 
 }
-
-
-
-
-
-
-
 
 
 // toggle the data set
@@ -173,23 +165,6 @@ function toggleDataSet(index) {
 // }
 
 
-
-Papa.parse("assets/csv/test2.csv", {
-  download: true,
-  complete: function (results) {
-    // console.log("results", results);
-    // processData(results.data);
-    // displayDefaultChart();
-
-    processData(results.data);
-    createDataSetButtons();
-    displayDefaultChart();
-
-    console.log(results);
-  }
-
-
-});
 
 // const chartData = "/assets/csv/test2.csv"
 
@@ -241,11 +216,13 @@ const data = {
         grid: {
           display: false,
         },
+
       },
       y: {
         grid: {
           display: false,
         },
+
       },
     },
   },
@@ -253,11 +230,7 @@ const data = {
 
 
 
-
-
-
-
-// config of chart - data color FIXME:
+// config of bar chart - data color FIXME:
 const configBar = {
   type: "bar",
   data,
@@ -274,20 +247,28 @@ const configBar = {
       y: {
         beginAtZero: true,
         stacked: true,
-        // grid: {
-        //   display: false,
-        // },
+        grid: {
+          color: "#f7f7f76b",
+          //   display: false,
+        },
+        ticks: {
+          color: '#f7f7f7'
+        }
       },
       x: {
         stacked: true,
         grid: {
           display: false,
         },
+
+        ticks: {
+          color: '#f7f7f7'
+        }
       },
     },
   },
 };
-// config2 of chart - data color
+// config of line chart - data color
 const configLine = {
   type: "line",
   data,
@@ -296,7 +277,7 @@ const configLine = {
     responsive: true,
     maintainAspectRatio: false,
     tension: 0.4,
-    pointRadius: 2,
+    pointRadius: 3,
     // pointHoverRadius: 5,
     plugins: {
       legend: {
@@ -306,15 +287,23 @@ const configLine = {
     scales: {
       y: {
         beginAtZero: true,
-        // grid: {
-        //   display: false,
-        // },
+        grid: {
+          color: "#f7f7f76b",
+          // display: false,
+        },
+        ticks: {
+          color: '#f7f7f7'
+        },
       },
       x: {
         stacked: true,
-        // grid: {
-        //   display: false,
-        // },
+        grid: {
+          color: "#f7f7f76b",
+          // display: false,
+        },
+        ticks: {
+          color: '#f7f7f7'
+        },
       },
     },
   },
@@ -349,6 +338,7 @@ myChart = new Chart(document.getElementById("myChart"), configBar);
 // to destroy and creat two different charts - bar and line
 function chartType(type) {
   myChart.destroy();
+  // myChart.reset();
   if (type === "bar") {
     myChart = new Chart(document.getElementById("myChart"), configBar);
   }
@@ -356,15 +346,3 @@ function chartType(type) {
     myChart = new Chart(document.getElementById("myChart"), configLine);
   }
 }
-
-
-function resetData() {
-  myChart.data.datasets[0].data = firstData;
-  myChart.data.datasets[1].data = secondData;
-  myChart.data.datasets[2].data = thirdData;
-  myChart.data.datasets[3].data = fourthData;
-  myChart.data.labels = labels;
-  myChart.update();
-
-}
-// resetData();
