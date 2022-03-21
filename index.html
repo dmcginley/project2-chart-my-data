@@ -47,8 +47,8 @@
       <header class="master-grid header">
         <div class="header-content">
           <a href="#" class="header-logo">
-            <img src="assets/icons/chart-icon-sm.svg" alt="chart website logo" />
-            <p>Chart Data</p>
+            <img src="assets/icons/chart-icon-grey-sm.svg" alt="chart website logo" />
+            <p class="site-name">Chart Data</p>
           </a>
           <nav>
             <ul class="">
@@ -63,26 +63,80 @@
 
       <div class="main-container">
         <div class="hero">
-          <h1>A place to upload your CSV dataset</h1>
-          <p>visualization of for your data</p>
+
+          <div class="hero-content">
+            <h1>chart data</h1>
+            <h2>A place to upload your CSV dataset</h2>
+            <p>Visualization of for your data<br>WebStorm is an integrated development
+              environment for JavaScript and related
+              technologies. Like other JetBrains IDEs, it makes your development experience more</p>
+            <div class="hero-button-container">
+
+              <div class="file-upload-container">
+
+
+                <label class="upload-label" for="txtFileUpload">
+                  <div class="upload-img-span">
+                    <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="" />
+                  </div>
+                  <div class="upload-text-span">Upload File</div>
+                </label>
+
+                <input class="file-upload-btn preview" type="file" id="txtFileUpload" name="File
+                       Upload" aria-label="File browser accept=" .csv" />
+              </div>
+
+
+
+
+              <button class="hero-btn">How To Use</button>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+          <div class=" hero-img-container">
+            <img src="assets/images/two-charts.png" alt="">
+          </div>
         </div>
-        <h2 id="introHeader">Upload your CSV File</h2>
 
-        <!-- the two chart type buttons under the chart -->
-        <div class="chart-toggle-btn">
-          <input onclick="chartType('bar')" class="radio-input" id="radio1" type="radio" value="bar"
-            name="chart" />
-          <label class="chart-toggle-label" for="radio1">
-            <img class="chart-toggle-svg" src="assets/icons/bx-bar-chart.svg" alt="" />
-            <p class="chart-toggle-name">Bar</p>
-          </label>
+        <div class="toggle-container">
+          <h2 id="introHeader">Toggle between Bar or chart</h2>
 
-          <input onclick="chartType('line')" class="radio-input" id="radio2" type="radio"
-            value="line" name="chart" />
-          <label class="chart-toggle-label" for="radio2">
-            <img class="chart-toggle-svg" src="assets/icons/bx-line-chart.svg" alt="" />
-            <p class="chart-toggle-name">Line</p>
-          </label>
+          <!-- the two chart type buttons under the chart -->
+          <div class="chart-toggle-btn">
+            <input onclick="chartType('bar')" class="radio-input" id="radio1" type="radio"
+              value="bar" name="chart" />
+            <label class="chart-toggle-label" for="radio1">
+              <img class="chart-toggle-svg" src="assets/icons/bx-bar-chart.svg" alt="" />
+              <p class="chart-toggle-name">Bar</p>
+            </label>
+
+            <input onclick="chartType('line')" class="radio-input" id="radio2" type="radio"
+              value="line" name="chart" />
+            <label class="chart-toggle-label" for="radio2">
+              <img class="chart-toggle-svg" src="assets/icons/bx-line-chart.svg" alt="" />
+              <p class="chart-toggle-name">Line</p>
+            </label>
+          </div>
         </div>
 
         <section class="chart-box">
@@ -100,7 +154,7 @@
             <span class="upload-text-span">Upload File</span>
           </label>
 
-          <input class="file-upload-btn" type="file" id="txtFileUpload" name="File
+          <input class="file-upload-btn preview" type="file" id="txtFileUpload" name="File
         Upload" aria-label="File browser accept=" .csv" />
         </div>
 
