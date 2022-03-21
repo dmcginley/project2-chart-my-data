@@ -13,6 +13,8 @@ const labels = [];
 
 
 // linked to the button that uploads the users data
+// const fileInput = document.querySelector("#txtFileUpload");
+// const fileInput = document.querySelector("#txtFileUpload");
 const fileInput = document.querySelector("#txtFileUpload");
 
 
@@ -59,7 +61,6 @@ function resetData() {
   myChart.data.datasets[3].data = fourthData;
   myChart.data.labels = labels;
   myChart.update();
-
 }
 
 // FIXME: function to clear the previous data
@@ -81,7 +82,6 @@ function displayDefaultChart() {
 
   myChart.update();
 }
-
 
 // demo csv data to be displayed on first load
 Papa.parse("assets/csv/test2.csv", {
