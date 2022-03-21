@@ -72,45 +72,22 @@
               technologies. Like other JetBrains IDEs, it makes your development experience more</p>
             <div class="hero-button-container">
 
+
+              <!-- <button onclick="scrollToChart()">btn</button> -->
               <div class="file-upload-container">
+                <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
 
-
-                <label class="upload-label" for="txtFileUpload">
-                  <div class="upload-img-span">
+                  <span class="upload-img-span">
                     <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="" />
-                  </div>
-                  <div class="upload-text-span">Upload File</div>
+                  </span>
+                  <span class="upload-text-span">Upload File</span>
                 </label>
-
-                <input class="file-upload-btn preview" type="file" id="txtFileUpload" name="File
+                <input class="file-upload-btn preview txtFileUpload" onclick="" type="file"
+                  id="txtFileUpload" name="File
                        Upload" aria-label="File browser accept=" .csv" />
               </div>
-
-
-
-
               <button class="hero-btn">How To Use</button>
-
-
-
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           </div>
           <div class=" hero-img-container">
@@ -119,10 +96,10 @@
         </div>
 
         <div class="toggle-container">
-          <h2 id="introHeader">Toggle between Bar or chart</h2>
+          <h2>Toggle between Bar or chart</h2>
 
           <!-- the two chart type buttons under the chart -->
-          <div class="chart-toggle-btn">
+          <div class="chart-toggle-btn" id="theChart">
             <input onclick="chartType('bar')" class="radio-input" id="radio1" type="radio"
               value="bar" name="chart" />
             <label class="chart-toggle-label" for="radio1">
@@ -154,7 +131,7 @@
             <span class="upload-text-span">Upload File</span>
           </label>
 
-          <input class="file-upload-btn preview" type="file" id="txtFileUpload" name="File
+          <input class="file-upload-btn preview txtFileUpload" type="file" id="txtFileUpload" name="File
         Upload" aria-label="File browser accept=" .csv" />
         </div>
 

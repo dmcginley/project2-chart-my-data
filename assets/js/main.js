@@ -15,7 +15,9 @@ const labels = [];
 // linked to the button that uploads the users data
 // const fileInput = document.querySelector("#txtFileUpload");
 // const fileInput = document.querySelector("#txtFileUpload");
-const fileInput = document.querySelector("#txtFileUpload");
+const fileInput = document.querySelector(".txtFileUpload");
+
+
 
 
 // function for extracting the names
@@ -53,6 +55,14 @@ function processData(data) {
   }
 }
 
+
+function scrollToChart() {
+  const element = document.getElementById("theChart");
+  element.scrollIntoView({
+    behavior: 'smooth'
+  });
+  console.log("click");
+}
 
 function resetData() {
   myChart.data.datasets[0].data = firstData;
