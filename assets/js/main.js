@@ -1,5 +1,7 @@
 // empty array to separate out the first row from the file (the names)
-let dataSetNames = [];
+let processedData = [];
+let labels = [];
+
 
 // 4 empty arrays for the data to be injected into
 const firstData = [];
@@ -8,13 +10,31 @@ const thirdData = [];
 const fourthData = [];
 
 
-// labels that determines the length of the chart
-const labels = [];
+const defaultData = {
+  labels: [],
+  datasets: [],
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+
+      },
+      y: {
+        grid: {
+          display: false,
+        },
+      },
+    },
+  },
+};
 
 
-// linked to the button that uploads the users data
-// const fileInput = document.querySelector("#txtFileUpload");
-// const fileInput = document.querySelector("#txtFileUpload");
+
+let chartData = defaultData;
+
+
 const fileInput = document.querySelector(".txtFileUpload");
 
 
