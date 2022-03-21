@@ -1,12 +1,7 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,300&display=swap"); */
-
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Maven+Pro:wght@400;500;600;700&display=swap');
 
 /* font-family: 'DM Sans', sans-serif; */
 /* font-family: 'Maven Pro', sans-serif; */
-
-
 
 * {
   margin: 0;
@@ -16,14 +11,21 @@
 
 /* -----------------------
    [table of contents]
+
 1.  color styling
 2.  global style
-    
-    2.1.  maine grid style
-    2.2.  typography
-3.  buttons
-4.  google icons
-5. footer icons
+
+
+3. master-grid
+4. header
+5. container
+6. hero
+7. the chart
+8. chart type toggle
+9. dynamic-btn-container
+10. buttons
+    10.1. file-upload-container 
+ 
 -------------------------- */
 
 /* ----------------
@@ -38,6 +40,11 @@
   --darker-grey: #1d1d1d;
 }
 
+
+
+/* ----------------
+    2. global style
+---------------- */
 body {
   font-family: 'DM Sans', sans-serif;
   color: var(--white);
@@ -53,17 +60,32 @@ h3 {
 }
 
 h1 {
-  font-size: 1.6rem;
-  text-align: center;
+  font-size: 3rem;
   /* padding: 1em; */
-  padding-bottom: 0.4em;
+  /* padding-bottom: 0.4em; */
   /* background-color: aqua; */
 }
 
 h2 {
+  font-weight: 400;
+  padding: .4em 0 1em 0;
+}
+
+.site-name {
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.2rem;
   padding: 1em;
 }
 
+
+
+/* ----------------
+    3. master-grid
+---------------- */
 .master-grid {
   display: grid;
   grid-template-columns: 1fr minmax(30ch, 120ch) 1fr;
@@ -72,6 +94,10 @@ h2 {
 
 
 
+
+/* ----------------
+    4. header
+---------------- */
 .header {
   grid-column: 1/4;
   padding: 10px;
@@ -118,28 +144,65 @@ li {
   list-style: none;
 }
 
+
+/* ----------------
+    5. main-container
+---------------- */
 .main-container {
   grid-column: 2;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-evenly; */
-  /* align-items: baseline; */
-}
-
-/* padding top 1em */
-.p-t1 {
-  padding-top: 1em;
 }
 
 
+
+/* ----------------
+    6. hero
+---------------- */
 .hero {
-  height: 50vh;
-  background-color: rgb(243, 134, 134);
-
+  /* display: flex; */
+  /* height: 50vh; */
+  /* background-color: rgba(243, 134, 134, 0.322); */
   padding: 2em 1em;
-
-  text-align: center;
 }
+
+.hero-content {
+  flex: 2;
+  text-align: center;
+
+}
+
+.hero-img-container {
+  flex: 3;
+  width: 100%;
+  /* background-color: #0cf0e9; */
+
+}
+
+.hero-img-container img {
+  width: 100%;
+}
+
+
+.hero-button-container {
+  /* display: flex; */
+  align-items: center;
+  padding: 2em 0;
+  /* background-color: #0cf0e9; */
+}
+
+
+
+input[type="file"] {
+  display: none;
+}
+
+
+
+
+
+
+/* ----------------
+    7. the chart
+---------------- */
 
 .chart-box {
   /* max-width: 900px; */
@@ -155,26 +218,70 @@ li {
 }
 
 
-.btn1 {
-  background-color: hsla(0, 0%, 100%, 0.5);
+
+
+/* ----------------
+  8. chart type toggle
+---------------- */
+
+chart type toggle .toggle-container {
+  display: block;
+  align-content: center;
 }
 
-.btn2 {
-  background-color: rgb(80, 77, 230);
+.chart-toggle-btn {
+  display: flex;
+  width: 300px;
+  /* margin-top: 1em; */
 }
 
-input[type="file"] {
-  display: none;
+
+
+/* ----------------
+  9. dynamic-btn-container
+---------------- */
+dynamic-btn-container
+
+/* dynamic buttons - the 4 legends for the chart */
+#dynamic-btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2em;
 }
+
+
+
+/* ----------------
+  10. buttons
+---------------- */
+
+/* global button properties  */
+button {
+  /* font-family: 'DM Sans', sans-serif; */
+  font-weight: 400;
+  padding: 1em;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+
+/* ----------------
+  10.1. file-upload-container 
+---------------- */
 
 .file-upload-container {
   display: flex;
   justify-content: center;
   /* background-color: #d6d6d6; */
-  padding: 4em 0;
+  padding: 1em 0;
 }
 
 .upload-label {
+  /* flex: 1; */
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -212,48 +319,55 @@ input[type="file"] {
   height: 2rem;
 }
 
-.chart-toggle-btn {
-  display: flex;
-  /* margin-top: 1em; */
+
+
+.hero-btn:nth-child(2) {
+  text-align: center;
+  /* height: 60px; */
+  font-size: 1.4rem;
+  /* padding: .6em; */
+  min-width: 156px;
+  background-color: #1a1a1a00;
+  color: var(--white);
+  background-color: rgba(201, 42, 42, 0);
+  outline: 2px solid var(--white);
+  outline-offset: -6px;
 }
 
-button {
-  padding: 1em;
-  border: none;
-  /* font-size: 600px; */
-  /* margin: 10px; */
-  /* min-width: 100px; */
-  width: 100%;
-  border-radius: 0;
 
-  font-size: 1rem;
-  font-weight: 600;
+.hero-upload-img {
+  height: 30px;
+  padding-right: 8px;
 }
 
-button:nth-child(1) {
+
+
+
+/* the colors of the buttons (legends) to mach the colors in the chart */
+.button:nth-child(1) {
   background-color: #245d74;
   color: var(--white);
 }
 
-button:nth-child(2) {
+.button:nth-child(2) {
   background-color: #7a5195;
   color: var(--white);
 }
 
-button:nth-child(3) {
+.button:nth-child(3) {
   background-color: #ef5675;
   color: var(--black);
 
 
 }
 
-button:nth-child(4) {
+.button:nth-child(4) {
   background-color: #ffa600;
   color: var(--black);
 }
 
-button:nth-child(n):hover,
-button:nth-child(n):focus-visible {
+.button:nth-child(n):hover,
+.button:nth-child(n):focus-visible {
   filter: brightness(0.9);
 }
 
@@ -271,20 +385,20 @@ button:nth-child(n):focus-visible {
 }
 
 .radio-input:focus-visible+.chart-toggle-label {
-  outline: 2px solid var(--black);
+  outline: 2px solid var(--white);
   outline-offset: -2px;
-  border-inline: 2px solid black;
+  border-inline: 2px solid var(--white);
 }
 
 .radio-input:checked+.chart-toggle-label {
   /* background-color: rgb(247, 155, 242); */
-  background-color: #8d3636;
+  background-color: #66a9c9;
   color: aliceblue;
 }
 
 .chart-toggle-label {
   color: #252525;
-  padding: 0.6em;
+  /* padding: 0.6em; */
 }
 
 .chart-toggle-svg {
@@ -299,28 +413,7 @@ button:nth-child(n):focus-visible {
   font-size: 1rem;
 }
 
-/* dynamic buttons - the 4 legends for the chart */
-#dynamic-btn-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 2em;
-}
 
-button .foo {
-  background-color: #0cf0e9;
-}
-
-
-
-
-
-
-.visible {
-  background-color: #1a1a1a7c;
-}
 
 @media only screen and (min-width: 340px) {
   .chart-box {
@@ -330,7 +423,11 @@ button .foo {
   }
 
   .upload-label {
-    width: auto;
+    width: 285px;
+  }
+
+  .hero-btn {
+    width: 285px;
   }
 
   .upload-img-span {
@@ -342,6 +439,13 @@ button .foo {
   .upload-text-span {
     font-size: 1.2rem;
   }
+
+  .hero-btn {
+    flex: 1;
+    font-size: 1.2rem;
+  }
+
+
 }
 
 @media only screen and (min-width: 520px) {
@@ -354,25 +458,98 @@ button .foo {
     flex-direction: row;
   }
 
+
   button {
     width: 40%;
   }
 }
 
-@media only screen and (min-width: 900px) {
-  .chart-box {
-    height: 450px;
-    /* width: 800px; */
+
+@media only screen and (min-width: 560px) {
+
+
+  .hero-btn {
+    max-width: 285px;
+  }
+
+  .upload-img-span {
+    display: flex;
+    /* background-color: rgba(0, 0, 0, 0.09); */
+    /* padding: 1em 2.2em; */
+  }
+
+}
+
+
+@media only screen and (min-width: 640px) {
+
+  .hero-button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-btn:nth-child(2) {
+    margin-left: 1em;
   }
 }
 
-@media only screen and (min-width: 560px) {}
-
 @media only screen and (min-width: 740px) {
+
+
+
   #dynamic-btn-container {
     width: 80%;
     flex-wrap: nowrap;
     margin: auto;
     margin-top: 2em;
   }
+}
+
+
+@media only screen and (min-width: 900px) {
+  .hero {
+    display: flex;
+  }
+
+  .hero-content {
+    text-align: left;
+    padding-right: 4em;
+
+  }
+
+  p {
+    padding: 1em 1em 1em 0;
+  }
+
+  .hero-button-container {
+    background-color: #7a5195;
+    /* display: block;
+     */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-btn:nth-child(2) {
+    margin-left: 0;
+  }
+
+  .chart-box {
+    height: 450px;
+  }
+}
+
+@media only screen and (min-width: 1320px) {
+
+  .hero-button-container {
+    flex-direction: row;
+  }
+
+  .hero-btn:nth-child(2) {
+
+
+    /* padding-left: 1em; */
+    margin-left: 1em;
+  }
+
+
 }
