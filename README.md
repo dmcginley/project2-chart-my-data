@@ -8,7 +8,7 @@ Repository for the project: https://github.com/dmcginley/project2-chart-my-data
 
 Live website: https://dmcginley.github.io/project2-chart-my-data/
 
-add chartjs and csv for my new project
+Sample data: [csv file](https://drive.google.com/file/d/1WBMsYecjmRCDqG8RzApDp8Nmv5wLSE9E/view?usp=sharing)
 
 <p>&nbsp;</p>
 
