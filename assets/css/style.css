@@ -456,12 +456,15 @@ button {
   }
 
   #dynamic-btn-container {
-    flex-direction: row;
+    /* flex-direction: row; */
+    padding: 2em;
+    /* background-color: #d3291a; */
+    justify-content: center;
   }
 
 
   button {
-    width: 40%;
+    width: 50%;
   }
 }
 
@@ -475,6 +478,7 @@ button {
 
   .upload-img-span {
     display: flex;
+
     /* background-color: rgba(0, 0, 0, 0.09); */
     /* padding: 1em 2.2em; */
   }
@@ -503,6 +507,10 @@ button {
     flex-wrap: nowrap;
     margin: auto;
     margin-top: 2em;
+  }
+
+  button {
+    width: 25%;
   }
 }
 
