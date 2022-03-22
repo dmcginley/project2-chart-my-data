@@ -123,6 +123,7 @@ function displayChart() {
 // demo csv data to be displayed on first load
 Papa.parse("assets/csv/test2.csv", {
   download: true,
+  skipEmptyLines: true,
   complete: function (results) {
     clearData();
     processData(results.data);
@@ -299,36 +300,14 @@ const configLine = {
   },
 };
 
-// Adding or Removing Data - from chart.js docs
-// function addData(chart, label, data) {
-//   // chart.data.labels.push(label);
-//   chart.data.datasets.forEach((dataset) => {
-//     dataset.data.push(data);
-//     console.log(dataset);
-//   });
-//   chart.update();
-// }
 
-// function removeData(chart) {
-//   chart.data.labels.pop();
-//   chart.data.datasets.forEach((dataset) => {
-//     dataset.data.pop();
-//   });
-//   chart.update();
-// }
-
-
-
-
-
-
-myChart = new Chart(document.getElementById("myChart"), configBar);
 // render init the data
-// let myChart = new Chart(document.getElementById("myChart"), configBar);
-// to destroy and creat two different charts - bar and line
+myChart = new Chart(document.getElementById("myChart"), configBar);
+
+
+// destroy and creat two different charts - bar and line
 function chartType(type) {
   myChart.destroy();
-  // myChart.reset();
   if (type === "bar") {
     myChart = new Chart(document.getElementById("myChart"), configBar);
   }
