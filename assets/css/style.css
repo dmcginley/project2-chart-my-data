@@ -187,7 +187,7 @@ li {
   /* display: flex; */
   align-items: center;
   padding: 2em 0;
-  /* background-color: #0cf0e9; */
+  /* background-color: #000000; */
 }
 
 .hero-img-container img {
@@ -327,6 +327,8 @@ button {
 
 
 .hero-btn:nth-child(2) {
+  font-family: 'DM Sans', sans-serif;
+
   text-align: center;
   /* height: 60px; */
   font-size: 1.4rem;
@@ -550,7 +552,7 @@ button {
     /* display: block;
      */
     flex-direction: column;
-    padding: 0 0 2em 2em;
+    padding: 0 0 2em 0;
     align-items: flex-start;
   }
 
