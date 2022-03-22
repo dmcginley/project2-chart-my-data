@@ -19,11 +19,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"
       integrity="sha384-gbSJST5/Geo6Slr9JzXgmoS6LqyisUUyjZG7z94EWbxfwQjHndoHiyz2YbZ6TCVz"
       crossorigin="anonymous"></script>
-    <!-- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"
-      integrity="sha384-gbSJST5/Geo6Slr9JzXgmoS6LqyisUUyjZG7z94EWbxfwQjHndoHiyz2YbZ6TCVz"
-      crossorigin="anonymous"
-    ></script> -->
+
+
     <!-- FIXME:d3js color sets not sure will I use yet-->
     <!-- Import D3 Scale Chromatic via CDN -->
     <script src="https://d3js.org/d3-color.v1.min.js"></script>
@@ -34,6 +31,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"
       integrity="sha384-7NrRHqlWUj2hJl3a/dZj/a1GxuQc56mJ3aYsEnydBYrY1jR+RSt6SBvK3sHfj+mJ"
       crossorigin="anonymous"></script>
+
+
+    <!-- chart.js plugin zoom for zoom functionality  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.0/chartjs-plugin-zoom.min.js"
+      integrity="sha384-Rqa45uIR7YT/7LtIf1aDOdzDFHNRbxooBwC1YPywSvKdEyy+RVi1zENhN77WbZab"
+      crossorigin="anonymous"></script>
+
+    <!-- hammer.js for adding pinch to zoom -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
+      integrity="sha384-Cs3dgUx6+jDxxuqHvVH8Onpyj2LF1gKZurLDlhqzuJmUqVYMJ0THTWpxK5Z086Zm"
+      crossorigin="anonymous"></script>
+
 
     <title>ChartJS</title>
   </head>
@@ -50,18 +60,18 @@
             <img src="assets/icons/chart-icon-grey-sm.svg" alt="chart website logo" />
             <p class="site-name">Chart Data</p>
           </a>
-          <nav>
+          <!-- <nav>
             <ul class="">
               <li class="">
                 <a class="links" id="" href="#"></a>
               </li>
 
             </ul>
-          </nav>
+          </nav> -->
         </div>
       </header>
 
-      <div class="main-container">
+      <main class="main-container">
         <section class="hero">
 
           <div class="hero-content">
@@ -82,8 +92,10 @@
                   </span>
                   <span class="upload-text-span">Upload File</span>
                 </label>
-                <input class="file-upload-btn preview txtFileUpload" onclick="" type="file"
-                  name="File Upload" aria-label="File browser accept=" .csv" />
+
+                <!-- FIXME: aria-label File browser -->
+                <input class="file-upload-btn preview txtFileUpload" type="file" name="File Upload"
+                  aria-label="File browser" accept=" .csv" />
               </div>
               <button class="hero-btn">How To Use</button>
             </div>
@@ -103,20 +115,20 @@
               value="bar" name="chart" />
             <label class="chart-toggle-label" for="radio1">
               <img class="chart-toggle-svg" src="assets/icons/bx-bar-chart.svg" alt="" />
-              <p class="chart-toggle-name">Bar</p>
+              <span class="chart-toggle-name">Bar</span>
             </label>
 
             <input onclick="chartType('line')" class="radio-input" id="radio2" type="radio"
               value="line" name="chart" />
             <label class="chart-toggle-label" for="radio2">
               <img class="chart-toggle-svg" src="assets/icons/bx-line-chart.svg" alt="" />
-              <p class="chart-toggle-name">Line</p>
+              <span class="chart-toggle-name">Line</span>
             </label>
           </div>
         </div>
 
         <section class="chart-box">
-          <!-- <h2 class="p-t1">CSV test data</h2> -->
+          <h2 class="p-t1">Title of chart from JS</h2>
           <canvas id="myChart" aria-label="Bar or line chart presentation" role="img"></canvas>
         </section>
 
@@ -135,7 +147,7 @@
         </div>
 
         <!-- <button id="confirm-read-csv">Upload CSV</button> -->
-      </div>
+      </main>
 
       <!-- script -->
       <script src="assets/js/main.js"></script>

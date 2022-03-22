@@ -111,7 +111,9 @@ function clearData() {
 // }
 
 function displayChart() {
-  const datasets = processedData
+
+  // FIXME: 	Expected an assignment or function call and instead saw an expression.
+  const datasets = processedData;
   myChart.data.datasets = processedData;
   myChart.data.labels = labels;
   myChart.update();
