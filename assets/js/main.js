@@ -4,10 +4,10 @@ let labels = [];
 
 
 // 4 empty arrays for the data to be injected into
-const firstData = [];
-const secondData = [];
-const thirdData = [];
-const fourthData = [];
+// const firstData = [];
+// const secondData = [];
+// const thirdData = [];
+// const fourthData = [];
 
 
 const defaultData = {
@@ -64,18 +64,18 @@ function processData(data) {
       // console.log("firstData set", firstData);
 
       // console.log(date);
-      firstData.push(row[1]);
-      secondData.push(row[2]);
-      thirdData.push(row[3]);
-      fourthData.push(row[4]);
-      labels.push(row[0]); // the date x axis
+      // firstData.push(row[1]);
+      // secondData.push(row[2]);
+      // thirdData.push(row[3]);
+      // fourthData.push(row[4]);
+      // labels.push(row[0]); // the date x axis
       // console.log("firstData set", firstData);
     }
 
   }
 }
 
-
+// scroll to chart section so the user doesn't have to go looking for it
 function scrollToChart() {
   const element = document.getElementById("theChart");
   element.scrollIntoView({
@@ -84,33 +84,29 @@ function scrollToChart() {
   console.log("click");
 }
 
-function resetData() {
-  myChart.data.datasets[0].data = firstData;
-  myChart.data.datasets[1].data = secondData;
-  myChart.data.datasets[2].data = thirdData;
-  myChart.data.datasets[3].data = fourthData;
-  myChart.data.labels = labels;
-  myChart.update();
+
+
+function clearData() {
+  processedData = [], labels = [];
 }
+
 
 // FIXME: function to clear the previous data
-function clearData() {
-  firstData.length = 0
-  secondData.length = 0
-  thirdData.length = 0
-  fourthData.length = 0
-}
+// function clearData() {
+//   firstData.length = 0
+//   secondData.length = 0
+//   thirdData.length = 0
+//   fourthData.length = 0
+// }
 
-// selects from the first 4 columns and adds them into an array (to form the button)
-function displayDefaultChart() {
-  // clearData()
+function displayChart() {
+  const datasets = processedData
+  myChart.data.datasets = processedData;
   myChart.data.labels = labels;
-  myChart.data.datasets[0].data = firstData;
-  myChart.data.datasets[1].data = secondData;
-  myChart.data.datasets[2].data = thirdData;
-  myChart.data.datasets[3].data = fourthData;
-
   myChart.update();
+
+
+  console.log("labels", labels);
 }
 
 // demo csv data to be displayed on first load
@@ -212,58 +208,12 @@ function toggleDataSet(index) {
 // });
 // chart
 
-const data = {
-  labels: [],
-  datasets: [{
-      label: "firstData",
-      // data: firstData,
-      data: firstData,
-      backgroundColor: "#245d74",
-      borderColor: "#245d74",
-    },
-    {
-      label: "secondData",
-      data: secondData,
-      backgroundColor: "#7a5195",
-      borderColor: "#7a5195",
-    },
-    {
-      label: "thirdData",
-      data: thirdData,
-      backgroundColor: "#ef5675",
-      borderColor: "#ef5675",
-    },
-    {
-      label: "fourthData",
-      data: fourthData,
-      backgroundColor: "#ffa600",
-      borderColor: "#ffa600",
-    },
-  ],
-  options: {
-    scales: {
-      x: {
-        grid: {
-          display: false,
-        },
-
-      },
-      y: {
-        grid: {
-          display: false,
-        },
-
-      },
-    },
-  },
-};
-
 
 
 // config of bar chart - data color FIXME:
 const configBar = {
   type: "bar",
-  data,
+  data: chartData,
   options: {
     borderWidth: 0,
     responsive: true,
@@ -301,7 +251,7 @@ const configBar = {
 // config of line chart - data color
 const configLine = {
   type: "line",
-  data,
+  data: chartData,
   options: {
     borderWidth: 2,
     responsive: true,
