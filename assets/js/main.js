@@ -37,42 +37,49 @@ let chartData = defaultData;
 
 const fileInput = document.querySelector(".txtFileUpload");
 
-
+// TODO: generating the color, maybe later change to d3js colors
+function getRandomColor() {
+  var letters = '0123456789ABCDEF'.split('');
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 
 // function for extracting the names
 function processData(data) {
-  for (i = 0; i < data.length; i++) {
-    const row = data[i];
-    // console.log(row);
+  const noOfCols = data.length > 0 ? data[0].length : 0; ///5
+  processedData = [];
+  console.log(processedData);
 
-    if (i === 0) {
+  if (noOfCols) {
+    for (i = 0; i < data.length; i++) {
+      const row = data[i];
 
-      // process the header
-      dataSetNames = row.slice(1); // remove 'Date' header
-      // console.log("dataSetNames", dataSetNames);
+      // Set label
+      if (i === 0) {
+        for (var label of row) {
+          processedData.push({
+            label,
+            backgroundColor: getRandomColor(),
+            borderColor: getRandomColor()
+            // borderColor: '#FFFFFF'
+          });
+        }
+      } else {
+        for (let colIndex = 0; colIndex < noOfCols; colIndex++) {
+          processedData[colIndex].data = [
+            ...(processedData[colIndex].data || []),
+            row[colIndex]
+          ];
+        }
+        labels.push(row[0]);
+      }
     }
-
-    // proses the rows
-    else {
-      const date = new Date(row[0]);
-      const year = date.getFullYear();
-      //const dict = {'year': year, 'month': month};
-
-      // clearData = [];
-
-      // console.log("firstData set", firstData);
-
-      // console.log(date);
-      // firstData.push(row[1]);
-      // secondData.push(row[2]);
-      // thirdData.push(row[3]);
-      // fourthData.push(row[4]);
-      // labels.push(row[0]); // the date x axis
-      // console.log("firstData set", firstData);
-    }
-
   }
+
 }
 
 // scroll to chart section so the user doesn't have to go looking for it
@@ -84,6 +91,10 @@ function scrollToChart() {
   console.log("click");
 }
 
+// function resetData() {
+//   processedData = [], labels = [];
+//   myChart.update();
+// }
 
 
 function clearData() {
@@ -114,12 +125,12 @@ Papa.parse("assets/csv/test2.csv", {
   download: true,
   complete: function (results) {
     clearData();
-
     processData(results.data);
-    createDataSetButtons();
-    displayDefaultChart();
+    // createDataSetButtons();
+    displayChart();
   }
 });
+
 
 
 // parsing the user uploaded data with papa parse
@@ -130,10 +141,9 @@ fileInput.addEventListener("change", (e) => {
     header: false,
     complete: function (results) {
       clearData();
-
       processData(results.data);
-      createDataSetButtons();
-      displayDefaultChart();
+      // createDataSetButtons();
+      displayChart();
     },
   });
 });
@@ -141,31 +151,31 @@ fileInput.addEventListener("change", (e) => {
 
 
 // remove any and adds dynamic buttons to the html file
-function createDataSetButtons() {
-  // console.log("createDataSetButtons", dataSetNames);
-  const container = document.getElementById("dynamic-btn-container");
-  // remove all previous buttons
-  while (container.firstChild) {
-    container.removeChild(container.lastChild);
-  }
+// function createDataSetButtons() {
+//   // console.log("createDataSetButtons", dataSetNames);
+//   const container = document.getElementById("dynamic-btn-container");
+//   // remove all previous buttons
+//   while (container.firstChild) {
+//     container.removeChild(container.lastChild);
+//   }
 
 
-  // I loop through the array to create buttons
-  for (let i = 0; i < dataSetNames.length; i++) {
-    const newButton = document.createElement("button");
-    newButton.innerText = dataSetNames[i];
-    newButton.setAttribute("onclick", `toggleDataSet(${i})`);
-    newButton.setAttribute("class", "button");
+//   // I loop through the array to create buttons
+//   for (let i = 0; i < dataSetNames.length; i++) {
+//     const newButton = document.createElement("button");
+//     newButton.innerText = dataSetNames[i];
+//     newButton.setAttribute("onclick", `toggleDataSet(${i})`);
+//     newButton.setAttribute("class", "button");
 
-    container.appendChild(newButton);
+//     container.appendChild(newButton);
 
-    // create only 4 buttons
-    if (i === 3) {
-      break;
-    }
-  }
+//     // create only 4 buttons
+//     if (i === 3) {
+//       break;
+//     }
+//   }
 
-}
+// }
 
 
 // toggle the data set
