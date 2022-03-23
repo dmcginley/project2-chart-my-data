@@ -1,6 +1,10 @@
 // empty array to separate out the first row from the file (the names)
-let processedData = [];
-let labels = [];
+let processedData = []; // the  axis
+let labels = []; // the x axis
+
+
+// names to add to the dynamic buttons
+let dataSetNames = [];
 
 
 // 4 empty arrays for the data to be injected into
@@ -14,6 +18,7 @@ const defaultData = {
   labels: [],
   datasets: [],
   options: {
+
     scales: {
       x: {
         grid: {
@@ -29,6 +34,7 @@ const defaultData = {
     },
   },
 };
+// Chart.register(zoomPlugin);
 
 
 
@@ -52,14 +58,20 @@ function getRandomColor() {
 function processData(data) {
   const noOfCols = data.length > 0 ? data[0].length : 0; ///5
   processedData = [];
-  console.log(processedData);
+  // console.log(processedData);
+  // console.log(labels);
 
   if (noOfCols) {
-    for (i = 0; i < data.length; i++) {
+    for (i = 0; i < data.length; ++i) {
       const row = data[i];
 
       // Set label
       if (i === 0) {
+
+        dataSetNames = row.slice(1); // remove 'Date' header
+
+        console.log("dataSetNames", dataSetNames);
+
         for (var label of row) {
           processedData.push({
             label,
@@ -76,6 +88,7 @@ function processData(data) {
           ];
         }
         labels.push(row[0]);
+        // console.log("labss", labels);
       }
     }
   }
@@ -88,7 +101,7 @@ function scrollToChart() {
   element.scrollIntoView({
     behavior: 'smooth'
   });
-  console.log("click");
+  // console.log("click");
 }
 
 // function resetData() {
@@ -98,7 +111,7 @@ function scrollToChart() {
 
 
 function clearData() {
-  processedData = [], labels = [];
+  processedData = [], labels = [], dataSetNames = [];
 }
 
 
@@ -129,7 +142,7 @@ Papa.parse("assets/csv/test2.csv", {
   complete: function (results) {
     clearData();
     processData(results.data);
-    // createDataSetButtons();
+    createDataSetButtons();
     displayChart();
   }
 });
@@ -145,7 +158,7 @@ fileInput.addEventListener("change", (e) => {
     complete: function (results) {
       clearData();
       processData(results.data);
-      // createDataSetButtons();
+      createDataSetButtons();
       displayChart();
     },
   });
@@ -153,32 +166,34 @@ fileInput.addEventListener("change", (e) => {
 
 
 
+
+
 // remove any and adds dynamic buttons to the html file
-// function createDataSetButtons() {
-//   // console.log("createDataSetButtons", dataSetNames);
-//   const container = document.getElementById("dynamic-btn-container");
-//   // remove all previous buttons
-//   while (container.firstChild) {
-//     container.removeChild(container.lastChild);
-//   }
+function createDataSetButtons() {
+  // console.log("createDataSetButtons", dataSetNames);
+  const container = document.getElementById("dynamic-btn-container");
+  // remove all previous buttons
+  while (container.firstChild) {
+    container.removeChild(container.lastChild);
+  }
 
 
-//   // I loop through the array to create buttons
-//   for (let i = 0; i < dataSetNames.length; i++) {
-//     const newButton = document.createElement("button");
-//     newButton.innerText = dataSetNames[i];
-//     newButton.setAttribute("onclick", `toggleDataSet(${i})`);
-//     newButton.setAttribute("class", "button");
+  // I loop through the array to create buttons
+  for (let i = 0; i < dataSetNames.length; i++) {
+    const newButton = document.createElement("button");
+    newButton.innerText = dataSetNames[i];
+    newButton.setAttribute("onclick", `toggleDataSet(${i})`);
+    newButton.setAttribute("class", "button");
 
-//     container.appendChild(newButton);
+    container.appendChild(newButton);
+    // console.log("newButton", newButton);
+    // create only 4 buttons
+    // if (i === 3) {
+    //   break;
+    // }
+  }
 
-//     // create only 4 buttons
-//     if (i === 3) {
-//       break;
-//     }
-//   }
-
-// }
+}
 
 
 // toggle the data set
@@ -235,7 +250,24 @@ const configBar = {
       legend: {
         display: false,
       },
+      zoom: {
+        pan: {
+          enabled: true,
+          // mode: "x",
+          // pan options and/or events
+        },
+        limits: {
+          // axis limits
+        },
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          // zoom options and/or events
+        }
+      },
     },
+
     scales: {
       y: {
         beginAtZero: true,
@@ -261,6 +293,8 @@ const configBar = {
     },
   },
 };
+// Chart.register(zoomPlugin);
+
 // config of line chart - data color
 const configLine = {
   type: "line",
@@ -275,6 +309,20 @@ const configLine = {
     plugins: {
       legend: {
         display: false,
+      },
+      zoom: {
+        pan: {
+          // pan options and/or events
+        },
+        limits: {
+          // axis limits
+        },
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          // zoom options and/or events
+        }
       },
     },
     scales: {
