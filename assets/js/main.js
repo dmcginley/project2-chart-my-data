@@ -50,7 +50,9 @@ function getRandomColor() {
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
+  console.log("colors", color);
   return color;
+
 }
 
 
@@ -253,17 +255,26 @@ const configBar = {
       zoom: {
         pan: {
           enabled: true,
-          // mode: "x",
+          mode: "x",
           // pan options and/or events
+          threshold: 10,
         },
-        limits: {
-          // axis limits
-        },
+        // limits: {
+        //   // axis limits
+        // },
         zoom: {
-          wheel: {
+          mode: "x",
+          drag: {
             enabled: true,
-          },
-          // zoom options and/or events
+            backgroundColor: "rgba(201, 106, 42, 0.397)",
+            borderColor: "rgba(201, 106, 42, 1)",
+            borderWidth: 1
+
+            // wheel: {
+            //   enabled: true,
+            // },
+            // zoom options and/or events
+          }
         }
       },
     },
@@ -293,7 +304,8 @@ const configBar = {
     },
   },
 };
-// Chart.register(zoomPlugin);
+
+
 
 // config of line chart - data color
 const configLine = {
@@ -312,16 +324,27 @@ const configLine = {
       },
       zoom: {
         pan: {
+          enabled: true,
+          mode: "x",
           // pan options and/or events
+          threshold: 10,
         },
-        limits: {
-          // axis limits
-        },
+        // limits: {
+        //   // axis limits
+        // },
         zoom: {
-          wheel: {
+          mode: "x",
+          drag: {
             enabled: true,
-          },
-          // zoom options and/or events
+            backgroundColor: "rgba(201, 106, 42, 0.397)",
+            borderColor: "rgba(201, 106, 42, 1)",
+            borderWidth: 1
+
+            // wheel: {
+            //   enabled: true,
+            // },
+            // zoom options and/or events
+          }
         }
       },
     },
@@ -351,7 +374,13 @@ const configLine = {
 };
 
 
-// render init the data
+// linked to the button to reset the zoom of the chart to 100%
+function resetZoom() {
+  myChart.resetZoom();
+}
+
+
+// render initialize the data
 myChart = new Chart(document.getElementById("myChart"), configBar);
 
 
