@@ -27,6 +27,13 @@
     <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
+
+    <!-- hammer.js for adding pinch to zoom -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
+      integrity="sha384-Cs3dgUx6+jDxxuqHvVH8Onpyj2LF1gKZurLDlhqzuJmUqVYMJ0THTWpxK5Z086Zm"
+      crossorigin="anonymous"></script>
+
+
     <!-- chart.js script added integrity and crossorigin for SRI Hash using https://www.srihash.org/  -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"
       integrity="sha384-7NrRHqlWUj2hJl3a/dZj/a1GxuQc56mJ3aYsEnydBYrY1jR+RSt6SBvK3sHfj+mJ"
@@ -39,10 +46,12 @@
       integrity="sha384-Rqa45uIR7YT/7LtIf1aDOdzDFHNRbxooBwC1YPywSvKdEyy+RVi1zENhN77WbZab"
       crossorigin="anonymous"></script>
 
-    <!-- hammer.js for adding pinch to zoom -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
-      integrity="sha384-Cs3dgUx6+jDxxuqHvVH8Onpyj2LF1gKZurLDlhqzuJmUqVYMJ0THTWpxK5Z086Zm"
-      crossorigin="anonymous"></script>
+
+    <!-- the favicon generated using https://favicon.io/favicon-converter/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
 
 
     <title>ChartJS</title>
@@ -83,6 +92,11 @@
             <div class="hero-button-container">
 
 
+
+              <!-- <div id="dynamic-red-btn"></div> -->
+
+
+
               <!-- <button onclick="scrollToChart()">btn</button> -->
               <div class="file-upload-container">
                 <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
@@ -95,7 +109,7 @@
 
                 <!-- FIXME: aria-label File browser -->
                 <input class="file-upload-btn preview txtFileUpload" type="file" name="File Upload"
-                  aria-label="File browser" accept=" .csv" />
+                  id="txtFileUpload" aria-label="File" accept=" .csv" />
               </div>
               <button class="hero-btn">How To Use</button>
             </div>
