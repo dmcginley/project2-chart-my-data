@@ -339,20 +339,20 @@ button {
     sans-serif;
   text-align: center;
   /* height: 60px; */
-  font-size: 1.2rem;
+  font-size: 1.rem;
   /* padding: .6em; */
   min-width: 156px;
   background-color: #1a1a1a00;
   color: var(--white);
   background-color: rgba(201, 42, 42, 0);
   outline: 2px solid var(--white);
-  outline-offset: -2px;
+  outline-offset: -6px;
 }
 
 .hero-btn:nth-child(2):hover {
   color: var(--lighter-grey);
   outline: 2px solid var(--lighter-grey);
-  background-color: #ffffff18;
+  background-color: #1a1a1a34;
 
 }
 
