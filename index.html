@@ -54,7 +54,7 @@
     <!-- <link rel="manifest" href="/site.webmanifest"> -->
 
 
-    <title>ChartJS</title>
+    <title>Chart Data</title>
   </head>
 
   <body>
@@ -84,7 +84,7 @@
         <section class="hero">
 
           <div class="hero-content">
-            <h1>chart data</h1>
+            <h1>chart your data</h1>
             <h2>A place to upload your CSV dataset</h2>
             <p>Visualization of for your data<br>Lorem, ipsum dolor sit amet consectetur adipisicing
               elit. Obcaecati omnis, et perferendis repellat fugit, earum nobis cum amet, a tempora
@@ -108,8 +108,8 @@
                 </label>
 
                 <!-- FIXME: aria-label File browser -->
-                <input class="file-upload-btn preview txtFileUpload" type="file" name="File Upload"
-                  id="txtFileUpload" aria-label="File" accept=" .csv" />
+                <input class="file-upload-btn preview txtFileUpload1" type="file" name="File Upload"
+                  id="txtFileUpload1" aria-label="File" accept=" .csv" />
               </div>
               <button class="hero-btn">How To Use</button>
             </div>
@@ -148,17 +148,35 @@
 
         <div id="dynamic-btn-container"></div>
 
-        <div class="file-upload-container">
-          <label class="upload-label" for="txtFileUpload">
+        <!-- <div class="file-upload-container">
+          <label class="upload-label" for="txtFileUpload2">
             <span class="upload-img-span">
               <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="" />
             </span>
             <span class="upload-text-span">Upload File</span>
           </label>
 
-          <input class="file-upload-btn preview txtFileUpload" type="file" id="txtFileUpload" name="File
+          <input class="file-upload-btn preview txtFileUpload" type="file" id="txtFileUpload2" name="File
         Upload" aria-label="File browser accept=" .csv" />
+        </div> -->
+
+
+        <div class="file-upload-container">
+          <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
+
+            <span class="upload-img-span">
+              <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="" />
+            </span>
+            <span class="upload-text-span">Upload File</span>
+          </label>
+
+          <!-- FIXME: aria-label File browser -->
+          <input class="file-upload-btn preview txtFileUpload" type="file" name="File Upload"
+            id="txtFileUpload" aria-label="File" accept=" .csv" />
         </div>
+
+
+
 
         <!-- <button id="confirm-read-csv">Upload CSV</button> -->
       </main>
