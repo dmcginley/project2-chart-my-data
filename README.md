@@ -116,6 +116,10 @@ I used Chrome and Firefox "developer tools, device toggle" to check the responsi
 
 ## Error Handling
 
+- Chart wasn't showing, error in displaying the dataSetNames array. which is the names of the bars (or points on the line).
+- buttons were not showing correctly.
+- 
+
 ## Deployment
 
 ## Image optimization for the web ???
@@ -125,8 +129,8 @@ I used Chrome and Firefox "developer tools, device toggle" to check the responsi
 
 - [uxplanet.org *8 Tips for Dark Theme Design*](https://uxplanet.org/8-tips-for-dark-theme-design-8dfc2f8f7ab6) 
 
-- [Data Color Picker](https://learnui.design/tools/data-color-picker.html) - used as a base for my color-set 
-- []()
+- [Data Color Picker](https://learnui.design/tools/data-color-picker.html) - used as a base for my choice of colors.
+- [4 Ways to Empty an Array in JavaScript](https://www.javascripttutorial.net/array/4-ways-empty-javascript-array/?utm_source=pocket_mylist)
 - []()
 - []()
 - []()
@@ -167,3 +171,5 @@ How to Create a Chart with a Remote CSV File with Chart JS
 
 
 ## Content
+
+
