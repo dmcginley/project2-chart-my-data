@@ -305,7 +305,12 @@ const configBar = {
   },
 };
 
+function resetZoom() {
+  myChart.resetZoom();
+}
 
+
+// FIXME: when switching between bar and line sometimes doesn't re zoom to 100%
 
 // config of line chart - data color
 const configLine = {
@@ -373,7 +378,7 @@ const configLine = {
   },
 };
 
-
+// FIXME: when switching between bar and line sometimes doesn't re zoom to 100%
 // linked to the button to reset the zoom of the chart to 100%
 function resetZoom() {
   myChart.resetZoom();
