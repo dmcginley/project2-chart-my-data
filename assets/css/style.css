@@ -35,6 +35,10 @@
   /* page colors */
   --white: #f7f7f7;
   --black: #1a1a1a;
+
+
+
+  --lighter-grey: #c1c1c7;
   --light-grey: #3e3e44;
   --dark-grey: #323236;
   --darker-grey: #1d1d1d;
@@ -70,6 +74,11 @@ h1 {
 h2 {
   font-weight: 400;
   padding: .4em 0 1em 0;
+}
+
+h3 {
+  font-weight: 100;
+  padding: 1em 0 .6em 0;
 }
 
 .site-name {
@@ -175,9 +184,6 @@ li {
   flex: 3;
   width: 100%;
   padding: 2em 0;
-  /* margin: 0 3em; */
-  /* background-color: #0cf0e9; */
-
 }
 
 
@@ -229,9 +235,11 @@ input[type="file"] {
   8. chart type toggle
 ---------------- */
 
-chart type toggle .toggle-container {
-  display: block;
+.toggle-container {
+  display: inline-flex;
+  flex-direction: column;
   align-content: center;
+  /* background-color: #c20a19; */
 }
 
 .chart-toggle-btn {
@@ -327,20 +335,26 @@ button {
 
 
 .hero-btn:nth-child(2) {
-  font-family: 'DM Sans', sans-serif;
-
+  font-family: 'DM Sans',
+    sans-serif;
   text-align: center;
   /* height: 60px; */
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   /* padding: .6em; */
   min-width: 156px;
   background-color: #1a1a1a00;
   color: var(--white);
   background-color: rgba(201, 42, 42, 0);
   outline: 2px solid var(--white);
-  outline-offset: -6px;
+  outline-offset: -2px;
 }
 
+.hero-btn:nth-child(2):hover {
+  color: var(--lighter-grey);
+  outline: 2px solid var(--lighter-grey);
+  background-color: #ffffff18;
+
+}
 
 .hero-upload-img {
   height: 30px;
@@ -386,10 +400,19 @@ button {
 
 .chart-toggle-label {
   display: inline-block;
-  background-color: rgb(238, 224, 238);
+  background-color: var(--white);
   width: 50%;
   text-align: center;
+  padding: 1em;
+  margin: 0 1em 1em 0;
 }
+
+.chart-toggle-label:hover {
+
+  background-color: var(--lighter-grey);
+
+}
+
 
 .radio-input:focus-visible+.chart-toggle-label {
   outline: 2px solid var(--white);
@@ -420,6 +443,14 @@ button {
   font-size: 1rem;
 }
 
+.resetZoom-btn:hover {
+  background-color: var(--lighter-grey)
+}
+
+.resetZoom-btn:active {
+  background-color: #66a9c9;
+
+}
 
 
 @media only screen and (min-width: 340px) {
