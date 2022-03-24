@@ -247,36 +247,36 @@ const configBar = {
   options: {
     borderWidth: 0,
     responsive: true,
-    maintainAspectRatio: false,
+    // maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false,
       },
-      zoom: {
-        pan: {
-          enabled: true,
-          mode: "x",
-          // pan options and/or events
-          threshold: 10,
-        },
-        // limits: {
-        //   // axis limits
-        // },
-        zoom: {
-          mode: "x",
-          drag: {
-            enabled: true,
-            backgroundColor: "rgba(201, 106, 42, 0.397)",
-            borderColor: "rgba(201, 106, 42, 1)",
-            borderWidth: 1
+      // zoom: {
+      //   pan: {
+      //     enabled: true,
+      //     mode: "x",
+      //     // pan options and/or events
+      //     threshold: 10,
+      //   },
+      //   // limits: {
+      //   //   // axis limits
+      //   // },
+      //   zoom: {
+      //     mode: "x",
+      //     drag: {
+      //       enabled: true,
+      //       backgroundColor: "rgba(201, 106, 42, 0.397)",
+      //       borderColor: "rgba(201, 106, 42, 1)",
+      //       borderWidth: 1
 
-            // wheel: {
-            //   enabled: true,
-            // },
-            // zoom options and/or events
-          }
-        }
-      },
+      //       // wheel: {
+      //       //   enabled: true,
+      //       // },
+      //       // zoom options and/or events
+      //     }
+      //   }
+      // },
     },
 
     scales: {
@@ -305,9 +305,9 @@ const configBar = {
   },
 };
 
-function resetZoom() {
-  myChart.resetZoom();
-}
+// function resetZoom() {
+//   myChart.resetZoom(1);
+// }
 
 
 // FIXME: when switching between bar and line sometimes doesn't re zoom to 100%
@@ -319,7 +319,7 @@ const configLine = {
   options: {
     borderWidth: 2,
     responsive: true,
-    maintainAspectRatio: false,
+    // maintainAspectRatio: false,
     tension: 0.4,
     pointRadius: 3,
     // pointHoverRadius: 5,
@@ -327,31 +327,31 @@ const configLine = {
       legend: {
         display: false,
       },
-      zoom: {
-        pan: {
-          enabled: true,
-          mode: "x",
-          // pan options and/or events
-          threshold: 10,
-        },
-        // limits: {
-        //   // axis limits
-        // },
-        zoom: {
-          mode: "x",
-          drag: {
-            enabled: true,
-            backgroundColor: "rgba(201, 106, 42, 0.397)",
-            borderColor: "rgba(201, 106, 42, 1)",
-            borderWidth: 1
+      // zoom: {
+      //   pan: {
+      //     enabled: true,
+      //     mode: "x",
+      //     // pan options and/or events
+      //     threshold: 10,
+      //   },
+      //   // limits: {
+      //   //   // axis limits
+      //   // },
+      //   zoom: {
+      //     mode: "x",
+      //     drag: {
+      //       enabled: true,
+      //       backgroundColor: "rgba(201, 106, 42, 0.397)",
+      //       borderColor: "rgba(201, 106, 42, 1)",
+      //       borderWidth: 1
 
-            // wheel: {
-            //   enabled: true,
-            // },
-            // zoom options and/or events
-          }
-        }
-      },
+      //       // wheel: {
+      //       //   enabled: true,
+      //       // },
+      //       // zoom options and/or events
+      //     }
+      //   }
+      // },
     },
     scales: {
       y: {
@@ -380,9 +380,36 @@ const configLine = {
 
 // FIXME: when switching between bar and line sometimes doesn't re zoom to 100%
 // linked to the button to reset the zoom of the chart to 100%
-function resetZoom() {
-  myChart.resetZoom();
-}
+// function resetZoom() {
+//   myChart.resetZoom(1);
+// }
+
+
+
+
+// function resetZoom() {
+//   myChart.resetZoom();
+// }
+
+
+// Note: changes to these actions are not applied to the buttons.
+// const actions = [{
+//   name: 'Zoom +10%',
+//   handler(chart) {
+//     chart.zoom(1.1);
+//   }
+// }, {
+//   name: 'Zoom -10%',
+//   handler(chart) {
+//     chart.zoom(0.9);
+//   },
+// }, {
+//   name: 'Reset zoom',
+//   handler(chart) {
+//     chart.resetZoom();
+//   }
+// }];
+
 
 
 // render initialize the data
@@ -392,10 +419,14 @@ myChart = new Chart(document.getElementById("myChart"), configBar);
 // destroy and creat two different charts - bar and line
 function chartType(type) {
   myChart.destroy();
+  // myChart.displayGraphs();
+
   if (type === "bar") {
     myChart = new Chart(document.getElementById("myChart"), configBar);
   }
   if (type === "line") {
     myChart = new Chart(document.getElementById("myChart"), configLine);
   }
+
+
 }
