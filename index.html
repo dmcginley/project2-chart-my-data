@@ -119,29 +119,34 @@
             <img src="assets/images/two-charts.png" alt="">
           </div>
         </section>
-
+        <div class="chart-text">
+          <h2>Toggle between Bar or Line chart</h2>
+          <p>Did you know you can simpley toggle between bar chart or line chart to view
+            your CSV data.</p>
+          <p>Line graphs are useful for displaying smaller changes in a trend over time. Bar graphs
+            are better for comparing larger changes or differences in data among groups.</p>
+          <!-- <h3>Reset the chart back to 100%</h3> -->
+        </div>
         <div class="toggle-container">
-          <h3>Toggle between Bar or Line chart</h3>
 
           <!-- the two chart type buttons under the chart -->
           <div class="chart-toggle-btn" id="theChart">
             <input onclick="chartType('bar')" class="radio-input" id="radio1" type="radio"
               value="bar" name="chart" />
-            <label class="chart-toggle-label" for="radio1">
+            <label class="chart-toggle-label chart-control-btn" for="radio1">
               <img class="chart-toggle-svg" src="assets/icons/bx-bar-chart.svg" alt="" />
               <span class="chart-toggle-name">Bar</span>
             </label>
 
             <input onclick="chartType('line')" class="radio-input" id="radio2" type="radio"
               value="line" name="chart" />
-            <label class="chart-toggle-label" for="radio2">
+            <label class="chart-toggle-label chart-control-btn" for="radio2">
               <img class="chart-toggle-svg" src="assets/icons/bx-line-chart.svg" alt="" />
               <span class="chart-toggle-name">Line</span>
             </label>
           </div>
 
-          <h3>Reset the chart back to 100%</h3>
-          <button class="resetZoom-btn" onclick="resetZoom()">Reset Chart</button>
+          <!-- <button class="resetZoom-btn chart-control-btn" onclick="resetZoom()">Reset Chart</button> -->
         </div>
 
         <section class="chart-box">
@@ -149,35 +154,23 @@
           <canvas id="myChart" aria-label="Bar or line chart presentation" role="img"></canvas>
         </section>
 
-        <div id="dynamic-btn-container"></div>
+        <div class="chart-buttons">
+          <div id="dynamic-btn-container"></div>
+          <div class="file-upload-container">
+            <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
 
-        <!-- <div class="file-upload-container">
-          <label class="upload-label" for="txtFileUpload2">
-            <span class="upload-img-span">
-              <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="" />
-            </span>
-            <span class="upload-text-span">Upload File</span>
-          </label>
+              <span class="upload-img-span">
+                <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="" />
+              </span>
+              <span class="upload-text-span">Upload File</span>
+            </label>
 
-          <input class="file-upload-btn preview txtFileUpload" type="file" id="txtFileUpload2" name="File
-        Upload" aria-label="File browser accept=" .csv" />
-        </div> -->
+            <!-- FIXME: aria-label File browser -->
+            <input class="file-upload-btn preview txtFileUpload" type="file" name="File Upload"
+              id="txtFileUpload" aria-label="File" accept=" .csv" />
+          </div>
 
-
-        <div class="file-upload-container">
-          <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
-
-            <span class="upload-img-span">
-              <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="" />
-            </span>
-            <span class="upload-text-span">Upload File</span>
-          </label>
-
-          <!-- FIXME: aria-label File browser -->
-          <input class="file-upload-btn preview txtFileUpload" type="file" name="File Upload"
-            id="txtFileUpload" aria-label="File" accept=" .csv" />
         </div>
-
 
 
 
