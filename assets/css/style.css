@@ -204,11 +204,26 @@ input[type="file"] {
 
 
 .chart-text {
+  position: relative;
   text-align: center;
-  background-color: rgba(0, 139, 139, 0.432);
+  background-color: rgba(0, 139, 139, 0.6);
+  padding: 1em 2em;
   margin-bottom: 1em;
 }
 
+
+.chart-text div {
+  display: none;
+}
+
+
+.chart-text h2 {
+  padding: .4em 0;
+}
+
+.chart-text p {
+  padding: .6em 0;
+}
 
 /* ----------------
     7. the chart
@@ -236,12 +251,7 @@ input[type="file"] {
 ---------------- */
 
 .toggle-container {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center; */
   padding: 2em 0 0 0;
-  /* background-color: #1aaabd; */
 }
 
 .chart-toggle-btn {
@@ -456,17 +466,7 @@ button {
   font-size: 1rem;
 }
 
-.chart-text {
-  padding: 1em 2em;
-}
 
-.chart-text h2 {
-  padding: .4em 0;
-}
-
-.chart-text p {
-  padding: .6em 0;
-}
 
 .resetZoom-btn {
   margin-top: 1em;
@@ -539,7 +539,8 @@ footer p {
 
 
   .chart-text {
-    padding: 2em 3em;
+    /* padding: 2em 3em; */
+    padding: 1em 2em 1em calc(2em + 12px);
     margin: 1em;
   }
 
@@ -596,11 +597,18 @@ footer p {
 
   .chart-text {
     text-align: start;
-
   }
 
+  .chart-text div {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 100%;
+    background-color: rgba(0, 139, 139, 1);
+  }
 }
-
 
 @media only screen and (min-width: 900px) {
   .main-container {
@@ -641,7 +649,6 @@ footer p {
 
   .hero-button-container {
     flex-direction: row;
-    /* justify-content: center; */
     align-items: center;
     padding: 0;
 
@@ -652,4 +659,18 @@ footer p {
     margin-left: 1em;
 
   }
+
+  .chart-text {
+    width: 90%;
+    margin: auto;
+  }
+
+  .toggle-container {
+    width: 90%;
+    margin: auto;
+
+  }
+
+
+
 }
