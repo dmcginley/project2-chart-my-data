@@ -36,12 +36,13 @@
   --white: #f7f7f7;
   --black: #1a1a1a;
 
-
-
   --lighter-grey: #c1c1c7;
   --light-grey: #3e3e44;
   --dark-grey: #323236;
   --darker-grey: #1d1d1d;
+
+  /* width component for width of bar on green box, so if you change the width of the green line the text padding will also change */
+  --green-bar-width: 12px;
 }
 
 
@@ -89,6 +90,7 @@ h3 {
 p {
   font-size: 1.2rem;
   padding: 1em;
+  line-height: 1.6
 }
 
 
@@ -539,8 +541,7 @@ footer p {
 
 
   .chart-text {
-    /* padding: 2em 3em; */
-    padding: 1em 2em 1em calc(2em + 12px);
+    padding: 1em 2em 1em calc(2em + var(--green-bar-width));
     margin: 1em;
   }
 
@@ -575,10 +576,7 @@ footer p {
   .hero-btn:nth-child(2) {
     margin-left: 1em;
   }
-
-
 }
-
 
 
 @media only screen and (min-width: 740px) {
@@ -604,7 +602,7 @@ footer p {
     display: block;
     left: 0;
     top: 0;
-    width: 12px;
+    width: var(--green-bar-width);
     height: 100%;
     background-color: rgba(0, 139, 139, 1);
   }
@@ -651,7 +649,6 @@ footer p {
     flex-direction: row;
     align-items: center;
     padding: 0;
-
   }
 
   .hero-btn:nth-child(2) {
@@ -661,7 +658,7 @@ footer p {
   }
 
   .chart-text {
-    width: 90%;
+    width: 86%;
     margin: auto;
   }
 
