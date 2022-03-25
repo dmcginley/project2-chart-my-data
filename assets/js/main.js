@@ -6,14 +6,7 @@ let labels = []; // the x axis
 // names to add to the dynamic buttons
 let dataSetNames = [];
 
-
-// 4 empty arrays for the data to be injected into
-// const firstData = [];
-// const secondData = [];
-// const thirdData = [];
-// const fourthData = [];
-
-
+// the default chart
 const defaultData = {
   labels: [],
   datasets: [],
@@ -108,14 +101,6 @@ function clearData() {
 }
 
 
-// FIXME: function to clear the previous data
-// function clearData() {
-//   firstData.length = 0
-//   secondData.length = 0
-//   thirdData.length = 0
-//   fourthData.length = 0
-// }
-
 function displayChart() {
 
   // FIXME: 	Expected an assignment or function call and instead saw an expression.
@@ -162,15 +147,14 @@ fileInput.addEventListener("change", (e) => {
 
 
 
-// remove any and adds dynamic buttons to the html file
+// removes any and adds dynamic buttons to the html file
 function createDataSetButtons() {
-  // console.log("createDataSetButtons", dataSetNames);
   const container = document.getElementById("dynamic-btn-container");
-  // remove all previous buttons
+  // removes all previous buttons
   while (container.firstChild) {
     container.removeChild(container.lastChild);
   }
-  // I loop through the array to create buttons
+  // I loop through the array to create the buttons with name of data
   for (let i = 1; i < dataSetNames.length; i++) {
     const newButton = document.createElement("button");
     newButton.innerText = dataSetNames[i];
@@ -178,10 +162,6 @@ function createDataSetButtons() {
     newButton.setAttribute("class", "button");
     container.appendChild(newButton);
     console.log("newButton", newButton);
-    // create only 4 buttons
-    // if (i === 3) {
-    //   break;
-    // }
   }
 
 }
