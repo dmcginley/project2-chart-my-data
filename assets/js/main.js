@@ -34,9 +34,6 @@ const defaultData = {
     },
   },
 };
-// Chart.register(zoomPlugin);
-
-
 
 let chartData = defaultData;
 
@@ -70,9 +67,9 @@ function processData(data) {
       // Set label
       if (i === 0) {
 
-        dataSetNames = row.slice(1); // remove 'Date' header
+        dataSetNames = row.slice(); // remove 'Date' header
 
-        console.log("dataSetNames", dataSetNames);
+        console.log("dataSetNames", row);
 
         for (var label of row) {
           processedData.push({
@@ -106,12 +103,6 @@ function scrollToChart() {
   // console.log("click");
 }
 
-// function resetData() {
-//   processedData = [], labels = [];
-//   myChart.update();
-// }
-
-
 function clearData() {
   processedData = [], labels = [], dataSetNames = [];
 }
@@ -141,6 +132,7 @@ function displayChart() {
 Papa.parse("assets/csv/test2.csv", {
   download: true,
   skipEmptyLines: true,
+  // header: false,
   complete: function (results) {
     clearData();
     processData(results.data);
@@ -178,17 +170,14 @@ function createDataSetButtons() {
   while (container.firstChild) {
     container.removeChild(container.lastChild);
   }
-
-
   // I loop through the array to create buttons
-  for (let i = 0; i < dataSetNames.length; i++) {
+  for (let i = 1; i < dataSetNames.length; i++) {
     const newButton = document.createElement("button");
     newButton.innerText = dataSetNames[i];
     newButton.setAttribute("onclick", `toggleDataSet(${i})`);
     newButton.setAttribute("class", "button");
-
     container.appendChild(newButton);
-    // console.log("newButton", newButton);
+    console.log("newButton", newButton);
     // create only 4 buttons
     // if (i === 3) {
     //   break;
@@ -196,6 +185,15 @@ function createDataSetButtons() {
   }
 
 }
+
+
+
+
+// dataSetNames = row.slice(1); // remove 'Date' header
+
+
+
+
 
 
 // toggle the data set
@@ -208,37 +206,6 @@ function toggleDataSet(index) {
     myChart.show(index);
   }
 }
-
-// function addData(chart, label, data) {
-//   // chart.destroy();
-
-
-//   chart.data.labels.push(label);
-//   chart.data.datasets.forEach((dataset) => {
-//     dataset.data.push(data);
-//   });
-//   chart.update();
-// }
-
-
-
-// const chartData = "/assets/csv/test2.csv"
-
-// d3.csv(chartData).then(function (dataPoints) {
-//   // console.log("My dataPoints", dataPoints);
-//   const firstData = [];
-//   const secondData = [];
-//   const thirdData = [];
-//   const fourthData = [];
-
-//   for (let i = 0; i < dataPoints.length; i++) {
-//     firstData.push(dataPoints[i].firstData)
-//     console.log("max", firstData);
-//   }
-// });
-// chart
-
-
 
 // config of bar chart - data color FIXME:
 const configBar = {
@@ -390,25 +357,6 @@ const configLine = {
 // function resetZoom() {
 //   myChart.resetZoom();
 // }
-
-
-// Note: changes to these actions are not applied to the buttons.
-// const actions = [{
-//   name: 'Zoom +10%',
-//   handler(chart) {
-//     chart.zoom(1.1);
-//   }
-// }, {
-//   name: 'Zoom -10%',
-//   handler(chart) {
-//     chart.zoom(0.9);
-//   },
-// }, {
-//   name: 'Reset zoom',
-//   handler(chart) {
-//     chart.resetZoom();
-//   }
-// }];
 
 
 
