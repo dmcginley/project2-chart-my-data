@@ -196,5 +196,5 @@ Zoom feature wasn't working properly, it wouldn't reset back to 100% after butto
 ## Content
 The how to use text on the home page.
 
-class = **"chart-text"**
+class = **"note-text-container"**
 [Bar Graph vs Line Graph *from https://www.smartdraw.com*](https://www.smartdraw.com/bar-graph/#:~:text=data%20over%20time.-,Bar%20Graph%20vs%20Line%20Graph,differences%20in%20data%20among%20groups.)

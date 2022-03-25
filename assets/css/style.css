@@ -45,7 +45,15 @@
   --green-bar-width: 12px;
 }
 
+.color-box1 {
+  background-color: #0d548d;
+}
 
+.color-box2 {
+  background-color: #0d8d42;
+}
+
+/* .color-box1 .color-box1 .color-box1 */
 
 /* ----------------
     2. global style
@@ -73,12 +81,14 @@ h1 {
 }
 
 h2 {
+  font-size: 2rem;
   font-weight: 400;
   padding: .4em 0 1em 0;
 }
 
 h3 {
-  font-weight: 100;
+  font-size: 1.4rem;
+  font-weight: 300;
   padding: 1em 0 .6em 0;
 }
 
@@ -166,19 +176,27 @@ li {
     6. hero
 ---------------- */
 .hero {
-  /* display: flex; */
-  /* height: 50vh; */
   /* background-color: rgba(243, 134, 134, 0.322); */
-  padding: 2em 1em;
 }
 
-.hero-content {
+.how-to-section {
+  /* background-color: rgba(223, 243, 134, 0.322); */
+}
+
+.hero,
+.how-to-section {
+  padding: 2em 1em;
+
+
+}
+
+.flex-text-content {
   flex: 2;
   text-align: center;
 
 }
 
-.hero-img-container {
+.section-img-container {
   flex: 3;
   width: 100%;
   padding: 2em 0;
@@ -188,16 +206,18 @@ li {
 
 
 .hero-button-container {
-  /* display: flex; */
   align-items: center;
   padding: 2em 0;
   /* background-color: #000000; */
 }
 
-.hero-img-container img {
+.section-img-container img {
   width: 100%;
+  /* background-color: #bd271a; */
   /* padding: 2em 0; */
 }
+
+
 
 input[type="file"] {
   display: none;
@@ -205,7 +225,7 @@ input[type="file"] {
 
 
 
-.chart-text {
+.note-text-container {
   position: relative;
   text-align: center;
   background-color: rgba(0, 139, 139, 0.6);
@@ -214,18 +234,19 @@ input[type="file"] {
 }
 
 
-.chart-text div {
+.note-text-container div {
   display: none;
 }
 
 
-.chart-text h2 {
+.note-text-container h2 {
   padding: .4em 0;
 }
 
-.chart-text p {
+.note-text-container p {
   padding: .6em 0;
 }
+
 
 /* ----------------
     7. the chart
@@ -359,8 +380,12 @@ button {
 .hero-btn:nth-child(2) {
   font-family: 'DM Sans',
     sans-serif;
+  display: block;
   text-align: center;
-  font-size: 1.rem;
+  text-decoration: none;
+  padding: 1em;
+  margin: auto;
+  font-size: 1.4rem;
   min-width: 156px;
   background-color: #1a1a1a00;
   color: var(--white);
@@ -485,6 +510,23 @@ footer p {
   /* background-color: #bd271a; */
 }
 
+
+
+
+.numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  font-size: 3rem;
+  /* padding: .6em; */
+  margin: 0 1em 0 .4em;
+  border: 4px solid var(--white);
+  border-radius: 50%;
+  /* background-color: #c20a19; */
+}
+
 @media only screen and (min-width: 340px) {
   /* .chart-box {
     height: 240px;
@@ -510,6 +552,11 @@ footer p {
     flex: 1;
     font-size: 1.2rem;
   }
+
+  .hero-btn:nth-child(2) {
+    font-size: 1.2rem;
+  }
+
 
   .toggle-container {
     display: flex;
@@ -540,7 +587,7 @@ footer p {
   }
 
 
-  .chart-text {
+  .note-text-container {
     padding: 1em 2em 1em calc(2em + var(--green-bar-width));
     margin: 1em;
   }
@@ -569,18 +616,22 @@ footer p {
 @media only screen and (min-width: 640px) {
 
   .hero-button-container {
+    width: 590px;
     display: flex;
+    margin: auto;
     justify-content: center;
+    align-items: center;
+    /* background-color: coral; */
   }
 
   .hero-btn:nth-child(2) {
     margin-left: 1em;
   }
+
 }
 
 
 @media only screen and (min-width: 740px) {
-
 
 
   #dynamic-btn-container {
@@ -593,11 +644,11 @@ footer p {
     width: 25%;
   }
 
-  .chart-text {
+  .note-text-container {
     text-align: start;
   }
 
-  .chart-text div {
+  .note-text-container div {
     position: absolute;
     display: block;
     left: 0;
@@ -606,6 +657,12 @@ footer p {
     height: 100%;
     background-color: rgba(0, 139, 139, 1);
   }
+
+  .how-to-section {
+    display: flex;
+  }
+
+
 }
 
 @media only screen and (min-width: 900px) {
@@ -617,10 +674,10 @@ footer p {
     display: flex;
   }
 
-  .hero-content {
+  .flex-text-content {
     text-align: left;
     padding-right: 4em;
-
+    flex: 4;
   }
 
   p {
@@ -631,15 +688,21 @@ footer p {
     flex-direction: column;
     padding: 0 0 2em 0;
     align-items: flex-start;
+    /* background-color: chartreuse; */
+    width: 100%;
+    height: auto;
   }
 
   .hero-btn:nth-child(2) {
     margin-left: 0;
   }
 
-  .hero-img-container {
+  .section-img-container {
     padding-top: 4em;
+  }
 
+  .how-to-section {
+    margin-bottom: 2em;
   }
 }
 
@@ -657,8 +720,9 @@ footer p {
 
   }
 
-  .chart-text {
-    width: 86%;
+  .note-text-container {
+    /* flex: 1; */
+    width: 90%;
     margin: auto;
   }
 
