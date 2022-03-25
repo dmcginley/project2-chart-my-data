@@ -15,23 +15,10 @@
       integrity="sha384-3UqfbTnADMqh/U3Nnc2YemCb4NU2tvfy1QWQa71aD9jM8J22WQov29gHPWobkC/p"
       crossorigin="anonymous"></script>
 
-    <!-- d3js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"
-      integrity="sha384-gbSJST5/Geo6Slr9JzXgmoS6LqyisUUyjZG7z94EWbxfwQjHndoHiyz2YbZ6TCVz"
-      crossorigin="anonymous"></script>
-
-
-    <!-- FIXME:d3js color sets not sure will I use yet-->
-    <!-- Import D3 Scale Chromatic via CDN -->
-    <script src="https://d3js.org/d3-color.v1.min.js"></script>
-    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-
-
     <!-- hammer.js for adding pinch to zoom -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
       integrity="sha384-Cs3dgUx6+jDxxuqHvVH8Onpyj2LF1gKZurLDlhqzuJmUqVYMJ0THTWpxK5Z086Zm"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script> -->
 
 
     <!-- chart.js script added integrity and crossorigin for SRI Hash using https://www.srihash.org/  -->
@@ -41,10 +28,10 @@
 
 
     <!-- chart.js plugin zoom for zoom functionality  -->
-    <script
+    <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.0/chartjs-plugin-zoom.min.js"
       integrity="sha384-Rqa45uIR7YT/7LtIf1aDOdzDFHNRbxooBwC1YPywSvKdEyy+RVi1zENhN77WbZab"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script> -->
 
 
     <!-- the favicon generated using https://favicon.io/favicon-converter/ -->
@@ -52,7 +39,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
     <!-- <link rel="manifest" href="/site.webmanifest"> -->
-
 
     <title>Chart Data</title>
   </head>
@@ -81,33 +67,28 @@
       </header>
 
       <main class="main-container">
+        <!-- the hero section of the page img and leading in text -->
         <section class="hero">
-
           <div class="hero-content">
             <h1>chart your data</h1>
             <h2>A place to upload your CSV dataset</h2>
             <p>Visualization of for your data<br>Lorem, ipsum dolor sit amet consectetur adipisicing
               elit. Obcaecati omnis, et perferendis repellat fugit, earum nobis cum amet, a tempora
               est beatae temporibus architecto itaque totaue. Nemo!</p>
+
+            <!-- a container with the two hero buttons in it -->
             <div class="hero-button-container">
 
-
-
-              <!-- <div id="dynamic-red-btn"></div> -->
-
-
-
-              <!-- <button onclick="scrollToChart()">btn</button> -->
               <div class="file-upload-container">
                 <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
 
                   <span class="upload-img-span">
-                    <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="" />
+                    <img class="upload-img" src="assets/icons/bx-upload-white.svg"
+                      alt="an upload icon beside the text upload file" />
                   </span>
                   <span class="upload-text-span">Upload File</span>
                 </label>
 
-                <!-- FIXME: aria-label File browser -->
                 <input class="file-upload-btn preview txtFileUpload1" type="file" name="File Upload"
                   id="txtFileUpload1" aria-label="File" accept=" .csv" />
               </div>
@@ -116,17 +97,21 @@
 
           </div>
           <div class="hero-img-container">
-            <img src="assets/images/two-charts.png" alt="">
+            <img src="assets/images/two-charts.png"
+              alt="two images of a line and bar chart overlapping in a cascading manner">
           </div>
         </section>
         <div class="chart-text">
           <h2>Toggle between Bar or Line chart</h2>
-          <p>Did you know you can simpley toggle between bar chart or line chart to view
+          <p>Did you know you can simpley toggle between bar chart or line chart to change the way
+            you view
             your CSV data.</p>
-          <p>Line graphs are useful for displaying smaller changes in a trend over time. Bar graphs
+          <p>Line graphs are useful for displaying smaller changes in a trend over time. Bar
+            graphs
             are better for comparing larger changes or differences in data among groups.</p>
-          <!-- <h3>Reset the chart back to 100%</h3> -->
         </div>
+
+        <!-- div containing the two input buttons, the input in hidden and the label is used to create the style  -->
         <div class="toggle-container">
 
           <!-- the two chart type buttons under the chart -->
@@ -150,7 +135,8 @@
         </div>
 
         <section class="chart-box">
-          <h2 class="p-t1">Title of chart from JS</h2>
+          <!-- FIXME: add dynamic chart name if i can -->
+          <h2 class="p-t1">{Title of chart from JS}</h2>
           <canvas id="myChart" aria-label="Bar or line chart presentation" role="img"></canvas>
         </section>
 
@@ -175,8 +161,12 @@
 
 
         <!-- <button id="confirm-read-csv">Upload CSV</button> -->
+
       </main>
 
+      <footer>
+        <p>Site created by Donnchadh Mc Ginley</p>
+      </footer>
       <!-- script -->
       <script src="assets/js/main.js"></script>
       <!-- <script src="assets/js/button.js"></script> -->
