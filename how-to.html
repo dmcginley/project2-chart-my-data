@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- boxicons icons -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- Papa parse JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
+      integrity="sha384-3UqfbTnADMqh/U3Nnc2YemCb4NU2tvfy1QWQa71aD9jM8J22WQov29gHPWobkC/p"
+      crossorigin="anonymous"></script>
+
+    <!-- hammer.js for adding pinch to zoom -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
+      integrity="sha384-Cs3dgUx6+jDxxuqHvVH8Onpyj2LF1gKZurLDlhqzuJmUqVYMJ0THTWpxK5Z086Zm"
+      crossorigin="anonymous"></script> -->
+
+
+    <!-- chart.js script added integrity and crossorigin for SRI Hash using https://www.srihash.org/  -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"
+      integrity="sha384-7NrRHqlWUj2hJl3a/dZj/a1GxuQc56mJ3aYsEnydBYrY1jR+RSt6SBvK3sHfj+mJ"
+      crossorigin="anonymous"></script>
+
+
+    <!-- chart.js plugin zoom for zoom functionality  -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.0/chartjs-plugin-zoom.min.js"
+      integrity="sha384-Rqa45uIR7YT/7LtIf1aDOdzDFHNRbxooBwC1YPywSvKdEyy+RVi1zENhN77WbZab"
+      crossorigin="anonymous"></script> -->
+
+
+    <!-- the favicon generated using https://favicon.io/favicon-converter/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+    <title>Chart Data</title>
+  </head>
+
+  <body>
+
+    <!-- grid container - of 1fr on either side and a minmax in the middle for the main content -->
+    <div class="master-grid">
+
+      <!-- header containing the navigation  -->
+      <header class="master-grid header">
+        <div class="header-content">
+          <a href="index.html" class="header-logo">
+            <img src="assets/icons/chart-icon-sm.svg" alt="chart website logo" />
+            <p class="site-name">Chart Data</p>
+          </a>
+          <!-- <nav>
+            <ul class="">
+              <li class="">
+                <a class="links" id="" href="#"></a>
+              </li>
+
+            </ul>
+          </nav> -->
+        </div>
+      </header>
+
+      <main class="main-container">
+
+
+        <!-- the hero section of the page img and leading in text -->
+        <section class="how-to-section color-box1">
+          <div class="numbers">1</div>
+          <div class="flex-text-content">
+            <h2>chart your data</h2>
+            <h3>A place to upload your CSV dataset</h3>
+            <p>With our interactive charts, you can visualize data and chose which datasets to view
+              by using the buttons below the chart.
+              <br>You can change between bar and line chart depending on which way to view your data
+              would suit you best. Automating views your CSV file and helps you handle complex
+              datasets with ease.
+            </p>
+          </div>
+          <div class="section-img-container">
+            <img src="assets/images/two-charts.png"
+              alt="two images of a line and bar chart overlapping in a cascading manner">
+          </div>
+        </section>
+        <section class="how-to-section color-box2">
+          <div class="numbers">2</div>
+          <div class="flex-text-content">
+            <h2>chart your data</h2>
+            <h3>A place to upload your CSV dataset</h3>
+            <p>With our interactive charts, you can visualize data and chose which datasets to view
+              by using the buttons below the chart.
+              <br>You can change u handle complex
+              datasets with ease.
+            </p>
+          </div>
+          <div class="section-img-container">
+            <img src="assets/images/two-charts.png"
+              alt="two images of a line and bar chart overlapping in a cascading manner">
+          </div>
+        </section>
+
+
+
+
+        <div class="note-text-container">
+          <div></div>
+          <h2>Toggle between Bar or Line chart</h2>
+          <p>Did you know you can simpley toggle between bar chart or line chart to change the way
+            you view
+            your CSV data.</p>
+          <p>Line graphs are useful for displaying smaller changes in a trend over time. Bar
+            graphs
+            are better for comparing larger changes or differences in data among groups.</p>
+        </div>
+
+
+
+      </main>
+
+      <footer>
+        <p>Site created by Donnchadh Mc Ginley</p>
+      </footer>
+      <!-- script -->
+      <script src="assets/js/main.js"></script>
+      <!-- <script src="assets/js/button.js"></script> -->
+      <!-- <script src="assets/js/read_head.js"></script> -->
+    </div>
+  </body>
+
+</html>
