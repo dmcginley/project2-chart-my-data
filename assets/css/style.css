@@ -235,13 +235,14 @@ input[type="file"] {
   8. chart type toggle
 ---------------- */
 
-/* .toggle-container {
-  display: flex;
+.toggle-container {
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: center;
-  background-color: #1aaabd;
-} */
+  align-content: center; */
+  padding: 2em 0 0 0;
+  /* background-color: #1aaabd; */
+}
 
 .chart-toggle-btn {
   display: flex;
@@ -337,27 +338,33 @@ button {
   height: 2rem;
 }
 
-
+.hero-btn,
+.upload-label,
+.chart-control-btn {
+  transition: 160ms;
+}
 
 .hero-btn:nth-child(2) {
   font-family: 'DM Sans',
     sans-serif;
   text-align: center;
-  /* height: 60px; */
   font-size: 1.rem;
-  /* padding: .6em; */
   min-width: 156px;
   background-color: #1a1a1a00;
   color: var(--white);
-  background-color: rgba(201, 42, 42, 0);
+  background-color: rgba(255, 255, 255, 0);
   outline: 2px solid var(--white);
-  outline-offset: -6px;
+  outline-offset: -2px;
 }
 
 .hero-btn:nth-child(2):hover {
   color: var(--lighter-grey);
   outline: 2px solid var(--lighter-grey);
   background-color: #1a1a1a34;
+}
+
+.hero-btn:nth-child(2):active {
+  background-color: #1a1a1a79;
 
 }
 
@@ -415,8 +422,6 @@ button {
   border: 2px solid var(--white);
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0);
-  /* background-color: aquamarine; */
-  /* width: 100%; */
 }
 
 .chart-control-btn:hover {
@@ -451,9 +456,31 @@ button {
   font-size: 1rem;
 }
 
+.chart-text {
+  padding: 1em 2em;
+}
+
+.chart-text h2 {
+  padding: .4em 0;
+}
+
+.chart-text p {
+  padding: .6em 0;
+}
 
 .resetZoom-btn {
   margin-top: 1em;
+}
+
+footer {
+  grid-column: 2;
+}
+
+footer p {
+  font-size: 1rem;
+  color: var(--lighter-grey);
+  padding: 2em 3em;
+  /* background-color: #bd271a; */
 }
 
 @media only screen and (min-width: 340px) {
@@ -512,11 +539,7 @@ button {
 
 
   .chart-text {
-    /* display: flex; */
-    text-align: start;
-    /* flex-direction: column; */
-    /* align-items: flex-end; */
-    padding: 1em 2em;
+    padding: 2em 3em;
     margin: 1em;
   }
 
@@ -551,7 +574,11 @@ button {
   .hero-btn:nth-child(2) {
     margin-left: 1em;
   }
+
+
 }
+
+
 
 @media only screen and (min-width: 740px) {
 
@@ -567,6 +594,10 @@ button {
     width: 25%;
   }
 
+  .chart-text {
+    text-align: start;
+
+  }
 
 }
 
