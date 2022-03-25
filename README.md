@@ -16,7 +16,11 @@ Sample data: [csv file](https://drive.google.com/file/d/1WBMsYecjmRCDqG8RzApDp8N
 ## Wireframe
 
 ## Who is this website for
-If you have some data you'd like to visualise... 
+If you have some data (a CSV file) you'd like to visualise...
+Display chart data to better understand your data trends in the chart that you otherwise wouldn't see.
+People wishing to view either bar charts, stacked bar charts or line charts.
+People wishing to see multiple data rows, as the website can pull in all the data.
+ 
 
 
 ## Technologies Used
@@ -25,7 +29,6 @@ If you have some data you'd like to visualise...
 
 ### Libraries used
 - **Chart.js** https://www.chartjs.org/docs/latest/
-- **d3.js** https://d3js.org/
 - **Papa Parse** https://www.papaparse.com/
 
 ### Graphic/UX Design
@@ -33,17 +36,29 @@ If you have some data you'd like to visualise...
 
 ## Design Decisions
 
-I decided to create a website that would take the user on a journey for uploading a csv file to be able to view it as a chart, rather than just having a chart and expecting that they would automatically know what to do with it.
+I decided to create a website that would take the user on a journey for uploading a CSV file to be able to view it as a chart, rather than just having a chart and expecting that they would automatically know what to do with it.
+
+In the hero section the main (call to action) button, when clicked prompts you to upload a CSV file while at the same time scrolls to where your chart will display.
+
+under the chart & chart buttons there is another, call to action button for uploading another chart, so you don't have to scroll to the top again to upload another file.
+
 
 The site and chart are created with the user in mind using a dark theme which is commonplace for viewing data or technical information where you have to concentrate on the numbers/data.
 
 The interface is created with a clean design with easy to read text, so that the user can concentrate on the task at hand.
 
+
+
 - Navigation
 - The Chart
 - How To
 - Features
+
+
+
 - Footer
+
+	The Footer is simple, minimalist designe with Site *created by Donnchadh Mc Ginley* as the only text. 
 
  
 ## Typography
@@ -57,10 +72,14 @@ The interface is created with a clean design with easy to read text, so that the
 **:root Selector - pseudo-class selector**
 
 I used the :root Selector for creating a personalised color set.
+As it an easy way to track colors across the elements while keeping the number of colors small.
 
 ## Responsiveness
 
-I created the website using mobile first 
+I created the website using mobile first.
+
+The chart is set to **responsive: true,** which is a Chartjs boolean, I cane across the and other settings reading up on the [documentation.](https://www.chartjs.org/docs/latest/configuration/responsive.html)
+
 
 The website has a basic Grid for the main area, and the same grid for the header element so that the content on both doesn't stretch to the far left and right of larger screens, e.g. QHD or 4K monitors.
 
@@ -69,16 +88,16 @@ The website has a basic Grid for the main area, and the same grid for the header
 
 - Contrasting colors.
  	* Easy to see buttons and navigation area.
+	* Off-white text against a black background.
 	
 
 
 ## Consistency
 - The fonts match, the header fonts and content (paragraph) fonts.
-- The padding is the same or similar for each element across the website
+- The padding is the same or similar for each element across the website.
 - Text size in rem and box/container padding is in em. 
 
 ## Testing
-
 
 *All tested in Incognito mode.*
 
@@ -117,8 +136,12 @@ I used Chrome and Firefox "developer tools, device toggle" to check the responsi
 ## Error Handling
 
 - Chart wasn't showing, error in displaying the dataSetNames array. which is the names of the bars (or points on the line).
-- buttons were not showing correctly.
-- 
+- Buttons were not showing correctly.
+- Column 0 was showing which is the date column and the button for loop (function createDataSetButtons) was creating a button for that which wouldn't click, I fixed this by skipping the first column in the CSV file.
+
+
+Zoom feature wasn't working properly, it wouldn't reset back to 100% after button click (I think it had something to do with there being two charts), didn't have time to implement this feature correctly, so I left it out.
+
 
 ## Deployment
 
@@ -167,9 +190,9 @@ I used Chrome and Firefox "developer tools, device toggle" to check the responsi
 - [How to Parse CSV String in Javascript with Papaparse JS](https://www.youtube.com/watch?v=s6SgVjIvIV8&list=PLPZlbsSRAxIpfL9s3LPCXqllojDEqxAXl&index=11) -using PapaParse.
 
 
-How to Create a Chart with a Remote CSV File with Chart JS
+- [How to Create a Chart with a Remote CSV File with Chart JS](https://www.youtube.com/watch?v=HFAjrai-d58)
 
-
+- [How To Generate a Random Color in JavaScript](https://css-tricks.com/snippets/javascript/random-hex-color/) - from css-tricks.com
 ## Content
 The how to use text on the home page.
 
