@@ -55,19 +55,22 @@
             <img src="assets/icons/chart-icon-sm.svg" alt="chart website logo" />
             <p class="site-name">Chart Data</p>
           </a>
-          <!-- <nav>
+
+          <!-- navigation with one element in it (the Chart Section link) -->
+          <nav class="navigation-section">
             <ul class="">
               <li class="">
-                <a class="links" id="" href="#"></a>
+                <a class="link" id="" href="#chart-section">Chart Section</a>
               </li>
-
             </ul>
-          </nav> -->
+          </nav>
         </div>
       </header>
 
+      <!-- main-container is just assigned to grid colum 2, so to center all elements in the page -->
       <main class="main-container">
-        <!-- the hero section of the page img and leading in text -->
+
+        <!-- the hero section of the page img and leading-in text -->
         <section class="hero">
           <div class="flex-text-content">
             <h1>chart your data</h1>
@@ -105,28 +108,26 @@
             <img src="assets/images/two-charts.png"
               alt="two images of a line and bar chart overlapping in a cascading manner">
           </div>
-
-
-
-
-
         </section>
-        <div class="note-text-container">
+
+        <!-- green boxed section with basic text on how to use the chart -->
+        <section class="note-text-container">
           <div></div>
           <h2>Toggle between Bar or Line chart</h2>
-          <p>Did you know you can simpley toggle between bar chart or line chart to change the way
+          <p>Did you know you can smiley toggle between bar chart or line chart to change the way
             you view
             your CSV data.</p>
           <p>Line graphs are useful for displaying smaller changes in a trend over time. Bar
             graphs
             are better for comparing larger changes or differences in data among groups.</p>
-        </div>
+        </section>
 
-        <!-- div containing the two input buttons, the input in hidden and the label is used to create the style  -->
-        <div class="toggle-container">
+        <!-- div containing the two input buttons, the input is hidden and the label is used to create the style  -->
+        <div class="toggle-container" id="chart-section">
 
           <!-- the two chart type buttons under the chart -->
           <div class="chart-toggle-btn" id="theChart">
+
             <input onclick="chartType('bar')" class="radio-input" id="radio1" type="radio"
               value="bar" name="chart" />
             <label class="chart-toggle-label chart-control-btn" for="radio1">
@@ -168,8 +169,6 @@
           </div>
 
         </div>
-
-
 
         <!-- <button id="confirm-read-csv">Upload CSV</button> -->
 
