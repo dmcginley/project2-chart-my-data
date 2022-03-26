@@ -1,5 +1,5 @@
 // empty array to separate out the first row from the file (the names)
-let processedData = []; // the  axis
+let processedData = []; // the y axis
 let labels = []; // the x axis
 
 
@@ -33,56 +33,83 @@ let chartData = defaultData;
 
 const fileInput = document.querySelector(".txtFileUpload");
 
-// TODO: generating the color, maybe later change to d3js colors
-function getRandomColor() {
-  var letters = '0123456789ABCDEF'.split('');
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  console.log("colors", color);
-  return color;
+// the colors optimized for dark theme 
+const CHART_COLORS = [
+  'rgb(255, 99, 132)',
+  'rgb(54, 162, 235)',
+  'rgb(255, 206, 86)',
+  'rgb(75, 192, 192)',
+  'rgb(153, 102, 255)',
+  'rgb(255, 159, 64)'
 
+]
+
+// show an error message
+function showErrorMessage(message) {
+  const errorHeader = document.getElementsByClassName("csv-upload-error")[0];
+  errorHeader.classList.add("show-error");
+  errorHeader.innerHTML = message;
 }
 
-// let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+function removeErrorMessage() {
+  const errorHeader = document.getElementsByClassName("csv-upload-error")[0];
+  errorHeader.classList.remove("show-error");
+  errorHeader.innerHTML = "";
+}
 
-// function for extracting the names
+// for extracting the names
+
 function processData(data) {
-  const noOfCols = data.length > 0 ? data[0].length : 0; ///5
+  const numberOfColumns = data.length > 0 ? data[0].length : 0; ///5
   processedData = [];
-  // console.log(processedData);
-  // console.log(labels);
+  // // console.log(processedData);
+  // // console.log(labels);
 
-  if (noOfCols) {
+
+  if (numberOfColumns < 2) {
+
+    showErrorMessage("Data should have at least two columns");
+  } else {
+    removeErrorMessage();
+
+    // enough data to display
     for (i = 0; i < data.length; ++i) {
       const row = data[i];
 
       // Set label
       if (i === 0) {
 
-        dataSetNames = row.slice(); // remove 'Date' header
+        dataSetNames = row.slice(0); // copy label names
 
-        console.log("dataSetNames", row);
+        // console.log("dataSetNames", row);
 
-        for (var label of row) {
+
+        //for (var label of row) {
+        for (let j = 0; j < row.length; j++) {
+          const label = row[j];
+
+          const colorIndex = j % CHART_COLORS.length;
           processedData.push({
             label,
-            backgroundColor: getRandomColor(),
-            borderColor: getRandomColor()
+            backgroundColor: CHART_COLORS[colorIndex],
+
+
+
+            borderColor: CHART_COLORS[colorIndex],
+
 
             // borderColor: '#FFFFFF'
           });
         }
       } else {
-        for (let colIndex = 0; colIndex < noOfCols; colIndex++) {
+        for (let colIndex = 1; colIndex < numberOfColumns; colIndex++) {
           processedData[colIndex].data = [
             ...(processedData[colIndex].data || []),
             row[colIndex]
           ];
         }
         labels.push(row[0]);
-        // console.log("labss", labels);
+        // // console.log("labss", labels);
       }
     }
   }
@@ -95,13 +122,23 @@ function scrollToChart() {
   element.scrollIntoView({
     behavior: 'smooth'
   });
-  // console.log("click");
+  // // console.log("click");
 }
 
 function clearData() {
   processedData = [], labels = [], dataSetNames = [];
 }
 
+
+function setChartTitle(title) {
+  // console.log("setChartTitle", title)
+  const titleHeader = document.getElementById("chart-title");
+  // console.log(titleHeader);
+  if (titleHeader) {
+
+    titleHeader.innerHTML = title;
+  }
+}
 
 function displayChart() {
 
@@ -112,7 +149,7 @@ function displayChart() {
   myChart.update();
 
 
-  console.log("labels", labels);
+  // console.log("labels", labels);
 }
 
 // demo csv data to be displayed on first load
@@ -132,17 +169,27 @@ Papa.parse("assets/csv/test2.csv", {
 
 // parsing the user uploaded data with papa parse
 fileInput.addEventListener("change", (e) => {
-  Papa.parse(fileInput.files[0], {
-    download: true,
-    skipEmptyLines: true,
-    header: false,
-    complete: function (results) {
-      clearData();
-      processData(results.data);
-      createDataSetButtons();
-      displayChart();
-    },
-  });
+
+  const fileName = fileInput.files[0].name;
+  setChartTitle(fileName);
+  if (fileName.toLowerCase().endsWith(".csv")) {
+
+    Papa.parse(fileInput.files[0], {
+      download: true,
+      skipEmptyLines: true,
+      header: false,
+      complete: function (results) {
+        clearData();
+        processData(results.data);
+        createDataSetButtons();
+        displayChart();
+      },
+    });
+  } else {
+    showErrorMessage("File is not a CSV file")
+    clearData();
+    displayChart();
+  }
 });
 
 
@@ -160,10 +207,14 @@ function createDataSetButtons() {
   for (let i = 1; i < dataSetNames.length; i++) {
     const newButton = document.createElement("button");
     newButton.innerText = dataSetNames[i];
+    const buttonColor = CHART_COLORS[i % CHART_COLORS.length];
+    const borderColor = CHART_COLORS[i % CHART_COLORS.length];
     newButton.setAttribute("onclick", `toggleDataSet(${i})`);
-    newButton.setAttribute("class", "button");
+    newButton.setAttribute("class", "button dataset-toggle");
+
+    newButton.setAttribute("style", `border-color: ${borderColor}; background-color: ${buttonColor}`)
     container.appendChild(newButton);
-    console.log("newButton", newButton);
+    // console.log("newButton", newButton);
   }
 
 }
@@ -180,12 +231,18 @@ function createDataSetButtons() {
 
 // toggle the data set
 function toggleDataSet(index) {
-  // console.log("toggle dataset", index);
+  // // console.log("toggle dataset", index);
   const isVisible = myChart.isDatasetVisible(index);
+  const datasetButtons = document.getElementsByClassName("dataset-toggle");
+  const datasetButton = datasetButtons[index - 1]; // TODO: off by one otherwise
+  //console.log("dataset button", datasetButton, datasetButton.classList);
   if (isVisible) {
     myChart.hide(index);
+    datasetButton.classList.add("dataset-hidden");
+    //  TODO: add class dataset-hidden
   } else {
     myChart.show(index);
+    datasetButton.classList.remove("dataset-hidden");
   }
 }
 
@@ -193,6 +250,22 @@ function toggleDataSet(index) {
 const configBar = {
   type: "bar",
   data: chartData,
+
+  datasets: [{
+
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+
+
+    ],
+  }],
+
+
   options: {
     borderWidth: 0,
     responsive: true,
@@ -201,31 +274,6 @@ const configBar = {
       legend: {
         display: false,
       },
-      // zoom: {
-      //   pan: {
-      //     enabled: true,
-      //     mode: "x",
-      //     // pan options and/or events
-      //     threshold: 10,
-      //   },
-      //   // limits: {
-      //   //   // axis limits
-      //   // },
-      //   zoom: {
-      //     mode: "x",
-      //     drag: {
-      //       enabled: true,
-      //       backgroundColor: "rgba(201, 106, 42, 0.397)",
-      //       borderColor: "rgba(201, 106, 42, 1)",
-      //       borderWidth: 1
-
-      //       // wheel: {
-      //       //   enabled: true,
-      //       // },
-      //       // zoom options and/or events
-      //     }
-      //   }
-      // },
     },
 
     scales: {
@@ -256,14 +304,6 @@ const configBar = {
 
 
 
-
-// function resetZoom() {
-//   myChart.resetZoom(1);
-// }
-
-
-// FIXME: when switching between bar and line sometimes doesn't re zoom to 100%
-
 // config of line chart - data color
 const configLine = {
   type: "line",
@@ -279,31 +319,6 @@ const configLine = {
       legend: {
         display: false,
       },
-      // zoom: {
-      //   pan: {
-      //     enabled: true,
-      //     mode: "x",
-      //     // pan options and/or events
-      //     threshold: 10,
-      //   },
-      //   // limits: {
-      //   //   // axis limits
-      //   // },
-      //   zoom: {
-      //     mode: "x",
-      //     drag: {
-      //       enabled: true,
-      //       backgroundColor: "rgba(201, 106, 42, 0.397)",
-      //       borderColor: "rgba(201, 106, 42, 1)",
-      //       borderWidth: 1
-
-      //       // wheel: {
-      //       //   enabled: true,
-      //       // },
-      //       // zoom options and/or events
-      //     }
-      //   }
-      // },
     },
     scales: {
       y: {
@@ -330,19 +345,6 @@ const configLine = {
   },
 };
 
-// FIXME: when switching between bar and line sometimes doesn't re zoom to 100%
-// linked to the button to reset the zoom of the chart to 100%
-// function resetZoom() {
-//   myChart.resetZoom(1);
-// }
-
-
-
-
-// function resetZoom() {
-//   myChart.resetZoom();
-// }
-
 
 
 // render initialize the data
@@ -352,14 +354,15 @@ myChart = new Chart(document.getElementById("myChart"), configBar);
 // destroy and creat two different charts - bar and line
 function chartType(type) {
   myChart.destroy();
-  // myChart.displayGraphs();
 
   if (type === "bar") {
     myChart = new Chart(document.getElementById("myChart"), configBar);
+
   }
   if (type === "line") {
     myChart = new Chart(document.getElementById("myChart"), configLine);
   }
-
-
+  // TODO: does not remember what datasets are visible
+  //       so re-call function to create data buttons
+  createDataSetButtons();
 }
