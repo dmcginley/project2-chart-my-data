@@ -37,12 +37,13 @@ const fileInput = document.querySelector(".txtFileUpload");
 const CHART_COLORS = [
 
   'rgb(255, 99, 132)',
-  'rgb(54, 162, 235)',
+  'rgb(214, 101, 6)',
+  // 'rgb(255, 166, 0)',
   'rgb(255, 206, 86)',
   'rgb(75, 192, 192)',
   'rgb(153, 102, 255)',
-  'rgb(255, 159, 64)'
-
+  'rgb(54, 162, 235)',
+  'gb(12, 240, 233)'
 ]
 
 // show an error message
