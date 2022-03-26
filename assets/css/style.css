@@ -41,6 +41,14 @@
   --dark-grey: #323236;
   --darker-grey: #1d1d1d;
 
+  /* the button colors */
+  --blue-hover: rgba(40, 176, 255, 0.5);
+  --blue-active: rgba(3, 116, 182, 0.5);
+  --red-background: #c20a19;
+  --red-hover: #d3291a;
+  --red-active: #bd271a;
+
+
   /* width component for width of bar on green box, so if you change the width of the green line the text padding will also change */
   --green-bar-width: 12px;
 }
@@ -53,7 +61,6 @@
   background-color: #0d8d42;
 }
 
-/* .color-box1 .color-box1 .color-box1 */
 
 /* ----------------
     2. global style
@@ -75,9 +82,6 @@ h3 {
 
 h1 {
   font-size: 3rem;
-  /* padding: 1em; */
-  /* padding-bottom: 0.4em; */
-  /* background-color: aqua; */
 }
 
 h2 {
@@ -123,39 +127,51 @@ p {
 .header {
   grid-column: 1/4;
   padding: 10px;
-  /* display: block; */
   background-color: var(--darker-grey);
 }
 
 .header-content {
   grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-logo {
   display: flex;
   width: 210px;
-  /* justify-content: center; */
   align-items: center;
   text-decoration: none;
   padding: 10px;
-  /* background-color: #0cf0e9; */
-  /* height: 30px; */
-  /* width: 300px; */
+
 }
 
 .header-logo img {
   height: 30px;
-  /* padding: 10px; */
 }
 
 .header-logo p {
   font-size: 1.4em;
   font-weight: 200;
   padding: 0 0 0 10px;
-  /* background-color: #0cf0e9; */
   text-transform: capitalize;
   color: var(--white);
-  /* padding: 10px; */
+}
+
+
+.navigation-section a {
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-right: 1em;
+}
+
+.navigation-section a:hover {
+  color: var(--blue-hover);
+}
+
+.navigation-section a:active {
+  color: var(--blue-active);
 }
 
 li {
@@ -169,7 +185,6 @@ li {
 .main-container {
   grid-column: 2;
 }
-
 
 
 /* ----------------
@@ -186,14 +201,11 @@ li {
 .hero,
 .how-to-section {
   padding: 2em 1em;
-
-
 }
 
 .flex-text-content {
   flex: 2;
   text-align: center;
-
 }
 
 .section-img-container {
@@ -208,13 +220,10 @@ li {
 .hero-button-container {
   align-items: center;
   padding: 2em 0;
-  /* background-color: #000000; */
 }
 
 .section-img-container img {
   width: 100%;
-  /* background-color: #bd271a; */
-  /* padding: 2em 0; */
 }
 
 
@@ -253,20 +262,10 @@ input[type="file"] {
 ---------------- */
 
 .chart-box {
-  /* max-width: 900px; */
   width: 100%;
   padding: .2em;
   justify-content: center;
 }
-
-#myChart {
-  /* background-color: var(--light-grey); */
-  /* padding: 1em 0; */
-  /* width: 100%; */
-
-}
-
-
 
 
 /* ----------------
@@ -282,7 +281,6 @@ input[type="file"] {
   justify-content: center;
   gap: 1em;
   width: 100%;
-  /* margin-top: 1em; */
 }
 
 .chart-buttons {
@@ -292,18 +290,17 @@ input[type="file"] {
 /* ----------------
   9. dynamic-btn-container
 ---------------- */
-dynamic-btn-container
 
 /* dynamic buttons - the 4 legends for the chart */
 #dynamic-btn-container {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 2em;
+  /* background-color: orange; */
 }
-
 
 
 /* ----------------
@@ -312,7 +309,6 @@ dynamic-btn-container
 
 /* global button properties  */
 button {
-  /* font-family: 'DM Sans', sans-serif; */
   font-weight: 400;
   padding: 1em;
   border: none;
@@ -333,21 +329,20 @@ button {
 }
 
 .upload-label {
-  /* flex: 1; */
   display: flex;
   justify-content: center;
   cursor: pointer;
   color: var(--white);
-  background-color: #c20a19;
+  background-color: var(--red-background);
   width: 100%;
 }
 
 .upload-label:hover {
-  background-color: #d3291a;
+  background-color: var(--red-hover);
 }
 
 .upload-label:active {
-  background-color: #bd271a;
+  background-color: var(--red-active);
 }
 
 .upload-img-span {
@@ -358,12 +353,9 @@ button {
 
 .upload-text-span {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   font-size: 1.4rem;
   padding: 1em 2.2em;
-  /* background-color: aquamarine; */
-  /* color: #ee3625; */
   font-weight: 400;
 }
 
@@ -378,8 +370,7 @@ button {
 }
 
 .hero-btn:nth-child(2) {
-  font-family: 'DM Sans',
-    sans-serif;
+  font-family: 'DM Sans', sans-serif;
   display: block;
   text-align: center;
   text-decoration: none;
@@ -402,7 +393,6 @@ button {
 
 .hero-btn:nth-child(2):active {
   background-color: #1a1a1a79;
-
 }
 
 .hero-upload-img {
@@ -454,7 +444,6 @@ button {
   align-items: center;
   font-size: 1em;
   padding: .8em 2em;
-  /* margin-right: 1em; */
   color: var(--white);
   border: 2px solid var(--white);
   border-radius: 4px;
@@ -462,11 +451,11 @@ button {
 }
 
 .chart-control-btn:hover {
-  background-color: rgba(0, 162, 255, 0.5);
+  background-color: var(--blue-hover);
 }
 
 .chart-control-btn:active {
-  background-color: rgba(3, 116, 182, 0.5);
+  background-color: var(--blue-active);
 }
 
 
@@ -477,7 +466,6 @@ button {
 }
 
 .radio-input:checked+.chart-toggle-label {
-  /* background-color: rgb(247, 155, 242); */
   background-color: rgba(3, 116, 182, 0.5);
   color: aliceblue;
 }
@@ -507,10 +495,7 @@ footer p {
   font-size: 1rem;
   color: var(--lighter-grey);
   padding: 2em 3em;
-  /* background-color: #bd271a; */
 }
-
-
 
 
 .numbers {
@@ -524,13 +509,9 @@ footer p {
   margin: 0 1em 0 .4em;
   border: 4px solid var(--white);
   border-radius: 50%;
-  /* background-color: #c20a19; */
 }
 
 @media only screen and (min-width: 340px) {
-  /* .chart-box {
-    height: 240px;
-  } */
 
   .upload-label {
     width: 285px;
@@ -569,10 +550,10 @@ footer p {
   .chart-control-btn {
     width: auto;
   }
-
 }
 
 @media only screen and (min-width: 520px) {
+
   .chart-box {
     padding: 1em;
   }
@@ -586,7 +567,6 @@ footer p {
     width: 50%;
   }
 
-
   .note-text-container {
     padding: 1em 2em 1em calc(2em + var(--green-bar-width));
     margin: 1em;
@@ -596,7 +576,6 @@ footer p {
     justify-content: flex-end;
 
   }
-
 }
 
 
@@ -609,7 +588,6 @@ footer p {
   .upload-img-span {
     display: flex;
   }
-
 }
 
 
@@ -627,12 +605,10 @@ footer p {
   .hero-btn:nth-child(2) {
     margin-left: 1em;
   }
-
 }
 
 
 @media only screen and (min-width: 740px) {
-
 
   #dynamic-btn-container {
     width: 80%;
@@ -661,11 +637,10 @@ footer p {
   .how-to-section {
     display: flex;
   }
-
-
 }
 
 @media only screen and (min-width: 900px) {
+
   .main-container {
     padding: 2em;
   }
@@ -731,7 +706,4 @@ footer p {
     margin: auto;
 
   }
-
-
-
 }
