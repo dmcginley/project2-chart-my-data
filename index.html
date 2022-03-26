@@ -57,13 +57,13 @@
           </a>
 
           <!-- navigation with one element in it (the Chart Section link) -->
-          <nav class="navigation-section">
+          <!-- <nav class="navigation-section">
             <ul class="">
               <li class="">
                 <a class="link" id="" href="#chart-section">Chart Section</a>
               </li>
             </ul>
-          </nav>
+          </nav> -->
         </div>
       </header>
 
@@ -114,7 +114,7 @@
         <section class="note-text-container">
           <div></div>
           <h2>Toggle between Bar or Line chart</h2>
-          <p>Did you know you can smiley toggle between bar chart or line chart to change the way
+          <p>Did you know you can easily toggle between bar chart or line chart to change the way
             you view
             your CSV data.</p>
           <p>Line graphs are useful for displaying smaller changes in a trend over time. Bar
@@ -129,7 +129,7 @@
           <div class="chart-toggle-btn" id="theChart">
 
             <input onclick="chartType('bar')" class="radio-input" id="radio1" type="radio"
-              value="bar" name="chart" />
+              value="bar" name="chart" checked />
             <label class="chart-toggle-label chart-control-btn" for="radio1">
               <img class="chart-toggle-svg" src="assets/icons/bx-bar-chart.svg" alt="" />
               <span class="chart-toggle-name">Bar</span>
@@ -142,13 +142,12 @@
               <span class="chart-toggle-name">Line</span>
             </label>
           </div>
-
-          <!-- <button class="resetZoom-btn chart-control-btn" onclick="resetZoom()">Reset Chart</button> -->
         </div>
 
         <section class="chart-box">
           <!-- FIXME: add dynamic chart name if i can -->
-          <h2 class="p-t1">{Title of chart from JS}</h2>
+          <h2 id="chart-title">example data.csv</h2>
+          <h3 class="csv-upload-error">doesn't work</h3>
           <canvas id="myChart" aria-label="Bar or line chart presentation" role="img"></canvas>
         </section>
 
@@ -179,6 +178,7 @@
       </footer>
       <!-- script -->
       <script src="assets/js/main.js"></script>
+
       <!-- <script src="assets/js/button.js"></script> -->
       <!-- <script src="assets/js/read_head.js"></script> -->
     </div>
