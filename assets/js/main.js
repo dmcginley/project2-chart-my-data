@@ -33,8 +33,9 @@ let chartData = defaultData;
 
 const fileInput = document.querySelector(".txtFileUpload");
 
-// the colors optimized for dark theme 
+// the colors used for each dataset, optimized for dark theme 
 const CHART_COLORS = [
+
   'rgb(255, 99, 132)',
   'rgb(54, 162, 235)',
   'rgb(255, 206, 86)',
@@ -147,9 +148,6 @@ function displayChart() {
   myChart.data.datasets = processedData;
   myChart.data.labels = labels;
   myChart.update();
-
-
-  // console.log("labels", labels);
 }
 
 // demo csv data to be displayed on first load
@@ -164,7 +162,6 @@ Papa.parse("assets/csv/test2.csv", {
     displayChart();
   }
 });
-
 
 
 // parsing the user uploaded data with papa parse
@@ -193,9 +190,6 @@ fileInput.addEventListener("change", (e) => {
 });
 
 
-
-
-
 // removes any and adds dynamic buttons to the html file
 function createDataSetButtons() {
   const container = document.getElementById("dynamic-btn-container");
@@ -220,12 +214,7 @@ function createDataSetButtons() {
 }
 
 
-
-
 // dataSetNames = row.slice(1); // remove 'Date' header
-
-
-
 
 
 
@@ -264,7 +253,6 @@ const configBar = {
 
     ],
   }],
-
 
   options: {
     borderWidth: 0,
@@ -363,6 +351,6 @@ function chartType(type) {
     myChart = new Chart(document.getElementById("myChart"), configLine);
   }
   // TODO: does not remember what datasets are visible
-  //       so re-call function to create data buttons
+  //       so re-called function to create data buttons again
   createDataSetButtons();
 }
