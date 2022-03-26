@@ -90,10 +90,28 @@ h2 {
   padding: .4em 0 1em 0;
 }
 
+h2#chart-title {
+  text-transform: none;
+}
+
 h3 {
   font-size: 1.4rem;
   font-weight: 300;
   padding: 1em 0 .6em 0;
+}
+
+.csv-upload-error {
+  /* display: block; */
+  text-align: center;
+  padding: .4em;
+  color: red;
+  border: 2px solid red;
+  margin-bottom: 1em;
+  display: none;
+}
+
+.show-error {
+  display: block;
 }
 
 .site-name {
@@ -142,7 +160,7 @@ p {
   width: 210px;
   align-items: center;
   text-decoration: none;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
 
 }
 
@@ -158,12 +176,18 @@ p {
   color: var(--white);
 }
 
+.navigation-section {
+  /* width: 90px; */
+  /* background-color: #0d548d; */
+}
 
 .navigation-section a {
+  /* display: block;- */
   color: var(--white);
   text-transform: uppercase;
   text-decoration: none;
-  padding-right: 1em;
+  padding-right: 8px;
+  /* background-color: #0d8d42; */
 }
 
 .navigation-section a:hover {
@@ -425,6 +449,20 @@ button {
   background-color: #ffa600;
   color: var(--black);
 } */
+
+.button.dataset-toggle {
+  border-style: solid;
+
+  border-width: 0;
+  border-left-width: 2ch;
+  border-color: white;
+}
+
+.button.dataset-toggle.dataset-hidden {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  color: white;
+
+}
 
 .button:nth-child(n):hover,
 .button:nth-child(n):focus-visible {
