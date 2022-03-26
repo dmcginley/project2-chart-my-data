@@ -64,7 +64,6 @@ function processData(data) {
   const numberOfColumns = data.length > 0 ? data[0].length : 0; ///5
   processedData = [];
   // // console.log(processedData);
-  // // console.log(labels);
 
 
   if (numberOfColumns < 2) {
@@ -110,7 +109,6 @@ function processData(data) {
           ];
         }
         labels.push(row[0]);
-        // // console.log("labss", labels);
       }
     }
   }
@@ -123,7 +121,6 @@ function scrollToChart() {
   element.scrollIntoView({
     behavior: 'smooth'
   });
-  // // console.log("click");
 }
 
 function clearData() {
@@ -208,7 +205,6 @@ function createDataSetButtons() {
 
     newButton.setAttribute("style", `border-color: ${borderColor}; background-color: ${buttonColor}`)
     container.appendChild(newButton);
-    // console.log("newButton", newButton);
   }
 
 }
@@ -239,21 +235,6 @@ function toggleDataSet(index) {
 const configBar = {
   type: "bar",
   data: chartData,
-
-  datasets: [{
-
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)'
-
-
-    ],
-  }],
-
   options: {
     borderWidth: 0,
     responsive: true,
