@@ -31,8 +31,14 @@
 /* ----------------
     1. color styling
 ---------------- */
+
+
+
+
+
+
 :root {
-  /* page colors */
+  /* page and text colors */
   --white: #f7f7f7;
   --black: #1a1a1a;
 
@@ -45,25 +51,22 @@
   --blue-hover: #28b0ff80;
   --blue-active: #0374b680;
   --red-background: #c20a19;
+
+  /* a lighter outline color for accessibility against the dark background */
+  --red-outline: #ff0062;
   --red-hover: #d3291a;
   --red-active: #bd271a;
 
-  --red-outline: #ff0062;
-
-
   --warning: #ffc60d;
-
 
   /* width component for width of bar on green box, so if you change the width of the green line the text padding will also change */
   --green-bar-width: 12px;
 }
 
 
-.lorem {
-  font-size: 4em;
-  font-weight: 800;
-  color: var(--red-outline);
-}
+
+
+
 
 .color-box1 {
   background-color: #0d548d;
@@ -246,7 +249,7 @@ li {
 }
 
 .section-img-container {
-  flex: 3;
+  flex: 4;
   width: 100%;
   padding: 2em 0;
 }
@@ -350,9 +353,9 @@ input[type="file"] {
 
 button {
   position: relative;
-  color: var(--white);
+  color: var(--black);
   font-weight: 400;
-  text-shadow: rgb(0, 0, 0) 0 2px 2px;
+  /* text-shadow: rgb(0, 0, 0) 0 2px 2px; */
 
   ;
   padding: 1em;
@@ -719,8 +722,12 @@ footer p {
   }
 
   .section-img-container {
+    /* display: flex; */
     padding-top: 4em;
+    margin: 0;
   }
+
+
 
   .how-to-section {
     margin-bottom: 2em;
@@ -739,6 +746,13 @@ footer p {
     /* padding-left: 1em; */
     margin-left: 1em;
 
+  }
+
+
+  .section-img-container {
+    /* display: flex; */
+    padding-top: 0em;
+    margin: 0;
   }
 
   .note-text-container {
