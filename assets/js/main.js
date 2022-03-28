@@ -36,14 +36,38 @@ const fileInput = document.querySelector(".txtFileUpload");
 // the colors used for each dataset, optimized for dark theme 
 const CHART_COLORS = [
 
-  'rgb(255, 99, 132)',
-  'rgb(214, 101, 6)',
-  // 'rgb(255, 166, 0)',
-  'rgb(255, 206, 86)',
-  'rgb(75, 192, 192)',
-  'rgb(153, 102, 255)',
-  'rgb(54, 162, 235)',
-  'gb(12, 240, 233)'
+  // "#2132a3",
+  // "#381ce5",
+  // "#9d02d7",
+  // "#cd34b5",
+  // "#ea5f94",
+  // "#fa8775",
+  // "#ffb14e",
+  // "#ffd700",
+  // "#fffba2"
+
+
+  "#2132a3",
+  '#41549d',
+  '#7a59a7',
+  '#a360ab',
+  '#c46ca9',
+  '#de7da0',
+  '#f19392',
+  '#fdab7d',
+  '#ffc85c',
+  '#ffe423'
+
+  // "#2a4361",
+  // "#4f4e7e",
+  // "#82558f",
+  // "#b8578f",
+  // "#e65d7f",
+  // "#ff7162",
+  // "#ff953d",
+  // "#ffbf00"
+
+
 ]
 
 // show an error message
@@ -60,11 +84,9 @@ function removeErrorMessage() {
 }
 
 // for extracting the names
-
 function processData(data) {
   const numberOfColumns = data.length > 0 ? data[0].length : 0; ///5
   processedData = [];
-  // // console.log(processedData);
 
 
   if (numberOfColumns < 2) {
@@ -82,9 +104,6 @@ function processData(data) {
 
         dataSetNames = row.slice(0); // copy label names
 
-        // console.log("dataSetNames", row);
-
-
         //for (var label of row) {
         for (let j = 0; j < row.length; j++) {
           const label = row[j];
@@ -94,12 +113,7 @@ function processData(data) {
             label,
             backgroundColor: CHART_COLORS[colorIndex],
 
-
-
             borderColor: CHART_COLORS[colorIndex],
-
-
-            // borderColor: '#FFFFFF'
           });
         }
       } else {
@@ -128,11 +142,9 @@ function clearData() {
   processedData = [], labels = [], dataSetNames = [];
 }
 
-
+// extracts the file name and displays it above the chart
 function setChartTitle(title) {
-  // console.log("setChartTitle", title)
   const titleHeader = document.getElementById("chart-title");
-  // console.log(titleHeader);
   if (titleHeader) {
 
     titleHeader.innerHTML = title;
@@ -142,13 +154,13 @@ function setChartTitle(title) {
 function displayChart() {
 
   // FIXME: 	Expected an assignment or function call and instead saw an expression.
-  const datasets = processedData;
+  // const datasets = processedData;
   myChart.data.datasets = processedData;
   myChart.data.labels = labels;
   myChart.update();
 }
 
-// demo csv data to be displayed on first load
+// my demo csv data to be displayed on first load
 Papa.parse("assets/csv/test2.csv", {
   download: true,
   skipEmptyLines: true,
@@ -221,7 +233,6 @@ function toggleDataSet(index) {
   const isVisible = myChart.isDatasetVisible(index);
   const datasetButtons = document.getElementsByClassName("dataset-toggle");
   const datasetButton = datasetButtons[index - 1]; // TODO: off by one otherwise
-  //console.log("dataset button", datasetButton, datasetButton.classList);
   if (isVisible) {
     myChart.hide(index);
     datasetButton.classList.add("dataset-hidden");
