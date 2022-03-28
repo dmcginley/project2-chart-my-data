@@ -47,12 +47,12 @@ The site and chart are created with the user in mind using a dark theme which is
 
 The interface is created with a clean design with easy to read text, so that the user can concentrate on the task at hand.
 
-
+## Features
 
 - Navigation
-- The Chart
+
 - How To
-- Features
+
 
 
 
@@ -192,7 +192,7 @@ Zoom feature wasn't working properly, it wouldn't reset back to 100% after butto
 
 - [How to Create a Chart with a Remote CSV File with Chart JS](https://www.youtube.com/watch?v=HFAjrai-d58)
 
-- [How To Generate a Random Color in JavaScript](https://css-tricks.com/snippets/javascript/random-hex-color/) - from css-tricks.com
+
 ## Content
 The how to use text on the home page.
 
