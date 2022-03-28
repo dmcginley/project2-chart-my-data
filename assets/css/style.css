@@ -355,7 +355,7 @@ input[type="file"] {
 button {
   position: relative;
   color: var(--black);
-  font-weight: 400;
+  font-weight: 600;
   /* text-shadow: rgb(0, 0, 0) 0 2px 2px; */
 
   ;

@@ -81,7 +81,8 @@ The interface is created with a clean design with easy to read text, so that the
 **:root Selector - pseudo-class selector**
 
 I used the :root Selector for creating a personalised color set.
-As it an easy way to track colors across the elements while keeping the number of colors small.
+As it an easy way to track colors across the elements while keeping the number of colors small.User Stories
+
 
 ## Responsiveness
 
@@ -162,6 +163,8 @@ Zoom feature wasn't working properly, it wouldn't reset back to 100% after butto
 - [uxplanet.org *8 Tips for Dark Theme Design*](https://uxplanet.org/8-tips-for-dark-theme-design-8dfc2f8f7ab6) 
 
 - [4 Ways to Empty an Array in JavaScript](https://www.javascripttutorial.net/array/4-ways-empty-javascript-array/?utm_source=pocket_mylist)
+
+- [User Stories *from Mountain Goat Software.com*](https://www.mountaingoatsoftware.com/agile/user-stories)
 
 #### Color
 - [Data Color Picker](https://learnui.design/tools/data-color-picker.html)
