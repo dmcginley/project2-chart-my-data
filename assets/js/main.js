@@ -36,38 +36,16 @@ const fileInput = document.querySelector(".txtFileUpload");
 // the colors used for each dataset, optimized for dark theme 
 const CHART_COLORS = [
 
-  // "#2132a3",
-  // "#381ce5",
-  // "#9d02d7",
-  // "#cd34b5",
-  // "#ea5f94",
-  // "#fa8775",
-  // "#ffb14e",
-  // "#ffd700",
-  // "#fffba2"
-
-
   "#2132a3",
-  '#41549d',
-  '#7a59a7',
-  '#a360ab',
-  '#c46ca9',
-  '#de7da0',
-  '#f19392',
-  '#fdab7d',
-  '#ffc85c',
-  '#ffe423'
-
-  // "#2a4361",
-  // "#4f4e7e",
-  // "#82558f",
-  // "#b8578f",
-  // "#e65d7f",
-  // "#ff7162",
-  // "#ff953d",
-  // "#ffbf00"
-
-
+  "#1984c5",
+  "#22a7f0",
+  "#63bff0",
+  "#a7d5ed",
+  "#e2e2e2",
+  "#e1a692",
+  "#de6e56",
+  "#e14b31",
+  "#c23728"
 ]
 
 // show an error message
