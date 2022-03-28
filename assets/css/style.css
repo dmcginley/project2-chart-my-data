@@ -59,6 +59,7 @@
 
   --warning: #ffc60d;
 
+
   /* width component for width of bar on green box, so if you change the width of the green line the text padding will also change */
   --green-bar-width: 12px;
 }
