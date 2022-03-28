@@ -152,16 +152,18 @@ Zoom feature wasn't working properly, it wouldn't reset back to 100% after butto
 
 - [uxplanet.org *8 Tips for Dark Theme Design*](https://uxplanet.org/8-tips-for-dark-theme-design-8dfc2f8f7ab6) 
 
-- [Data Color Picker](https://learnui.design/tools/data-color-picker.html) - used as a base for my choice of colors.
 - [4 Ways to Empty an Array in JavaScript](https://www.javascripttutorial.net/array/4-ways-empty-javascript-array/?utm_source=pocket_mylist)
-- []()
-- []()
-- []()
+
+#### Color
+- [Data Color Picker](https://learnui.design/tools/data-color-picker.html)
+- [Chroma.js Color Palette Helper - *used as a base for my choice of colors*](http://vis4.net/palettes/#/9|s|00429d,96ffea,ffffe0|ffffe0,ff005e,93003a|1|1)
+- [VIZ PALETTE - *by Elijah Meeks & Susie Lu*](https://projects.susielu.com/viz-palette?colors=[%22#fffba2%22,%22#ffd700%22,%22#ffb14e%22,%22#fa8775%22,%22#ea5f94%22,%22#cd34b5%22,%22#9d02d7%22,%22#361ae5%22]&backgroundColor=%22white%22&fontColor=%22black%22&mode=%22normal%22)
+- [Papa Parse - *Documentation*](https://www.papaparse.com/docs)
 
 #### Books 
-- [Eloquent JavaScript ~ *by Marijn Haverbeke*](https://www.goodreads.com/book/show/52016825-javascript)
+- [Eloquent JavaScript - *by Marijn Haverbeke*](https://www.goodreads.com/book/show/52016825-javascript)
 
-- [JavaScript and jQuery: Interactive Front-End Web Development ~ *by Jon Duckett*](https://www.goodreads.com/book/show/16219704-javascript-and-jquery)
+- [JavaScript and jQuery: Interactive Front-End Web Development - *by Jon Duckett*](https://www.goodreads.com/book/show/16219704-javascript-and-jquery)
 
 
 
@@ -187,7 +189,7 @@ Zoom feature wasn't working properly, it wouldn't reset back to 100% after butto
 
 - [JavaScript Break and Continue](https://www.w3schools.com/js/js_break.asp) - to break out of the loop for the buttons.
 
-- [How to Parse CSV String in Javascript with Papaparse JS](https://www.youtube.com/watch?v=s6SgVjIvIV8&list=PLPZlbsSRAxIpfL9s3LPCXqllojDEqxAXl&index=11) -using PapaParse.
+- [How to Parse CSV String in Javascript with Papaparse JS](https://www.youtube.com/watch?v=s6SgVjIvIV8&list=PLPZlbsSRAxIpfL9s3LPCXqllojDEqxAXl&index=11) - using PapaParse.
 
 
 - [How to Create a Chart with a Remote CSV File with Chart JS](https://www.youtube.com/watch?v=HFAjrai-d58)
