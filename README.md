@@ -22,7 +22,7 @@ People wishing to view either bar charts, stacked bar charts or line charts.
 People wishing to see multiple data rows, as the website can pull in all the data.
  
 
-
+## User Stories
 ## Technologies Used
 ### The Code
 * **HTML, CSS & JavaScript**
@@ -67,6 +67,15 @@ The interface is created with a clean design with easy to read text, so that the
 
 
 ## Color Choices
+
+![:root Colors](readme-images/root-colors.png)
+
+
+#### Chart Colors
+![Chart Colors](readme-images/chart-colors.png)
+
+
+
 
 #### CSS root Selector
 **:root Selector - pseudo-class selector**
