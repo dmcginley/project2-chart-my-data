@@ -106,6 +106,21 @@ h2 {
   padding: .4em 0 1em 0;
 }
 
+.chart-title-container {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* background-color: #0d8d42; */
+}
+
+.chart-title-container img {
+  /* width: 20px; */
+  height: 2.2em;
+  /* background-color: #0d548d; */
+  margin: .4em 0 1em 1em;
+
+}
+
 h2#chart-title {
   text-transform: none;
 }
@@ -354,11 +369,12 @@ input[type="file"] {
 
 button {
   position: relative;
-  color: var(--black);
+  /* color: var(--black); */
+  color: black;
   font-weight: 600;
   /* text-shadow: rgb(0, 0, 0) 0 2px 2px; */
 
-  ;
+
   padding: 1em;
   /* margin: .2em; */
   border: none;
