@@ -62,26 +62,27 @@ The interface is created with a clean design with easy to read text, so that the
 
  
 ## Typography
-- FONT (fill in) for the h1, h2 and h3 as a strong, clean, easy to read font.
-- FONT (fill in) for the body, modern and easy to read, keeping it clean with the chart
+- Maven Pro *(with fallback of sans-serif)* - for the h1, h2 and h3 as a strong, clean, easy to read font.
+- DM Sans *(with fallback of sans-serif)* - for the body, modern and less stylised, easy to read so in keeping it clean with the chart
 
 
 ## Color Choices
-
-![:root Colors](readme-images/root-colors.png)
-
-
-#### Chart Colors
-![Chart Colors](readme-images/chart-colors.png)
-
-
-
 
 #### CSS root Selector
 **:root Selector - pseudo-class selector**
 
 I used the :root Selector for creating a personalised color set.
 As it an easy way to track colors across the elements while keeping the number of colors small.User Stories
+
+![:root Colors](readme-images/root-colors.png)
+
+#### Chart Colors
+I chose the chart color from the website [Chroma.js Color Palette Helper.](http://vis4.net/palettes/)
+ I used their palette as a base for my colors, keeping the colors bright against the dark background of the site. I checked every color passes the Chrome devtools.
+
+
+![Chart Colors](readme-images/chart-colors.png)
+
 
 
 ## Responsiveness
@@ -166,11 +167,13 @@ Zoom feature wasn't working properly, it wouldn't reset back to 100% after butto
 
 - [User Stories *from Mountain Goat Software.com*](https://www.mountaingoatsoftware.com/agile/user-stories)
 
+- [Papa Parse - *Documentation*](https://www.papaparse.com/docs)
+
 #### Color
 - [Data Color Picker](https://learnui.design/tools/data-color-picker.html)
-- [Chroma.js Color Palette Helper - *used as a base for my choice of colors*](http://vis4.net/palettes/#/9|s|00429d,96ffea,ffffe0|ffffe0,ff005e,93003a|1|1)
+- [Chroma.js Color Palette Helper - *used as a base for my choice of colors*](http://vis4.net/palettes)
 - [VIZ PALETTE - *by Elijah Meeks & Susie Lu*](https://projects.susielu.com/viz-palette?colors=[%22#fffba2%22,%22#ffd700%22,%22#ffb14e%22,%22#fa8775%22,%22#ea5f94%22,%22#cd34b5%22,%22#9d02d7%22,%22#361ae5%22]&backgroundColor=%22white%22&fontColor=%22black%22&mode=%22normal%22)
-- [Papa Parse - *Documentation*](https://www.papaparse.com/docs)
+
 
 #### Books 
 - [Eloquent JavaScript - *by Marijn Haverbeke*](https://www.goodreads.com/book/show/52016825-javascript)
@@ -187,7 +190,7 @@ Zoom feature wasn't working properly, it wouldn't reset back to 100% after butto
 - [w3schools](https://www.w3schools.com/js/default.asp) - JavaScript
 - [Mozilla Developer](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - JavaScript
 - [d3js](https://d3js.org/)
-- []()
+- [Efficiently load third-party JavaScript](https://web.dev/efficiently-load-third-party-javascript/)
 - []()
 - []()
 

@@ -53,6 +53,10 @@ let chartData = defaultData;
 
 const fileInput = document.querySelector(".txtFileUpload");
 
+
+console.log("fpp", fileInput);
+
+
 // show an error message
 function showErrorMessage(message) {
   const errorHeader = document.getElementsByClassName("csv-upload-error")[0];
@@ -112,13 +116,24 @@ function processData(data) {
 
 }
 
-// scroll to chart section so the user doesn't have to go looking for it
+
+
+// window.onload = function () {
+//   yourFunction(fileInput);
+// };
+// yourFunction();
+
+
+// scroll to chart section so the user doesn 't have to go looking for it
+
 function scrollToChart() {
   const element = document.getElementById("theChart");
   element.scrollIntoView({
     behavior: 'smooth'
   });
 }
+
+
 
 function clearData() {
   processedData = [], labels = [], dataSetNames = [];
