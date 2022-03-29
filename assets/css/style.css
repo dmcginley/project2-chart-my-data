@@ -115,15 +115,24 @@ h2 {
 
 .chart-title-container img {
   /* width: 20px; */
-  height: 2.2em;
+  height: 2.8em;
   /* background-color: #0d548d; */
-  margin: .4em 0 1em 1em;
-
+  margin-left: 1.6em;
+  padding: .4em;
+  border: var(--white) solid 2px;
+  border-radius: 4px;
 }
 
-h2#chart-title {
+.example-chart-title,
+.chart-title {
+  font-size: 2rem;
+  padding: 1em 0;
+  /* background-color: #bd271a; */
+}
+
+/* h2#chart-title {
   text-transform: none;
-}
+} */
 
 h3 {
   font-size: 1.4rem;
@@ -380,6 +389,8 @@ button {
   border: none;
   width: 100%;
   font-size: 1rem;
+  cursor: pointer;
+
 }
 
 /* button::after {
@@ -511,6 +522,8 @@ button {
   border: 2px solid var(--white);
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+
 }
 
 .chart-control-btn:hover {
