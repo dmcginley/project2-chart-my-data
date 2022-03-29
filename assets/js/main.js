@@ -1,3 +1,103 @@
+// the colors used for each dataset, optimized for dark theme 
+const CHART_COLORS = [
+
+  "#2132a3",
+  "#1984c5",
+  "#22a7f0",
+  "#63bff0",
+  "#a7d5ed",
+  "#e2e2e2",
+  "#e1a692",
+  "#de6e56",
+  "#e14b31",
+  "#c23728"
+]
+
+
+// config of bar chart 
+const configBar = {
+  type: "bar",
+  data: chartData,
+  options: {
+    borderWidth: 0,
+    responsive: true,
+    // maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+
+    scales: {
+      y: {
+        beginAtZero: true,
+        stacked: true,
+        grid: {
+          color: "#f7f7f76b",
+          //   display: false,
+        },
+        ticks: {
+          color: '#f7f7f7'
+        }
+      },
+      x: {
+        stacked: true,
+        grid: {
+          display: false,
+        },
+
+        ticks: {
+          color: '#f7f7f7'
+        }
+      },
+    },
+  },
+};
+
+
+
+// config of line chart - data color
+const configLine = {
+  type: "line",
+  data: chartData,
+  options: {
+    borderWidth: 2,
+    responsive: true,
+    // maintainAspectRatio: false,
+    tension: 0.4,
+    pointRadius: 3,
+    // pointHoverRadius: 5,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: {
+          color: "#f7f7f76b",
+          // display: false,
+        },
+        ticks: {
+          color: '#f7f7f7'
+        },
+      },
+      x: {
+        stacked: true,
+        grid: {
+          color: "#f7f7f76b",
+          // display: false,
+        },
+        ticks: {
+          color: '#f7f7f7'
+        },
+      },
+    },
+  },
+};
+
+
 // empty array to separate out the first row from the file (the names)
 let processedData = []; // the y axis
 let labels = []; // the x axis
@@ -33,21 +133,6 @@ let chartData = defaultData;
 
 const fileInput = document.querySelector(".txtFileUpload");
 
-// the colors used for each dataset, optimized for dark theme 
-const CHART_COLORS = [
-
-  "#2132a3",
-  "#1984c5",
-  "#22a7f0",
-  "#63bff0",
-  "#a7d5ed",
-  "#e2e2e2",
-  "#e1a692",
-  "#de6e56",
-  "#e14b31",
-  "#c23728"
-]
-
 // show an error message
 function showErrorMessage(message) {
   const errorHeader = document.getElementsByClassName("csv-upload-error")[0];
@@ -68,7 +153,6 @@ function processData(data) {
 
 
   if (numberOfColumns < 2) {
-
     showErrorMessage("Data should have at least two columns");
   } else {
     removeErrorMessage();
@@ -130,9 +214,6 @@ function setChartTitle(title) {
 }
 
 function displayChart() {
-
-  // FIXME: 	Expected an assignment or function call and instead saw an expression.
-  // const datasets = processedData;
   myChart.data.datasets = processedData;
   myChart.data.labels = labels;
   myChart.update();
@@ -221,88 +302,7 @@ function toggleDataSet(index) {
   }
 }
 
-// config of bar chart - data color FIXME:
-const configBar = {
-  type: "bar",
-  data: chartData,
-  options: {
-    borderWidth: 0,
-    responsive: true,
-    // maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
 
-    scales: {
-      y: {
-        beginAtZero: true,
-        stacked: true,
-        grid: {
-          color: "#f7f7f76b",
-          //   display: false,
-        },
-        ticks: {
-          color: '#f7f7f7'
-        }
-      },
-      x: {
-        stacked: true,
-        grid: {
-          display: false,
-        },
-
-        ticks: {
-          color: '#f7f7f7'
-        }
-      },
-    },
-  },
-};
-
-
-
-// config of line chart - data color
-const configLine = {
-  type: "line",
-  data: chartData,
-  options: {
-    borderWidth: 2,
-    responsive: true,
-    // maintainAspectRatio: false,
-    tension: 0.4,
-    pointRadius: 3,
-    // pointHoverRadius: 5,
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        grid: {
-          color: "#f7f7f76b",
-          // display: false,
-        },
-        ticks: {
-          color: '#f7f7f7'
-        },
-      },
-      x: {
-        stacked: true,
-        grid: {
-          color: "#f7f7f76b",
-          // display: false,
-        },
-        ticks: {
-          color: '#f7f7f7'
-        },
-      },
-    },
-  },
-};
 
 
 
