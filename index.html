@@ -76,17 +76,14 @@
 
             <!-- a container with the two hero buttons in it -->
             <div class="hero-button-container">
-
               <div class="file-upload-container">
                 <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
-
                   <span class="upload-img-span">
                     <img class="upload-img" src="assets/icons/bx-upload-white.svg"
                       alt="an upload icon beside the text upload file" />
                   </span>
                   <span class="upload-text-span">Upload File</span>
                 </label>
-
                 <input class="file-upload-btn preview txtFileUpload1" type="file" name="File Upload"
                   id="txtFileUpload1" aria-label="File" accept=" .csv" />
               </div>
@@ -138,6 +135,7 @@
           </div>
         </div>
 
+        <!-- the chart area with chart text/name displayed above it -->
         <section class="chart-box">
           <div class="chart-title-container">
             <h2 id="chart-title">example data.csv</h2>
@@ -148,6 +146,7 @@
           <canvas id="myChart" aria-label="Bar or line chart presentation" role="img"></canvas>
         </section>
 
+        <!-- dynamic chart buttons + another download button  -->
         <div class="chart-buttons">
           <div id="dynamic-btn-container"></div>
           <div class="file-upload-container">
@@ -164,7 +163,6 @@
             <input class="file-upload-btn preview txtFileUpload" type="file" name="File Upload"
               id="txtFileUpload" aria-label="File" accept=" .csv" />
           </div>
-
         </div>
 
         <!-- <button id="confirm-read-csv">Upload CSV</button> -->
@@ -174,11 +172,10 @@
       <footer>
         <p>Site created by Donnchadh Mc Ginley</p>
       </footer>
+
       <!-- script -->
       <script src="assets/js/main.js"></script>
 
-      <!-- <script src="assets/js/button.js"></script> -->
-      <!-- <script src="assets/js/read_head.js"></script> -->
     </div>
   </body>
 
