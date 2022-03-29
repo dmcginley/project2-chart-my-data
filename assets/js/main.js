@@ -14,88 +14,8 @@ const CHART_COLORS = [
 ]
 
 
-// config of bar chart 
-const configBar = {
-  type: "bar",
-  data: chartData,
-  options: {
-    borderWidth: 0,
-    responsive: true,
-    // maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-
-    scales: {
-      y: {
-        beginAtZero: true,
-        stacked: true,
-        grid: {
-          color: "#f7f7f76b",
-          //   display: false,
-        },
-        ticks: {
-          color: '#f7f7f7'
-        }
-      },
-      x: {
-        stacked: true,
-        grid: {
-          display: false,
-        },
-
-        ticks: {
-          color: '#f7f7f7'
-        }
-      },
-    },
-  },
-};
-
-
-
-// config of line chart - data color
-const configLine = {
-  type: "line",
-  data: chartData,
-  options: {
-    borderWidth: 2,
-    responsive: true,
-    // maintainAspectRatio: false,
-    tension: 0.4,
-    pointRadius: 3,
-    // pointHoverRadius: 5,
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        grid: {
-          color: "#f7f7f76b",
-          // display: false,
-        },
-        ticks: {
-          color: '#f7f7f7'
-        },
-      },
-      x: {
-        stacked: true,
-        grid: {
-          color: "#f7f7f76b",
-          // display: false,
-        },
-        ticks: {
-          color: '#f7f7f7'
-        },
-      },
-    },
-  },
-};
+// csv file that is first loaded
+const SAMPLE_CSV_FILENAME = 'test2.csv';
 
 
 // empty array to separate out the first row from the file (the names)
@@ -207,8 +127,8 @@ function clearData() {
 // extracts the file name and displays it above the chart
 function setChartTitle(title) {
   const titleHeader = document.getElementById("chart-title");
+  titleHeader.setAttribute("class", "chart-title")
   if (titleHeader) {
-
     titleHeader.innerHTML = title;
   }
 }
@@ -220,7 +140,7 @@ function displayChart() {
 }
 
 // my demo csv data to be displayed on first load
-Papa.parse("assets/csv/test2.csv", {
+Papa.parse(`assets/csv/${SAMPLE_CSV_FILENAME}`, {
   download: true,
   skipEmptyLines: true,
   // header: false,
@@ -302,6 +222,92 @@ function toggleDataSet(index) {
   }
 }
 
+
+
+
+
+// config of bar chart 
+const configBar = {
+  type: "bar",
+  data: chartData,
+  options: {
+    borderWidth: 0,
+    responsive: true,
+    // maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+
+    scales: {
+      y: {
+        beginAtZero: true,
+        stacked: true,
+        grid: {
+          color: "#f7f7f76b",
+          //   display: false,
+        },
+        ticks: {
+          color: '#f7f7f7'
+        }
+      },
+      x: {
+        stacked: true,
+        grid: {
+          display: false,
+        },
+
+        ticks: {
+          color: '#f7f7f7'
+        }
+      },
+    },
+  },
+};
+
+
+
+// config of line chart - data color
+const configLine = {
+  type: "line",
+  data: chartData,
+  options: {
+    borderWidth: 2,
+    responsive: true,
+    // maintainAspectRatio: false,
+    tension: 0.4,
+    pointRadius: 3,
+    // pointHoverRadius: 5,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: {
+          color: "#f7f7f76b",
+          // display: false,
+        },
+        ticks: {
+          color: '#f7f7f7'
+        },
+      },
+      x: {
+        stacked: true,
+        grid: {
+          color: "#f7f7f76b",
+          // display: false,
+        },
+        ticks: {
+          color: '#f7f7f7'
+        },
+      },
+    },
+  },
+};
 
 
 
