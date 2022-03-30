@@ -10,6 +10,10 @@ Live website: https://dmcginley.github.io/project2-chart-my-data/
 
 Sample data: [csv file](https://drive.google.com/file/d/1WBMsYecjmRCDqG8RzApDp8Nmv5wLSE9E/view?usp=sharing)
 
+<p>&nbsp;</p>
+
+![Finished image of site](readme-images/screenshot.png "the site mobile desktop and tablet")
+
 
 <p>&nbsp;</p>
 
@@ -116,6 +120,16 @@ The website has a basic Grid for the main area, and the same grid for the header
 
 ### Lighthouse in Chrome DevTools
 
+{{{{Best Practices on the video page was the only one that was low at (92), the issue was "SameSite cookie", this is a server-side issue so there was little I could do to fix the issue.}}}}}
+
+![Desktop website in Lighthouse in Chrome ](readme-images/desktop-both.png "Lighthouse score for desktop pages")
+
+
+![Mobile website in Lighthouse in Chrome ](readme-images/mobile-both.png "Lighthouse score for mobile pages")
+
+
+readme-images/desktop-both.png
+
 ### Validator Testing
 - **HTML**
 <https://validator.w3.org/>
@@ -167,6 +181,10 @@ My Yoga 4 Life site can be found here - https://dmcginley.github.io/project1_yog
 
 
 ## Image optimization for the web
+
+
+For all the images I edited them in [Gimp](https://www.gimp.org/) changing the resolution when required. I'd pass the images through Optimizilla or Tinypng and then put them in the image folder.
+- [Tinypng](https://tinypng.com/)
 
 - [favicon.io](https://favicon.io/favicon-converter/) - used for generating the set of images for the tab in the browser.
 

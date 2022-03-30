@@ -119,7 +119,9 @@ function scrollToChart() {
 }
 
 function clearData() {
-  (processedData = []), (labels = []), (dataSetNames = []);
+  processedData = [];
+  labels = [];
+  dataSetNames = [];
 }
 
 // extracts the file name and displays it above the chart
