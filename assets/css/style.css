@@ -73,6 +73,7 @@
   background-color: #00d32e65;
 }
 
+
 /* ----------------
     2. global style
 ---------------- */
@@ -224,6 +225,20 @@ p {
 li {
   list-style: none;
 }
+
+.home-link {
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 200;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+
+
+
+.home-link:hover {
+  color: var(--lighter-grey);
+}
+
 
 
 /* ----------------
@@ -406,12 +421,14 @@ button {
   height: 2rem;
 }
 
+
 .hero-btn,
 .upload-label,
 .chart-control-btn {
   transition: 160ms;
 }
 
+.hero-btn,
 .hero-btn:nth-child(2) {
   font-family: 'DM Sans', sans-serif;
   display: block;
@@ -428,12 +445,14 @@ button {
   outline-offset: -2px;
 }
 
+.hero-btn:hover,
 .hero-btn:nth-child(2):hover {
   color: var(--lighter-grey);
   outline: 2px solid var(--lighter-grey);
   background-color: #1a1a1a34;
 }
 
+.hero-btn:active,
 .hero-btn:nth-child(2):active {
   background-color: #1a1a1a79;
 }
@@ -554,6 +573,11 @@ footer p {
 
 .file-editor-links a:hover {
   color: var(--lighter-grey);
+}
+
+
+.go-to-chart-container {
+  padding-top: 2em;
 }
 
 @media only screen and (min-width: 340px) {
@@ -728,7 +752,7 @@ footer p {
     margin-bottom: 2em;
   }
 
-  .color-box3 {
+  .color-box {
     margin-top: 2em;
   }
 }
