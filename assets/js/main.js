@@ -1,6 +1,5 @@
-// the colors used for each dataset, optimized for dark theme 
+// the colors used for each dataset, optimized for dark theme
 const CHART_COLORS = [
-
   "#2132a3",
   "#1984c5",
   "#22a7f0",
@@ -10,18 +9,15 @@ const CHART_COLORS = [
   "#e1a692",
   "#de6e56",
   "#e14b31",
-  "#c23728"
-]
-
+  "#c23728",
+];
 
 // csv file that is first loaded
-const SAMPLE_CSV_FILENAME = 'ireland-covid-3months-of 2021.csv';
-
+const SAMPLE_CSV_FILENAME = "ireland-covid-3months-of 2021.csv";
 
 // empty array to separate out the first row from the file (the names)
 let processedData = []; // the y axis
 let labels = []; // the x axis
-
 
 // names to add to the dynamic buttons
 let dataSetNames = [];
@@ -31,13 +27,11 @@ const defaultData = {
   labels: [],
   datasets: [],
   options: {
-
     scales: {
       x: {
         grid: {
           display: false,
         },
-
       },
       y: {
         grid: {
@@ -50,12 +44,9 @@ const defaultData = {
 
 let chartData = defaultData;
 
-
 const fileInput = document.querySelector(".txtFileUpload");
 
-
 console.log("fpp", fileInput);
-
 
 // show an error message
 function showErrorMessage(message) {
@@ -75,7 +66,6 @@ function processData(data) {
   const numberOfColumns = data.length > 0 ? data[0].length : 0; ///5
   processedData = [];
 
-
   if (numberOfColumns < 2) {
     showErrorMessage("Data should have at least two columns");
   } else {
@@ -87,7 +77,6 @@ function processData(data) {
 
       // Set label
       if (i === 0) {
-
         dataSetNames = row.slice(0); // copy label names
 
         //for (var label of row) {
@@ -106,43 +95,37 @@ function processData(data) {
         for (let colIndex = 1; colIndex < numberOfColumns; colIndex++) {
           processedData[colIndex].data = [
             ...(processedData[colIndex].data || []),
-            row[colIndex]
+            row[colIndex],
           ];
         }
         labels.push(row[0]);
       }
     }
   }
-
 }
-
-
 
 // window.onload = function () {
 //   yourFunction(fileInput);
 // };
 // yourFunction();
 
-
 // scroll to chart section so the user doesn 't have to go looking for it
 
 function scrollToChart() {
   const element = document.getElementById("theChart");
   element.scrollIntoView({
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 }
 
-
-
 function clearData() {
-  processedData = [], labels = [], dataSetNames = [];
+  (processedData = []), (labels = []), (dataSetNames = []);
 }
 
 // extracts the file name and displays it above the chart
 function setChartTitle(title) {
   const titleHeader = document.getElementById("chart-title");
-  titleHeader.setAttribute("class", "chart-title")
+  titleHeader.setAttribute("class", "chart-title");
   if (titleHeader) {
     titleHeader.innerHTML = title;
   }
@@ -164,17 +147,14 @@ Papa.parse(`assets/csv/${SAMPLE_CSV_FILENAME}`, {
     processData(results.data);
     createDataSetButtons();
     displayChart();
-  }
+  },
 });
-
 
 // parsing the user uploaded data with papa parse
 fileInput.addEventListener("change", (e) => {
-
   const fileName = fileInput.files[0].name;
   setChartTitle(fileName);
   if (fileName.toLowerCase().endsWith(".csv")) {
-
     Papa.parse(fileInput.files[0], {
       download: true,
       skipEmptyLines: true,
@@ -187,12 +167,11 @@ fileInput.addEventListener("change", (e) => {
       },
     });
   } else {
-    showErrorMessage("File is not a CSV file")
+    showErrorMessage("File is not a CSV file");
     clearData();
     displayChart();
   }
 });
-
 
 // removes any and adds dynamic buttons to the html file
 function createDataSetButtons() {
@@ -210,16 +189,15 @@ function createDataSetButtons() {
     newButton.setAttribute("onclick", `toggleDataSet(${i})`);
     newButton.setAttribute("class", "button dataset-toggle");
 
-    newButton.setAttribute("style", `border-color: ${borderColor}; background-color: ${buttonColor}`)
+    newButton.setAttribute(
+      "style",
+      `border-color: ${borderColor}; background-color: ${buttonColor}`
+    );
     container.appendChild(newButton);
   }
-
 }
 
-
 // dataSetNames = row.slice(1); // remove 'Date' header
-
-
 
 // toggle the data set
 function toggleDataSet(index) {
@@ -237,11 +215,7 @@ function toggleDataSet(index) {
   }
 }
 
-
-
-
-
-// config of bar chart 
+// config of bar chart
 const configBar = {
   type: "bar",
   data: chartData,
@@ -264,8 +238,8 @@ const configBar = {
           //   display: false,
         },
         ticks: {
-          color: '#f7f7f7'
-        }
+          color: "#f7f7f7",
+        },
       },
       x: {
         stacked: true,
@@ -274,14 +248,12 @@ const configBar = {
         },
 
         ticks: {
-          color: '#f7f7f7'
-        }
+          color: "#f7f7f7",
+        },
       },
     },
   },
 };
-
-
 
 // config of line chart - data color
 const configLine = {
@@ -308,7 +280,7 @@ const configLine = {
           // display: false,
         },
         ticks: {
-          color: '#f7f7f7'
+          color: "#f7f7f7",
         },
       },
       x: {
@@ -318,19 +290,15 @@ const configLine = {
           // display: false,
         },
         ticks: {
-          color: '#f7f7f7'
+          color: "#f7f7f7",
         },
       },
     },
   },
 };
 
-
-
-
 // render initialize the data
 myChart = new Chart(document.getElementById("myChart"), configBar);
-
 
 // destroy and creat two different charts - bar and line
 function chartType(type) {
@@ -338,7 +306,6 @@ function chartType(type) {
 
   if (type === "bar") {
     myChart = new Chart(document.getElementById("myChart"), configBar);
-
   }
   if (type === "line") {
     myChart = new Chart(document.getElementById("myChart"), configLine);

@@ -1,5 +1,5 @@
 /* imported fonts from google fonts - DM Sans & Maven Pro */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Maven+Pro:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Maven+Pro:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -56,10 +56,6 @@
   --green-bar-width: 12px;
 }
 
-
-
-
-
 .color-box1 {
   background-color: #006fc965;
 }
@@ -72,22 +68,20 @@
   background-color: #00d32e65;
 }
 
-
 /* ----------------
     2. global style
 ---------------- */
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   color: var(--white);
   background-color: var(--dark-grey);
   scroll-behavior: smooth;
 }
 
-
 h1,
 h2,
 h3 {
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
   text-transform: capitalize;
 }
 
@@ -98,7 +92,7 @@ h1 {
 h2 {
   font-size: 2rem;
   font-weight: 400;
-  padding: .4em 0 1em 0;
+  padding: 0.4em 0 1em 0;
 }
 
 .chart-title-container {
@@ -109,7 +103,7 @@ h2 {
 .chart-title-container img {
   height: 2.8em;
   margin-left: 1.6em;
-  padding: .4em;
+  padding: 0.4em;
   border: var(--white) solid 2px;
   border-radius: 4px;
 }
@@ -120,17 +114,16 @@ h2 {
   padding: 1em 0;
 }
 
-
 h3 {
   font-size: 1.4rem;
   font-weight: 300;
-  padding: 1em 0 .6em 0;
+  padding: 1em 0 0.6em 0;
 }
 
 .csv-upload-error {
   text-align: center;
   font-weight: 600;
-  padding: .6em;
+  padding: 0.6em;
   color: var(--warning);
   border: 2px solid var(--warning);
   margin-bottom: 1em;
@@ -142,17 +135,15 @@ h3 {
 }
 
 .site-name {
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
   font-weight: bold;
 }
 
 p {
   font-size: 1.2rem;
   padding: 1em;
-  line-height: 1.6
+  line-height: 1.6;
 }
-
-
 
 /* ----------------
     3. master-grid
@@ -161,7 +152,6 @@ p {
   display: grid;
   grid-template-columns: 1fr minmax(20ch, 120ch) 1fr;
 }
-
 
 /* ----------------
     4. header
@@ -211,11 +201,11 @@ p {
 
 li {
   list-style: none;
-  padding-right: .2em;
+  padding-right: 0.2em;
 }
 
 .home-link {
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
   font-weight: 200;
   font-size: 1.4rem;
   color: var(--white);
@@ -254,9 +244,6 @@ li {
   padding: 2em 0;
 }
 
-
-
-
 .hero-button-container {
   align-items: center;
   padding: 2em 0;
@@ -282,23 +269,21 @@ input[type="file"] {
 }
 
 .note-text-container h2 {
-  padding: .4em 0;
+  padding: 0.4em 0;
 }
 
 .note-text-container p {
-  padding: .6em 0;
+  padding: 0.6em 0;
 }
-
 
 /* ----------------
     7. the chart
 ---------------- */
 .chart-box {
   width: 100%;
-  padding: .2em;
+  padding: 0.2em;
   justify-content: center;
 }
-
 
 /* ----------------
   8. chart type toggle
@@ -401,7 +386,7 @@ button {
 
 .hero-btn,
 .hero-btn:nth-child(2) {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   display: block;
   text-align: center;
   text-decoration: none;
@@ -443,7 +428,6 @@ button {
 .button.dataset-toggle.dataset-hidden {
   background-color: rgba(255, 255, 255, 0.178) !important;
   color: var(--white);
-
 }
 
 .button:nth-child(n):hover,
@@ -462,13 +446,12 @@ button {
   justify-content: center;
   align-items: center;
   font-size: 1em;
-  padding: .8em 2em;
+  padding: 0.8em 2em;
   color: var(--white);
   border: 2px solid var(--white);
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0);
   cursor: pointer;
-
 }
 
 .chart-control-btn:hover {
@@ -479,13 +462,13 @@ button {
   background-color: var(--blue-active);
 }
 
-.radio-input:focus-visible+.chart-toggle-label {
+.radio-input:focus-visible + .chart-toggle-label {
   outline: 2px solid var(--white);
   outline-offset: -2px;
   border-inline: 2px solid var(--white);
 }
 
-.radio-input:checked+.chart-toggle-label {
+.radio-input:checked + .chart-toggle-label {
   background-color: rgba(3, 116, 182, 0.5);
   color: aliceblue;
 }
@@ -521,13 +504,13 @@ footer p {
   width: 60px;
   height: 60px;
   font-size: 3rem;
-  margin: 0 1em 0 .4em;
+  margin: 0 1em 0 0.4em;
   border: 4px solid var(--white);
   border-radius: 50%;
 }
 
 .file-editor-links li {
-  padding: .2em 0;
+  padding: 0.2em 0;
 }
 
 .file-editor-links a {
@@ -543,7 +526,6 @@ footer p {
 }
 
 @media only screen and (min-width: 340px) {
-
   .upload-label {
     width: 285px;
   }
@@ -583,7 +565,6 @@ footer p {
 }
 
 @media only screen and (min-width: 520px) {
-
   .chart-box {
     padding: 1em;
   }
@@ -605,13 +586,10 @@ footer p {
 
   .chart-toggle-btn {
     justify-content: flex-end;
-
   }
 }
 
-
 @media only screen and (min-width: 560px) {
-
   .hero-btn {
     max-width: 285px;
   }
@@ -621,9 +599,7 @@ footer p {
   }
 }
 
-
 @media only screen and (min-width: 640px) {
-
   .hero-button-container {
     width: 590px;
     display: flex;
@@ -637,9 +613,7 @@ footer p {
   }
 }
 
-
 @media only screen and (min-width: 740px) {
-
   #dynamic-btn-container {
     width: 90%;
     margin: auto;
@@ -670,7 +644,6 @@ footer p {
 }
 
 @media only screen and (min-width: 900px) {
-
   .main-container {
     padding: 2em;
   }
@@ -716,7 +689,6 @@ footer p {
 }
 
 @media only screen and (min-width: 1320px) {
-
   .hero-button-container {
     flex-direction: row;
     align-items: center;
@@ -726,7 +698,6 @@ footer p {
   .hero-btn:nth-child(2) {
     /* padding-left: 1em; */
     margin-left: 1em;
-
   }
 
   .section-img-container {
@@ -745,6 +716,5 @@ footer p {
   .toggle-container {
     width: 90%;
     margin: auto;
-
   }
 }

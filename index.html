@@ -1,43 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="chart you csv data by simply uploading your file" />
+    <meta
+      name="description"
+      content="chart you csv data by simply uploading your file"
+    />
     <meta name="keywords" content="chart, data, csv, barchart, linechart" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- Papa parse JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
       integrity="sha384-3UqfbTnADMqh/U3Nnc2YemCb4NU2tvfy1QWQa71aD9jM8J22WQov29gHPWobkC/p"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
 
     <!-- chart.js script added integrity and crossorigin for SRI Hash using https://www.srihash.org/  -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js"
       integrity="sha384-7NrRHqlWUj2hJl3a/dZj/a1GxuQc56mJ3aYsEnydBYrY1jR+RSt6SBvK3sHfj+mJ"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
 
     <!-- the favicon generated using https://favicon.io/favicon-converter/ -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icons/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/icons/favicon/favicon-16x16.png"
+    />
 
     <title>Chart Data</title>
   </head>
 
   <body>
-
     <!-- grid container - of 1fr on either side and a minmax in the middle for the main content -->
     <div class="master-grid">
-
       <!-- header containing the navigation  -->
       <header class="master-grid header">
         <div class="header-content">
           <a href="#" class="header-logo">
-            <img src="assets/icons/chart-icon-sm.svg" height="30"
-              alt="chart website logo three colored bars pink blue and green representing a bar chart" />
+            <img
+              src="assets/icons/chart-icon-sm.svg"
+              height="30"
+              alt="chart website logo three colored bars pink blue and green representing a bar chart"
+            />
             <p class="site-name">Chart Data</p>
           </a>
           <nav>
@@ -52,40 +73,53 @@
 
       <!-- main-container is just assigned to grid colum 2, so to center all elements in the page -->
       <main class="main-container">
-
         <!-- the hero section of the page img and leading-in text -->
         <section class="hero">
           <div class="flex-text-content">
             <h1>chart your data</h1>
             <h2>A place to upload your CSV dataset</h2>
-            <p>With our interactive charts, you can visualize data and chose which datasets to
-              view
-              by using the buttons below the chart.
-              <br>You can change between bar and line chart depending on which way to view your
-              data
-              would suit you best. Automating views your CSV file and helps you handle complex
-              datasets with ease.
+            <p>
+              With our interactive charts, you can visualize data and chose
+              which datasets to view by using the buttons below the chart.
+              <br />You can change between bar and line chart depending on which
+              way to view your data would suit you best. Automating views your
+              CSV file and helps you handle complex datasets with ease.
             </p>
 
             <!-- a container with the two hero buttons in it -->
             <div class="hero-button-container">
               <div class="file-upload-container">
-                <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
+                <label
+                  class="upload-label"
+                  for="txtFileUpload"
+                  onclick="scrollToChart()"
+                >
                   <span class="upload-img-span">
-                    <img class="upload-img" src="assets/icons/bx-upload-white.svg"
-                      alt="an upload icon beside the text upload file" />
+                    <img
+                      class="upload-img"
+                      src="assets/icons/bx-upload-white.svg"
+                      alt="an upload icon beside the text upload file"
+                    />
                   </span>
                   <span class="upload-text-span">Upload File</span>
                 </label>
-                <input class="file-upload-btn preview txtFileUpload1" type="file" name="File Upload"
-                  id="txtFileUpload1" aria-label="File" accept=" .csv" />
+                <input
+                  class="file-upload-btn preview txtFileUpload1"
+                  type="file"
+                  name="File Upload"
+                  id="txtFileUpload1"
+                  aria-label="File"
+                  accept=" .csv"
+                />
               </div>
               <a href="how-to.html" class="hero-btn">How To Use</a>
             </div>
           </div>
           <div class="section-img-container">
-            <img src="assets/images/both-chart_result.jpg"
-              alt="two images of a line and bar chart overlapping in a cascading manner">
+            <img
+              src="assets/images/both-chart_result.jpg"
+              alt="two images of a line and bar chart overlapping in a cascading manner"
+            />
           </div>
         </section>
 
@@ -93,32 +127,53 @@
         <section class="note-text-container">
           <div></div>
           <h2>Toggle between Bar or Line chart</h2>
-          <p>Did you know you can easily toggle between bar chart or line chart to change the way
-            you view
-            your CSV data.</p>
-          <p>Line graphs are useful for displaying smaller changes in a trend over time. Bar
-            graphs
-            are better for comparing larger changes or differences in data among groups.</p>
+          <p>
+            Did you know you can easily toggle between bar chart or line chart
+            to change the way you view your CSV data.
+          </p>
+          <p>
+            Line graphs are useful for displaying smaller changes in a trend
+            over time. Bar graphs are better for comparing larger changes or
+            differences in data among groups.
+          </p>
         </section>
 
         <!-- div containing the two input buttons, the input is hidden and the label is used to create the style  -->
         <div class="toggle-container" id="chart-section">
-
           <!-- the two chart type buttons under the chart -->
           <div class="chart-toggle-btn" id="theChart">
-            <input onclick="chartType('bar')" class="radio-input" id="radio1" type="radio"
-              value="bar" name="chart" checked />
+            <input
+              onclick="chartType('bar')"
+              class="radio-input"
+              id="radio1"
+              type="radio"
+              value="bar"
+              name="chart"
+              checked
+            />
             <label class="chart-toggle-label chart-control-btn" for="radio1">
-              <img class="chart-toggle-svg" src="assets/icons/bx-bar-chart.svg"
-                alt="bar chart icon" />
+              <img
+                class="chart-toggle-svg"
+                src="assets/icons/bx-bar-chart.svg"
+                alt="bar chart icon"
+              />
               <span class="chart-toggle-name">Bar</span>
             </label>
 
-            <input onclick="chartType('line')" class="radio-input" id="radio2" type="radio"
-              value="line" name="chart" />
+            <input
+              onclick="chartType('line')"
+              class="radio-input"
+              id="radio2"
+              type="radio"
+              value="line"
+              name="chart"
+            />
             <label class="chart-toggle-label chart-control-btn" for="radio2">
-              <img class="chart-toggle-svg" src="assets/icons/bx-line-chart.svg"
-                alt="line chart icon" />
+              <img
+                class="chart-toggle-svg"
+                src="assets/icons/bx-line-chart.svg"
+                alt="line chart icon"
+              />
               <span class="chart-toggle-name">Line</span>
             </label>
           </div>
@@ -128,28 +183,49 @@
         <section class="chart-box">
           <div id="chart-title" class="chart-title-container">
             <p class="example-chart-title">example data.csv</p>
-            <a href="https://drive.google.com/file/d/1nsoUh3Pp302tMsWz9uwc1k_Zd2s5S0fe/view?usp=sharing"
-              target="_blank" rel="nofollow noopener noreferrer"><img
+            <a
+              href="https://drive.google.com/file/d/1nsoUh3Pp302tMsWz9uwc1k_Zd2s5S0fe/view?usp=sharing"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              ><img
                 src="assets/icons/bxs-download.svg"
-                alt="download icon a link to download sample csv file"></a>
+                alt="download icon a link to download sample csv file"
+            /></a>
           </div>
           <h3 class="csv-upload-error">doesn't work</h3>
-          <canvas id="myChart" aria-label="Bar or line chart presentation" role="img"></canvas>
+          <canvas
+            id="myChart"
+            aria-label="Bar or line chart presentation"
+            role="img"
+          ></canvas>
         </section>
 
         <!-- dynamic chart buttons + another download button  -->
         <div class="chart-buttons">
           <div id="dynamic-btn-container"></div>
           <div class="file-upload-container">
-            <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
+            <label
+              class="upload-label"
+              for="txtFileUpload"
+              onclick="scrollToChart()"
+            >
               <span class="upload-img-span">
-                <img class="upload-img" src="assets/icons/bx-upload-white.svg"
-                  alt="upload icon for upload button" />
+                <img
+                  class="upload-img"
+                  src="assets/icons/bx-upload-white.svg"
+                  alt="upload icon for upload button"
+                />
               </span>
               <span class="upload-text-span">Upload File</span>
             </label>
-            <input class="file-upload-btn preview txtFileUpload" type="file" name="File Upload"
-              id="txtFileUpload" aria-label="File" accept=" .csv" />
+            <input
+              class="file-upload-btn preview txtFileUpload"
+              type="file"
+              name="File Upload"
+              id="txtFileUpload"
+              aria-label="File"
+              accept=" .csv"
+            />
           </div>
         </div>
       </main>
@@ -162,5 +238,4 @@
       <script defer src="assets/js/main.js"></script>
     </div>
   </body>
-
 </html>
