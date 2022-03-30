@@ -52,7 +52,6 @@
 
   --warning: #ffc60d;
 
-
   /* width component for width of bar on green box, so if you change the width of the green line the text padding will also change */
   --green-bar-width: 12px;
 }
@@ -119,7 +118,6 @@ h2 {
 .chart-title {
   font-size: 2rem;
   padding: 1em 0;
-  /* background-color: #bd271a; */
 }
 
 
@@ -159,20 +157,15 @@ p {
 /* ----------------
     3. master-grid
 ---------------- */
-
-
 .master-grid {
   display: grid;
-  grid-template-columns: 1fr minmax(30ch, 120ch) 1fr;
+  grid-template-columns: 1fr minmax(20ch, 120ch) 1fr;
 }
 
 
 /* ----------------
     4. header
 ---------------- */
-
-
-
 .header {
   grid-column: 1/4;
   padding: 10px;
@@ -188,16 +181,10 @@ p {
 
 .header-logo {
   display: flex;
-  width: 210px;
   align-items: center;
   text-decoration: none;
   padding: 10px 0 10px 10px;
-
 }
-
-/* .header-logo img {
-  height: 30px;
-} */
 
 .header-logo p {
   font-size: 1.4em;
@@ -224,6 +211,7 @@ p {
 
 li {
   list-style: none;
+  padding-right: .2em;
 }
 
 .home-link {
@@ -231,15 +219,14 @@ li {
   font-weight: 200;
   font-size: 1.4rem;
   color: var(--white);
+  text-decoration: none;
+  transition: 100ms;
 }
-
-
 
 .home-link:hover {
   color: var(--lighter-grey);
+  text-decoration: underline;
 }
-
-
 
 /* ----------------
     5. main-container
@@ -247,7 +234,6 @@ li {
 .main-container {
   grid-column: 2;
 }
-
 
 /* ----------------
     6. hero
@@ -280,27 +266,20 @@ li {
   width: 100%;
 }
 
-
-
 input[type="file"] {
   display: none;
 }
-
-
 
 .note-text-container {
   position: relative;
   text-align: center;
   background-color: rgba(0, 139, 139, 0.6);
   padding: 1em 2em;
-  /* margin-bottom: 1em; */
 }
-
 
 .note-text-container div {
   display: none;
 }
-
 
 .note-text-container h2 {
   padding: .4em 0;
@@ -314,7 +293,6 @@ input[type="file"] {
 /* ----------------
     7. the chart
 ---------------- */
-
 .chart-box {
   width: 100%;
   padding: .2em;
@@ -325,7 +303,6 @@ input[type="file"] {
 /* ----------------
   8. chart type toggle
 ---------------- */
-
 .toggle-container {
   padding: 2em 0 0 0;
 }
@@ -345,7 +322,6 @@ input[type="file"] {
 /* ----------------
   9. dynamic-btn-container
 ---------------- */
-
 /* dynamic buttons - the 4 legends for the chart */
 #dynamic-btn-container {
   display: flex;
@@ -355,11 +331,9 @@ input[type="file"] {
   margin-top: 2em;
 }
 
-
 /* ----------------
   10. buttons
 ---------------- */
-
 /* global button properties  */
 button {
   position: relative;
@@ -372,11 +346,9 @@ button {
   cursor: pointer;
 }
 
-
 /* ----------------
   10.1. file-upload-container 
 ---------------- */
-
 .file-upload-container {
   display: flex;
   justify-content: center;
@@ -421,7 +393,6 @@ button {
   height: 2rem;
 }
 
-
 .hero-btn,
 .upload-label,
 .chart-control-btn {
@@ -462,8 +433,6 @@ button {
   padding-right: 8px;
 }
 
-
-
 .button.dataset-toggle {
   border-style: solid;
   border-width: 0;
@@ -488,7 +457,6 @@ button {
   position: absolute;
 }
 
-
 .chart-control-btn {
   display: flex;
   justify-content: center;
@@ -511,7 +479,6 @@ button {
   background-color: var(--blue-active);
 }
 
-
 .radio-input:focus-visible+.chart-toggle-label {
   outline: 2px solid var(--white);
   outline-offset: -2px;
@@ -530,11 +497,8 @@ button {
 }
 
 .chart-toggle-name {
-
   font-size: 1rem;
 }
-
-
 
 .resetZoom-btn {
   margin-top: 1em;
@@ -549,7 +513,6 @@ footer p {
   color: var(--lighter-grey);
   padding: 2em 3em;
 }
-
 
 .numbers {
   display: flex;
@@ -575,9 +538,8 @@ footer p {
   color: var(--lighter-grey);
 }
 
-
 .go-to-chart-container {
-  padding-top: 2em;
+  padding: 2em 1em 0 1em;
 }
 
 @media only screen and (min-width: 340px) {
@@ -606,7 +568,6 @@ footer p {
   .hero-btn:nth-child(2) {
     font-size: 1.2rem;
   }
-
 
   .toggle-container {
     display: flex;
@@ -669,7 +630,6 @@ footer p {
     margin: auto;
     justify-content: center;
     align-items: center;
-    /* background-color: coral; */
   }
 
   .hero-btn:nth-child(2) {
@@ -745,8 +705,6 @@ footer p {
     padding-top: 4em;
     margin: 0;
   }
-
-
 
   .how-to-section {
     margin-bottom: 2em;

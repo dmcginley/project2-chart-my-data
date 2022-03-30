@@ -155,8 +155,20 @@ Zoom feature wasn't working properly, it wouldn't reset back to 100% after butto
 
 
 ## Deployment
+Deployed using GitHub Pages. <https://github.com/dmcginley/project2-chart-my-data/settings/pages>
 
-## Image optimization for the web ???
+I went to my  Repository (project1_yoga_site), and under the "Settings" tab went down to the "Pages" section on the left menu.
+In there I could easily deploy my site. 
+
+Once everything deployed I checked everything was working ok. I checked response times and refresh time, the links/buttons, and that the videos worked as desired.
+
+
+My Yoga 4 Life site can be found here - https://dmcginley.github.io/project1_yoga_site (same link as above)
+
+
+## Image optimization for the web
+
+- [favicon.io](https://favicon.io/favicon-converter/) - used for generating the set of images for the tab in the browser.
 
 ## Resources
 *General reading and resources.*
