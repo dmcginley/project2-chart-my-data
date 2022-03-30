@@ -191,7 +191,7 @@ Zoom feature wasn't working properly, it wouldn't reset back to 100% after butto
 - [Mozilla Developer](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - JavaScript
 - [d3js](https://d3js.org/)
 - [Efficiently load third-party JavaScript](https://web.dev/efficiently-load-third-party-javascript/)
-- []()
+- [meta description](https://web.dev/meta-description/?utm_source=lighthouse&utm_medium=devtools)
 - []()
 
 #### Tutorials

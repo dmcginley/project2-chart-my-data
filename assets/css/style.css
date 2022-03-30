@@ -61,15 +61,17 @@
 
 
 
-
 .color-box1 {
-  background-color: #0d548d;
+  background-color: #006fc965;
 }
 
 .color-box2 {
-  background-color: #0d8d42;
+  background-color: #da0cec65;
 }
 
+.color-box3 {
+  background-color: #00d3b065;
+}
 
 /* ----------------
     2. global style
@@ -276,7 +278,7 @@ input[type="file"] {
   text-align: center;
   background-color: rgba(0, 139, 139, 0.6);
   padding: 1em 2em;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
 }
 
 
@@ -712,6 +714,10 @@ footer p {
 
   .how-to-section {
     margin-bottom: 2em;
+  }
+
+  .color-box3 {
+    margin-top: 2em;
   }
 }
 

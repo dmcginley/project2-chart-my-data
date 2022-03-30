@@ -15,7 +15,7 @@ const CHART_COLORS = [
 
 
 // csv file that is first loaded
-const SAMPLE_CSV_FILENAME = 'test2.csv';
+const SAMPLE_CSV_FILENAME = '48ran-country-POP-DNST-DS2-en.csv';
 
 
 // empty array to separate out the first row from the file (the names)
@@ -291,9 +291,10 @@ const configLine = {
     borderWidth: 2,
     responsive: true,
     // maintainAspectRatio: false,
-    tension: 0.4,
-    pointRadius: 3,
-    // pointHoverRadius: 5,
+    // tension: 0.1,
+    pointRadius: 0,
+    pointHoverRadius: 6,
+    hitRadius: 15,
     plugins: {
       legend: {
         display: false,
