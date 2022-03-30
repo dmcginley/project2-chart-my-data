@@ -70,7 +70,7 @@
 }
 
 .color-box3 {
-  background-color: #00d3b065;
+  background-color: #00d32e65;
 }
 
 /* ----------------
@@ -542,6 +542,18 @@ footer p {
   margin: 0 1em 0 .4em;
   border: 4px solid var(--white);
   border-radius: 50%;
+}
+
+.file-editor-links li {
+  padding: .2em 0;
+}
+
+.file-editor-links a {
+  color: var(--white);
+}
+
+.file-editor-links a:hover {
+  color: var(--lighter-grey);
 }
 
 @media only screen and (min-width: 340px) {
