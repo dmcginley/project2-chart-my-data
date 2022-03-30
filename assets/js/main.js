@@ -15,7 +15,7 @@ const CHART_COLORS = [
 
 
 // csv file that is first loaded
-const SAMPLE_CSV_FILENAME = '48ran-country-POP-DNST-DS2-en.csv';
+const SAMPLE_CSV_FILENAME = 'ireland-covid-3months-of 2021.csv';
 
 
 // empty array to separate out the first row from the file (the names)
