@@ -2,7 +2,7 @@
 
 <p>&nbsp;</p>
 
-Site url:
+Site URL:
 
 Repository for the project: https://github.com/dmcginley/project2-chart-my-data
 
@@ -44,7 +44,7 @@ Live website: https://dmcginley.github.io/project2-chart-my-data
 <p>&nbsp;</p>
 
 ## Sample data 
-Sample data that can be download to use with the chart.
+Sample data that can be downloaded to use with the chart.
 
 - The first 3 months of 2021 COVID-19 data - [CSV file](https://drive.google.com/file/d/1nsoUh3Pp302tMsWz9uwc1k_Zd2s5S0fe/view?usp=sharing)
 	- New cases
@@ -69,10 +69,10 @@ Sample data that can be download to use with the chart.
 ![wireframe image of site](readme-images/wireframe.png "the site wireframe of desktop and mobile")
 
 ## Who is this website for
-If you have some data (a CSV file) you'd like to visualise...
+If you have some data (a CSV file) you'd like to visualize...
 Display chart data to better understand your data trends in the chart that you otherwise wouldn't see.
-People wishing to view either stacked bar charts or line charts.
-People wishing to see multiple data rows, as the website can pull in all the data.
+For people wishing to view either stacked bar charts or line charts.
+For people wishing to see multiple data rows, as the website can pull in all the data.
  
 
 ## User Stories
@@ -93,9 +93,9 @@ Acceptance criteria:
 
  - Dark theme with lighter chart and chart elements.
 
-- Buttons kept lighter than background.
+- Buttons kept lighter than the background.
 
-- Correct contrast between colors for dark theme.
+- Correct contrast between colors for the dark theme.
 
 <p>&nbsp;</p>
 
@@ -103,7 +103,7 @@ Acceptance criteria:
 
 Acceptance criteria:
 
-- Create chart type toggle buttons.
+- Create chart-type toggle buttons.
 
 <p>&nbsp;</p>
 
@@ -113,7 +113,7 @@ Acceptance criteria:
 
 - Give a short summary of use in the hero section.
 
-- Create a how to use page.
+- Create a how-to-use page.
 
 <p>&nbsp;</p>
 
@@ -121,7 +121,7 @@ Acceptance criteria:
 
 Acceptance criteria:
 
-- Buttons below chart representing the data in the chart.
+- Buttons below the chart representing the data in the chart.
 
 - Ability to toggle them on and off.
 
@@ -129,11 +129,11 @@ Acceptance criteria:
 
 <p>&nbsp;</p>
 
-*"As a user, I’d like a how to page that clearly outlines how to use the web app, so that I don’t miss out on anything."*
+*"As a user, I’d like a how-to page that clearly outlines how to use the web app, so that I don’t miss out on anything."*
 
 Acceptance criteria:
 
-- Create how to page.
+- Create how-to page.
 
 - Describe the chart’s functionality.
 
@@ -147,9 +147,9 @@ Acceptance criteria:
 
 - Upload buttons created for easy navigation.
 
-- Home and how to use link to get to the relevant parts of the site.
+- Home and how to use a link to get to the relevant parts of the site.
 
-- Go to chart button on how to page to take you directly to the chart.
+- "Go to chart" button on the how-to page to take you directly to the chart.
 
 <p>&nbsp;</p>
 
@@ -165,7 +165,7 @@ Acceptance criteria:
 
 Acceptance criteria:
 
-- Added element that takes the name from the file and display it above the chart.
+- Added element that takes the name from the file and displays it above the chart.
 
 <p>&nbsp;</p>
 
@@ -193,38 +193,62 @@ Acceptance criteria:
 
 I decided to create a website that would take the user on a journey for uploading a CSV file to be able to view it as a chart, rather than just having a chart and expecting that they would automatically know what to do with it.
 
-In the hero section the main (call to action) button has a stronger in color, when clicked prompts you to upload a CSV file while at the same time scrolls to where your chart will display.
+In the hero section, the main (call to action) button has a stronger color, when clicked prompts you to upload a CSV file while at the same time scrolls to where your chart will display.
 
 The site and chart are created with the user in mind using a dark theme which is commonplace for viewing data or technical information where you have to concentrate on the numbers/data.
 
-The interface is created with a clean design with easy to read text, so that the user can concentrate on the task at hand.
+The interface is created with a clean design with easy-to-read text, so that the user can concentrate on the task at hand.
 
 ## Features
 
 - Navigation
 
+	The upload button in the hero section makes it easy to see what you're to do.
+
 	The red button is it's the first thing you would want to use on the site.
 It will bring you down to the chart and prompt you to upload a file. It's an input element with type="file".
+
+
+	![upload button](readme-images/upload-btn_result.jpg)
+
+
+
+	Chart toggle button
+
+	So you can toggle between the two types of charts.
+
+	![chart toggle button](readme-images/toggle-btn_result.jpg)
+
+
 
 - The Chart title
 
 	The default text has a download link beside it so you can download the file if you wish to.
 The text changes to the text of the file uploaded by the user, (and the download link dissipaters).
+
+	![chart text](readme-images/sample-data_result.jpg)
+
 - The Chart buttons
 	
 	Under the chart & chart buttons there is another, call to action button for uploading another chart, so you don't have to scroll to the top again to upload another file.
 
+	![chart text](readme-images/chart-btn.png)
+
 - How To Page
 
-	I decided to create a how to page so that people wouldn't just be confronted with a chart of data and be expected to know what to do with it. 
+	I decided to create a how-to page so that people wouldn't just be confronted with a chart of data and be expected to know what to do with it. 
+
+	![chart text](readme-images/how-to-page.png)
 
 - Footer
 
-	The Footer is simple, minimalist designe with Site *created by Donnchadh Mc Ginley* as the only text element.
+	The Footer is a simple, minimalist design with Site *created by Donnchadh Mc Ginley* as the only text element.
+
+![chart text](readme-images/footer.png)
  
 ## Typography
-- Maven Pro *(with fallback of sans-serif)* - for the h1, h2 and h3 as a strong, clean, easy to read font.
-- DM Sans *(with fallback of sans-serif)* - for the body, modern and less stylised, easy to read so in keeping it clean with the chart
+- Maven Pro *(with a fallback of sans-serif)* - for the h1, h2, and h3 as a strong, clean, easy to read font.
+- DM Sans *(with a fallback of sans-serif)* - for the body, modern and less stylized, easy to read so in keeping it clean with the chart
 
 
 ## Color Choices
@@ -232,8 +256,8 @@ The text changes to the text of the file uploaded by the user, (and the download
 #### CSS root Selector
 **:root Selector - pseudo-class selector**
 
-I used the :root Selector for creating a personalised color set.
-As it an easy way to track colors across the elements while keeping the number of colors small.User Stories
+I used the :root Selector for creating a personalized color set.
+As it is an easy way to track colors across the elements while keeping the number of colors small.User Stories
 
 ![:root Colors](readme-images/root-colors.png)
 
@@ -248,7 +272,7 @@ I chose the chart color from the website [Chroma.js Color Palette Helper.](http:
 
 ## Responsiveness
 
-I created the website using mobile first.
+I created the website using mobile-first.
 
 The chart is set to **responsive: true,** which is a Chartjs boolean, I came across this and other settings reading up on the Chartjs [documentation.](https://www.chartjs.org/docs/latest/configuration/responsive.html)
 
@@ -318,27 +342,27 @@ Checked each button went to the proper location.
 
 I used Chrome and Firefox "developer tools, device toggle" to check the responsiveness for each device. From iPhone, roughly 300px, to laptop 1920px, and to the desktop at 2560px (QHD).
 
-On larger screens I made sure that the chart did get too larg as after a certain size it became clumsy to use.
+On larger screens, I made sure that the chart did get too large as after a certain size it became clumsy to use.
 
 ## Error Handling
 
-- I implemented to show an error wnen you would upload a image, as before that PapaParse would still parse the image into an array, so it wouldn't catch the error,
+- I implemented it to show an error when you would upload an image, as before that PapaParse would still parse the image into an array, so it wouldn't catch the error,
 
 - I also set a limit of two columns so you couldn't upload a blank file.
 
-- Chart wasn't showing, error in displaying the dataSetNames array. which is the names of the bars (or points on the line).
+- Chart wasn't showing, an error in displaying the dataSetNames array. which are the names of the bars (or points on the line).
 - Buttons were not showing correctly.
 - Column 0 was showing which is the date column and the button for loop (function createDataSetButtons) was creating a button for that which wouldn't click, I fixed this by skipping the first column in the CSV file.
 
-- I changed the "hitRadius" os that the chat (especially the line chart) is easer to hover on, I found this from reading the [Chartjs docs.](https://www.chartjs.org/docs/latest/charts/line.html)
+- I changed the "hitRadius" so that the chat (especially the line chart) is easier to hover on, I found this from reading the [Chartjs docs.](https://www.chartjs.org/docs/latest/charts/line.html)
 
 ## Deployment
 Deployed using GitHub Pages. <https://github.com/dmcginley/project2-chart-my-data/settings/pages>
 
 I went to my  Repository (project2-chart-my-data), and under the "Settings" tab went down to the "Pages" section on the left menu.
-In there I could easily deploy my site. 
+There I could easily deploy my site. 
 
-Once everything deployed I checked everything was working ok. I checked that the files would upload ok. I checked response times and refresh time, the links and buttons.
+Once everything was deployed I checked everything was working ok. I checked that the files would upload ok. I checked response times and refresh time, the links, and the buttons.
 
 
 Chart Data can be found here - https://dmcginley.github.io/project2-chart-my-data (same link as above)

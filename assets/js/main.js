@@ -73,7 +73,7 @@ function processData(data) {
     for (i = 0; i < data.length; ++i) {
       const row = data[i];
 
-      // Set label
+      // Set the label
       if (i === 0) {
         dataSetNames = row.slice(0); // copy label names
 
@@ -103,7 +103,6 @@ function processData(data) {
 }
 
 // scroll to chart section so the user doesn't have to go looking for it
-
 function scrollToChart() {
   const element = document.getElementById("theChart");
   element.scrollIntoView({
@@ -132,7 +131,7 @@ function displayChart() {
   myChart.update();
 }
 
-// my demo csv data to be displayed on first load
+// my demo csv data to be displayed on first load implemented from the docs
 Papa.parse(`assets/csv/${SAMPLE_CSV_FILENAME}`, {
   download: true,
   skipEmptyLines: true,
@@ -205,7 +204,7 @@ function toggleDataSet(index) {
   }
 }
 
-// config of bar chart
+// config of bar chart from chartjs
 const configBar = {
   type: "bar",
   data: chartData,
@@ -243,7 +242,7 @@ const configBar = {
   },
 };
 
-// config of line chart - data color
+// config of line chart - from chartjs
 const configLine = {
   type: "line",
   data: chartData,
