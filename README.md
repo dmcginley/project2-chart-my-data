@@ -46,7 +46,7 @@ Live website: https://dmcginley.github.io/project2-chart-my-data
 ## Sample data 
 Sample data that can be downloaded to use with the chart.
 
-- The first 3 months of 2021 COVID-19 data - [CSV file](https://drive.google.com/file/d/1nsoUh3Pp302tMsWz9uwc1k_Zd2s5S0fe/view?usp=sharing)
+- The first 3 months of 2021 COVID-19 data - [CSV file](https://drive.google.com/file/d/1nsoUh3Pp302tMsWz9uwc1k_Zd2s5S0fe/view?usp=sharing){:target="_blank"}
 	- New cases
 	- ICU patients
 	- Hospital  patients
