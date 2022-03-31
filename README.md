@@ -13,7 +13,34 @@ Live website: https://dmcginley.github.io/project2-chart-my-data
 
 ![Finished image of site](readme-images/screenshot.png "the site mobile desktop and tablet")
 
+## Table of contents
 
+  - [Sample data](#sample-data)
+  - [Wireframe](#wireframe)
+  - [Who is this website for](#who-is-this-website-for)
+  - [User Stories](#user-stories)
+  - [Technologies Used](#technologies-used)
+    - [The Code](#the-code)
+    - [Libraries used](#libraries-used)
+    - [Graphic/UX Design](#graphicux-design)
+  - [Design Decisions](#design-decisions)
+  - [Features](#features)
+  - [Typography](#typography)
+  - [Color Choices](#color-choices)
+  - [Responsiveness](#responsiveness)
+  - [Accessibility](#accessibility)
+  - [Consistency](#consistency)
+  - [Testing](#testing)
+    - [Lighthouse in Chrome DevTools](#lighthouse-in-chrome-devtools)
+    - [Validator Testing](#validator-testing)
+    - [Manual Testing](#manual-testing)
+    - [Responsive Testing](#responsive-testing)
+  - [Error Handling](#error-handling)
+  - [Deployment](#deployment)
+  - [Image optimization for the web](#image-optimization-for-the-web)
+  - [Resources](#resources)
+  - [Credits](#credits)
+  - [Content](#content)
 <p>&nbsp;</p>
 
 ## Sample data 
@@ -369,6 +396,8 @@ Tinypng and then put them in the image folder.
 - [How to Parse CSV String in Javascript with Papaparse JS](https://www.youtube.com/watch?v=s6SgVjIvIV8&list=PLPZlbsSRAxIpfL9s3LPCXqllojDEqxAXl&index=11) - using PapaParse.
 
 - [How to Create a Chart with a Remote CSV File with Chart JS](https://www.youtube.com/watch?v=HFAjrai-d58)
+
+- [How to Write Good User Stories](https://www.youtube.com/watch?v=tKSUokG3Y0w)
 
 ## Content
 The "how to use" text on the home page, (Toggle Between Bar Or Line Chart section).
