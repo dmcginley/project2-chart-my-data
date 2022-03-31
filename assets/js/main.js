@@ -46,8 +46,6 @@ let chartData = defaultData;
 
 const fileInput = document.querySelector(".txtFileUpload");
 
-console.log("fpp", fileInput);
-
 // show an error message
 function showErrorMessage(message) {
   const errorHeader = document.getElementsByClassName("csv-upload-error")[0];
@@ -104,12 +102,7 @@ function processData(data) {
   }
 }
 
-// window.onload = function () {
-//   yourFunction(fileInput);
-// };
-// yourFunction();
-
-// scroll to chart section so the user doesn 't have to go looking for it
+// scroll to chart section so the user doesn't have to go looking for it
 
 function scrollToChart() {
   const element = document.getElementById("theChart");
@@ -143,7 +136,6 @@ function displayChart() {
 Papa.parse(`assets/csv/${SAMPLE_CSV_FILENAME}`, {
   download: true,
   skipEmptyLines: true,
-  // header: false,
   complete: function (results) {
     clearData();
     processData(results.data);
@@ -199,18 +191,14 @@ function createDataSetButtons() {
   }
 }
 
-// dataSetNames = row.slice(1); // remove 'Date' header
-
 // toggle the data set
 function toggleDataSet(index) {
-  // // console.log("toggle dataset", index);
   const isVisible = myChart.isDatasetVisible(index);
   const datasetButtons = document.getElementsByClassName("dataset-toggle");
   const datasetButton = datasetButtons[index - 1]; // TODO: off by one otherwise
   if (isVisible) {
     myChart.hide(index);
     datasetButton.classList.add("dataset-hidden");
-    //  TODO: add class dataset-hidden
   } else {
     myChart.show(index);
     datasetButton.classList.remove("dataset-hidden");
@@ -224,7 +212,6 @@ const configBar = {
   options: {
     borderWidth: 0,
     responsive: true,
-    // maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false,
@@ -237,7 +224,6 @@ const configBar = {
         stacked: true,
         grid: {
           color: "#f7f7f76b",
-          //   display: false,
         },
         ticks: {
           color: "#f7f7f7",
@@ -264,8 +250,6 @@ const configLine = {
   options: {
     borderWidth: 2,
     responsive: true,
-    // maintainAspectRatio: false,
-    // tension: 0.1,
     pointRadius: 0,
     pointHoverRadius: 6,
     hitRadius: 15,
@@ -279,7 +263,6 @@ const configLine = {
         beginAtZero: true,
         grid: {
           color: "#f7f7f76b",
-          // display: false,
         },
         ticks: {
           color: "#f7f7f7",
@@ -289,7 +272,6 @@ const configLine = {
         stacked: true,
         grid: {
           color: "#f7f7f76b",
-          // display: false,
         },
         ticks: {
           color: "#f7f7f7",
@@ -312,7 +294,7 @@ function chartType(type) {
   if (type === "line") {
     myChart = new Chart(document.getElementById("myChart"), configLine);
   }
-  // TODO: does not remember what datasets are visible
-  //       so re-called function to create data buttons again
+
+  // does not remember what datasets are visible so re-called function to create data buttons again
   createDataSetButtons();
 }
