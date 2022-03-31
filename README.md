@@ -232,7 +232,13 @@ The text changes to the text of the file uploaded by the user, (and the download
 	
 	Under the chart & chart buttons there is another, call to action button for uploading another chart, so you don't have to scroll to the top again to upload another file.
 
-	![chart text](readme-images/chart-btn.png)
+
+	![chart buttons](readme-images/chart-btn.png)
+
+	As you toggle the button a part of the button keeps the color so that you can see which color it would relate to.
+
+	![chart buttons toggle](readme-images/focus-on-dyn-btn_result.jpg)
+
 
 - How To Page
 
