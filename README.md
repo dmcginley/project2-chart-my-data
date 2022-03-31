@@ -244,7 +244,7 @@ The text changes to the text of the file uploaded by the user, (and the download
 
 	The Footer is a simple, minimalist design with Site *created by Donnchadh Mc Ginley* as the only text element.
 
-![chart text](readme-images/footer.png)
+	![chart text](readme-images/footer.png)
  
 ## Typography
 - Maven Pro *(with a fallback of sans-serif)* - for the h1, h2, and h3 as a strong, clean, easy to read font.
@@ -355,6 +355,8 @@ On larger screens, I made sure that the chart did get too large as after a certa
 - Column 0 was showing which is the date column and the button for loop (function createDataSetButtons) was creating a button for that which wouldn't click, I fixed this by skipping the first column in the CSV file.
 
 - I changed the "hitRadius" so that the chat (especially the line chart) is easier to hover on, I found this from reading the [Chartjs docs.](https://www.chartjs.org/docs/latest/charts/line.html)
+
+- [jshint](https://jshint.com/) was showing a error so I reformated the clearData() function.
 
 ## Deployment
 Deployed using GitHub Pages. <https://github.com/dmcginley/project2-chart-my-data/settings/pages>
