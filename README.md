@@ -1,4 +1,4 @@
-# Project 2 - Chart my data
+# Project 2 - Chart Data
 
 <p>&nbsp;</p>
 
