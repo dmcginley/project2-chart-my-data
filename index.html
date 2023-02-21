@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="chart you csv data by simply uploading your file" />
+    <meta
+      name="description"
+      content="chart you csv data by simply uploading your file" />
     <meta name="keywords" content="chart, data, csv, barchart, linechart" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- Papa parse JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
       integrity="sha384-3UqfbTnADMqh/U3Nnc2YemCb4NU2tvfy1QWQa71aD9jM8J22WQov29gHPWobkC/p"
       crossorigin="anonymous"></script>
 
     <!-- chart.js script added integrity and crossorigin for SRI Hash using https://www.srihash.org/  -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"
-      integrity="sha384-SYpV1h9bTsJbHC3nCbHFUSwAZ0qWtTfg5WBERH3boj2It6saUDN07bATL944dSGe"
-      crossorigin="anonymous"></script>
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/chart.js"
-      integrity="sha384-7NrRHqlWUj2hJl3a/dZj/a1GxuQc56mJ3aYsEnydBYrY1jR+RSt6SBvK3sHfj+mJ"
-      crossorigin="anonymous"
-    ></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
 
     <!-- the favicon generated using https://favicon.io/favicon-converter/ -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icons/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/favicon/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/icons/favicon/favicon-16x16.png" />
 
     <title>Chart Data</title>
   </head>
@@ -39,7 +45,9 @@
       <header class="master-grid header">
         <div class="header-content">
           <a href="#" class="header-logo">
-            <img src="assets/icons/chart-icon-sm.svg" height="30"
+            <img
+              src="assets/icons/chart-icon-sm.svg"
+              height="30"
               alt="chart website logo three colored bars pink blue and green representing a bar chart" />
             <p class="site-name">Chart Data</p>
           </a>
@@ -71,21 +79,32 @@
             <!-- a container with the two hero buttons in it -->
             <div class="hero-button-container">
               <div class="file-upload-container">
-                <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
+                <label
+                  class="upload-label"
+                  for="txtFileUpload"
+                  onclick="scrollToChart()">
                   <span class="upload-img-span">
-                    <img class="upload-img" src="assets/icons/bx-upload-white.svg"
+                    <img
+                      class="upload-img"
+                      src="assets/icons/bx-upload-white.svg"
                       alt="an upload icon beside the text upload file" />
                   </span>
                   <span class="upload-text-span">Upload File</span>
                 </label>
-                <input class="file-upload-btn preview txtFileUpload1" type="file" name="File Upload" id="txtFileUpload1"
-                  aria-label="File" accept=" .csv" />
+                <input
+                  class="file-upload-btn preview txtFileUpload1"
+                  type="file"
+                  name="File Upload"
+                  id="txtFileUpload1"
+                  aria-label="File"
+                  accept=" .csv" />
               </div>
               <a href="how-to.html" class="hero-btn">How To Use</a>
             </div>
           </div>
           <div class="section-img-container">
-            <img src="assets/images/both-chart_result.jpg"
+            <img
+              src="assets/images/both-chart_result.jpg"
               alt="two images of a line and bar chart overlapping in a cascading manner" />
           </div>
         </section>
@@ -110,16 +129,34 @@
         <div class="toggle-container" id="chart-section">
           <!-- the two chart type buttons under the chart -->
           <div class="chart-toggle-btn" id="theChart">
-            <input onclick="chartType('bar')" class="radio-input" id="radio1" type="radio" value="bar" name="chart"
+            <input
+              onclick="chartType('bar')"
+              class="radio-input"
+              id="radio1"
+              type="radio"
+              value="bar"
+              name="chart"
               checked />
             <label class="chart-toggle-label chart-control-btn" for="radio1">
-              <img class="chart-toggle-svg" src="assets/icons/bx-bar-chart.svg" alt="bar chart icon" />
+              <img
+                class="chart-toggle-svg"
+                src="assets/icons/bx-bar-chart.svg"
+                alt="bar chart icon" />
               <span class="chart-toggle-name">Bar</span>
             </label>
 
-            <input onclick="chartType('line')" class="radio-input" id="radio2" type="radio" value="line" name="chart" />
+            <input
+              onclick="chartType('line')"
+              class="radio-input"
+              id="radio2"
+              type="radio"
+              value="line"
+              name="chart" />
             <label class="chart-toggle-label chart-control-btn" for="radio2">
-              <img class="chart-toggle-svg" src="assets/icons/bx-line-chart.svg" alt="line chart icon" />
+              <img
+                class="chart-toggle-svg"
+                src="assets/icons/bx-line-chart.svg"
+                alt="line chart icon" />
               <span class="chart-toggle-name">Line</span>
             </label>
           </div>
@@ -129,26 +166,45 @@
         <section class="chart-box">
           <div id="chart-title" class="chart-title-container">
             <p class="example-chart-title">example data.csv</p>
-            <a href="https://drive.google.com/file/d/1nsoUh3Pp302tMsWz9uwc1k_Zd2s5S0fe/view?usp=sharing" target="_blank"
-              rel="nofollow noopener noreferrer"><img src="assets/icons/bxs-download.svg"
-                alt="download icon a link to download sample csv file" /></a>
+            <a
+              href="https://drive.google.com/file/d/1nsoUh3Pp302tMsWz9uwc1k_Zd2s5S0fe/view?usp=sharing"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              ><img
+                src="assets/icons/bxs-download.svg"
+                alt="download icon a link to download sample csv file"
+            /></a>
           </div>
           <h3 class="csv-upload-error">doesn't work</h3>
-          <canvas id="myChart" aria-label="Bar or line chart presentation" role="img"></canvas>
+          <canvas
+            id="myChart"
+            aria-label="Bar or line chart presentation"
+            role="img"></canvas>
         </section>
 
         <!-- dynamic chart buttons + another download button  -->
         <div class="chart-buttons">
           <div id="dynamic-btn-container"></div>
           <div class="file-upload-container">
-            <label class="upload-label" for="txtFileUpload" onclick="scrollToChart()">
+            <label
+              class="upload-label"
+              for="txtFileUpload"
+              onclick="scrollToChart()">
               <span class="upload-img-span">
-                <img class="upload-img" src="assets/icons/bx-upload-white.svg" alt="upload icon for upload button" />
+                <img
+                  class="upload-img"
+                  src="assets/icons/bx-upload-white.svg"
+                  alt="upload icon for upload button" />
               </span>
               <span class="upload-text-span">Upload File</span>
             </label>
-            <input class="file-upload-btn preview txtFileUpload" type="file" name="File Upload" id="txtFileUpload"
-              aria-label="File" accept=" .csv" />
+            <input
+              class="file-upload-btn preview txtFileUpload"
+              type="file"
+              name="File Upload"
+              id="txtFileUpload"
+              aria-label="File"
+              accept=" .csv" />
           </div>
         </div>
       </main>
@@ -161,5 +217,4 @@
       <script defer src="assets/js/main.js"></script>
     </div>
   </body>
-
 </html>
